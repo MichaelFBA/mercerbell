@@ -11,7 +11,7 @@
 	      </a>
 	 
 	      <!-- Be sure to leave the brand out there if you want it shown -->
-	      <a class="brand absolute" href="<?php get_bloginfo('/'); ?>">Mercerbell</a>
+	      <a class="brand absolute" href="<?php get_bloginfo('url'); ?>">Mercerbell</a>
 	 
 	      <!-- Everything you want hidden at 940px or less, place within here -->
 	      <div class="nav-collapse collapse">

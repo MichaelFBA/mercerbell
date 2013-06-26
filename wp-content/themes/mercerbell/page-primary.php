@@ -181,14 +181,16 @@
 					<h4 class="fsl uppercase color6">Follow us</h4>
 					<p>Stay in the loop <i class="icon-facebook"></i> <i class="icon-twitter mrt"></i><i class="icon-pinterest mrt"></i><i class="icon-instagram"></i> </p>
 				</div>
-			</section>
-			<section class="row color6 txtC bts bc-color6 mtm">	
-				<div class="span12">
+				
+				<div class="span12 bts bc-color6 mtm">
 					<p class="mvl">Level 3, 71 York Street, Sydney, NSW, 2000    |   +612 92990802</p>
 				</div>
 				
+				
 				<!--	Google Maps -->
-				<iframe class="desaturate" width="1170" height="540" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=MercerBell,+York+Street,+Sydney,+New+South+Wales,+Australia&amp;aq=0&amp;oq=mercer+bell&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,84.199219&amp;ie=UTF8&amp;hq=MercerBell,+York+Street,&amp;hnear=Sydney+New+South+Wales,+Australia&amp;t=k&amp;ll=-33.866977,151.206293&amp;spn=0.009621,0.027037&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+				<div class="span12">
+					<iframe class="desaturate" width="1170" height="540" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=MercerBell,+York+Street,+Sydney,+New+South+Wales,+Australia&amp;aq=0&amp;oq=mercer+bell&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,84.199219&amp;ie=UTF8&amp;hq=MercerBell,+York+Street,&amp;hnear=Sydney+New+South+Wales,+Australia&amp;t=k&amp;ll=-33.866977,151.206293&amp;spn=0.009621,0.027037&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+				</div>
 					
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
