@@ -1,5 +1,12 @@
 <header>
-	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-	<?php bloginfo( 'description' ); ?>
-	<?php get_search_form(); ?>
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Title</a>
+	    <ul class="nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#">Link</a></li>
+	      <li><a href="#">Link</a></li>
+	    </ul>
+	  </div>
+	</div>
 </header>
