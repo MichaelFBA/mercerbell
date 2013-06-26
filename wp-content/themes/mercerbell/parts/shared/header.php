@@ -17,7 +17,7 @@
 	      <div class="nav-collapse collapse">
 	        
 	        <form class="navbar-search pull-right mtm">
-					  <input type="text" class="uppercaes" placeholder=""> 
+					  <input type="text" class="uppercase" placeholder=""> 
 					  <i class="icon-search"></i>
 					  <i class="icon-envelope-alt"></i>
 					</form>
@@ -27,7 +27,7 @@
 				        'menu'       => 'Main',
 				        'depth'      => 2,
 				        'container'  => false,
-				        'menu_class' => 'nav uppercase fst pull-right'
+				        'menu_class' => 'nav uppercase fss pull-right'
 				    ));
 					?>
 					

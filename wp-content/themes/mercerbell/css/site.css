@@ -13,21 +13,31 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif; }
+body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif;color: #4c4c4c; }
 header{margin-top: 75px;}
+hr {margin: 10px 0;border-top: 1px solid #4c4c4c;}
 
 /* Generic */
 .uppercase{text-transform: uppercase;}
-.df-light{font-family: 'GillSansStd-Light', sans-serif;}
+.underline{text-decoration: underline;}
+.fwNormal{font-weight: normal;}
+.df-light{font-family:'Conv_GillSansStd-Light',Sans-Serif;}
+.arrows{width: 20px;}
 
 /* Colors */
 .bg-color1{background-color: #ffffff;} /* white */
-.bg-color2{background-color: #f2f2f2;} /* Light grey */
+.bg-color2{background-color: #4c4c4c;} /* medium grey */
+.bg-color3{background-color: #009ce8;} /* blue */
+.bg-color4{background-color: #cc3333;} /* red */
 
+.color1{color: #ffffff} /* white */
 .color2{color: #4c4c4c} /* medium grey */
+.color3{color: #009ce8} /* blue */
+.color4{color: #cc3333} /* Red */
+
 
 /* Navbar */
-.navbar .nav > li > a {padding: 28px 15px 28px;}
+.navbar .nav > li > a {padding: 30px 15px 26px;}
 .navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;text-indent: 9999px; padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
 .navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
@@ -38,6 +48,10 @@ header .container{height: 75px}
 .carousel-indicators {top:auto; bottom: -25px;right: 0px;}
 .carousel-indicators .active{background-color: #c2d53d;}
 .carousel-indicators li {background-color: #ff9933;}
+.primary-caption{}
+
+
+
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Responsive           ----------------------------------------------------------------------------------------
