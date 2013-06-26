@@ -90,6 +90,8 @@ function starkers_script_enqueuer()
   wp_enqueue_style('fontAwesome');
   wp_register_style('css', get_template_directory_uri() . '/css/site.css', '', '', 'screen');
   wp_enqueue_style('css');
+  wp_register_style('fonts', get_template_directory_uri() . '/css/fonts.css', '', '', 'screen');
+  wp_enqueue_style('fonts');
 }
 
 

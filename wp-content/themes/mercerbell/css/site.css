@@ -12,6 +12,10 @@ Author URI: 	http://falsebehavinganimals.com
 /* ---------------------------------------------------------------------------------------------------------- 
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
+/* Overall */
+body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif; }
+
+
 /* Colors */
 .bg-color1{background-color: #f2f2f2;} /* Lightgrey */
 
@@ -24,31 +28,14 @@ Responsive           -----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 
+/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
 /* Landscape phones and down */
-@media (max-width: 480px) 
-{ 
-}
-
-/* iphone5 landscape */
-@media (min-width : 568px) and (max-width : 568px) 
-{	
-}
-
-@media (min-width: 480px) and (max-width: 767px) 
-{
-}
-
-/* Tablet */
-@media (max-width: 979px) 
-{ 
-}
-
-/* Tablet */
-@media (min-width: 767px) and (max-width: 979px) 
-{ 
-}
-
-/* Small*/
-@media (min-width: 980px) 
-{
-}
+@media (max-width: 480px) { ... }
