@@ -14,7 +14,7 @@ Start here           -----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
 body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif; }
-header{padding-top: 75px;}
+header{margin-top: 75px;}
 
 /* Generic */
 .uppercase{text-transform: uppercase;}
@@ -27,6 +27,8 @@ header{padding-top: 75px;}
 
 /* Navbar */
 .navbar .nav > li > a {padding: 28px 15px 28px;}
+.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;text-indent: 9999px; padding:0px; margin-left: 0px;left: -286px;top: 7px;}
+header .container{height: 75px}
 
 
 
@@ -40,10 +42,28 @@ Responsive           -----------------------------------------------------------
 @media (min-width: 1200px) { ... }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { ... }
+@media (min-width: 768px) and (max-width: 979px) {
+	header{margin-top: 0px}
+}
  
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) { ... }
+@media (max-width: 767px) {
+	header{margin-top: 0px}
+}
  
 /* Landscape phones and down */
-@media (max-width: 480px) { ... }
+@media (max-width: 480px) {
+	header{margin-top: 0px}
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+Retina           ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat top left;background-size: 482px 61px;}
+
+}
