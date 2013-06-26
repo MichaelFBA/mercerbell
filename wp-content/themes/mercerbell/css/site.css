@@ -18,6 +18,7 @@ header{margin-top: 75px;}
 
 /* Generic */
 .uppercase{text-transform: uppercase;}
+.df-light{font-family: 'GillSansStd-Light', sans-serif;}
 
 /* Colors */
 .bg-color1{background-color: #ffffff;} /* white */
@@ -29,9 +30,14 @@ header{margin-top: 75px;}
 .navbar .nav > li > a {padding: 28px 15px 28px;}
 .navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;text-indent: 9999px; padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
+.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
+.navbar .nav > li.current-menu-item a{color: #333333}
 
 
-
+/* Carousel */
+.carousel-indicators {top:auto; bottom: -25px;right: 0px;}
+.carousel-indicators .active{background-color: #c2d53d;}
+.carousel-indicators li {background-color: #ff9933;}
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Responsive           ----------------------------------------------------------------------------------------

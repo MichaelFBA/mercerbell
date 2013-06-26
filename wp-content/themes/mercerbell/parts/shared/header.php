@@ -17,7 +17,7 @@
 	      <div class="nav-collapse collapse">
 	        
 	        <form class="navbar-search pull-right mtm">
-					  <input type="text" class="" placeholder="Search"> 
+					  <input type="text" class="uppercaes" placeholder=""> 
 					  <i class="icon-search"></i>
 					  <i class="icon-envelope-alt"></i>
 					</form>
