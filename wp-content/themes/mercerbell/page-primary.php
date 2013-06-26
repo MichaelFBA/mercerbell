@@ -45,7 +45,7 @@
 			</div>
 		</section> 
 		
-		<!-- 	Work Section  -->
+<!-- 	Work Section  -->
 		
 		<section class="row">
 			<!--	Logo -->
@@ -55,7 +55,7 @@
 			</div>
 			
 			<!-- Work items -->
-			<div class="span4 bg-color1">
+			<div class="span4 bg-color1 transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
 				<div class="pam">
 					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
@@ -64,7 +64,7 @@
 				</div>
 			</div>
 			
-			<div class="span4 bg-color1">
+			<div class="span4 bg-color1 transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
 				<div class="pam">
 					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 			
-			<div class="span4 bg-color1">
+			<div class="span4 bg-color1 transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
 				<div class="pam">
 					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
@@ -82,7 +82,6 @@
 				</div>
 			</div>
 			
-			<!--	Logo -->
 			<div class="span12 txtC mvl">
 				<h5 class="fwNormal uppercase">View All</h5>
 				<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
@@ -103,7 +102,7 @@
 			</section>
 			<section class="row">
 				<div class="span8 offset2">
-					<h2 class="df-light fwNormal color1">MercerBell is an independent marketing and communications agency of passionate, creative people working together to build committed relationships between brands and customers for our clients. </h5>
+					<h2 class="df-light fwNormal color1">MercerBell is an independent marketing and communications agency of passionate, creative people working together to build committed relationships between brands and customers for our clients. </h2>
 				</div>
 					
 				<!--	Logo -->
@@ -117,10 +116,11 @@
 	</div><!-- close bg-color3 wrap-->
 
 
+<!-- 	Press Section  -->
 	<div class="container">
-				<!-- 	Press Section  -->
+				
 		
-		<section class="row txtC">
+		<section class="row txtC" id="press">
 			<!--	Logo -->
 			<div class="span12 mvl">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
@@ -128,26 +128,23 @@
 			</div>
 			
 			<!-- Work items -->
-			<div class="span4">
+			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h5 class="uppercase fwNormal uppercase">WORK FROM HOME ISN’TTHE ONLY OPTION FOR FLEXIBILITY</h5>
-				<p class="df-light">Mar 20, 2013</p>
-				<hr class="phh">
-				<p class="fss man">digital campaign, print</p>
+				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
+				<hr class="smallhr">
+				<p class="fss man uppercase">Read Jule's Article</p>
 			</div>
-			
-			<div class="span4">
+			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
-				<hr>
-				<p class="fss man">digital campaign, print</p>
+				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
+				<hr class="smallhr">
+				<p class="fss man uppercase">Read Jule's Article</p>
 			</div>
-			
-			<div class="span4">
+			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
-				<hr>
-				<p class="fss man">digital campaign, print</p>
+				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
+				<hr class="smallhr">
+				<p class="fss man uppercase">Read Jule's Article</p>
 			</div>
 			
 			<!--	Logo -->
@@ -158,6 +155,51 @@
 		</section>
 		
 	</div><!-- close container -->
+	
+	
+	<div class="bg-color5">
+		<div class="container" id="contact">	
+					<!-- About use -->
+			<section class="row">
+				<!--	Logo -->
+				<div class="span12 txtC mvl">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+					<h5 class="uppercase lsm fwNormal color1">Contact</h5>
+				</div>
+			</section>
+			
+			<section class="row color6 txtC">
+				<div class="span4 ">
+					<h4 class="fsl uppercase color6">GENERAL INQUIRIES</h4>
+					<p>Just want to say "hi"? Drop us a line. mercerbell@mercerbell.com.au</p>
+				</div>
+				<div class="span4">
+					<h4 class="fsl uppercase color6">Work for us</h4>
+					<p>We are always looking for talented, creative, ambitious individuals to join our team <i class="icon-angle-right"></i></p>
+				</div>
+				<div class="span4">
+					<h4 class="fsl uppercase color6">Follow us</h4>
+					<p>Stay in the loop <i class="icon-facebook"></i> <i class="icon-twitter mrt"></i><i class="icon-pinterest mrt"></i><i class="icon-instagram"></i> </p>
+				</div>
+			</section>
+			<section class="row color6 txtC bts bc-color6 mtm">	
+				<div class="span12">
+					<p class="mvl">Level 3, 71 York Street, Sydney, NSW, 2000    |   +612 92990802</p>
+				</div>
+				
+				<!--	Google Maps -->
+				<iframe class="desaturate" width="1170" height="540" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=MercerBell,+York+Street,+Sydney,+New+South+Wales,+Australia&amp;aq=0&amp;oq=mercer+bell&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,84.199219&amp;ie=UTF8&amp;hq=MercerBell,+York+Street,&amp;hnear=Sydney+New+South+Wales,+Australia&amp;t=k&amp;ll=-33.866977,151.206293&amp;spn=0.009621,0.027037&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+					
+				<!--	Logo -->
+				<div class="span12 txtC mvl">
+					<h5 class="fwNormal uppercase">Back to top</h5>
+					<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
+				</div>
+			</section>
+			
+		</div><!-- close container -->
+	</div><!-- close bg-color3 wrap-->
+	
 
 	<?php the_content(); ?>
 <?php endwhile; ?>
