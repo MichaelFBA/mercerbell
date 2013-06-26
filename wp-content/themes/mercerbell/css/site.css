@@ -14,11 +14,19 @@ Start here           -----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
 body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif; }
+header{padding-top: 75px;}
 
+/* Generic */
+.uppercase{text-transform: uppercase;}
 
 /* Colors */
-.bg-color1{background-color: #f2f2f2;} /* Lightgrey */
+.bg-color1{background-color: #ffffff;} /* white */
+.bg-color2{background-color: #f2f2f2;} /* Light grey */
 
+.color2{color: #4c4c4c} /* medium grey */
+
+/* Navbar */
+.navbar .nav > li > a {padding: 28px 15px 28px;}
 
 
 

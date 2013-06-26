@@ -1,6 +1,6 @@
 <header>
-	<div class="navbar">
-	  <div class="navbar-inner">
+	<div class="navbar navbar-fixed-top">
+	  <div class="bg-color1">
 	    <div class="container">
 	 
 	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -21,13 +21,15 @@
 				        'menu'       => 'Main',
 				        'depth'      => 2,
 				        'container'  => false,
-				        'menu_class' => 'nav'
+				        'menu_class' => 'nav uppercase fst'
 				    ));
 					?>
 					
 					<form class="navbar-search pull-left">
 					  <input type="text" class="search-query" placeholder="Search"><i class="icon-search"></i>
 					</form>
+	        
+	        <i class="icon-envelope-alt"></i>
 	        
 	      </div>
 	 

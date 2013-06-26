@@ -86,8 +86,6 @@ function starkers_script_enqueuer()
   wp_enqueue_style('responsive');
   wp_register_style('garth', get_template_directory_uri() . '/css/garth.css', '', '', 'screen');
   wp_enqueue_style('garth');
-  wp_register_style('fontAwesome', get_template_directory_uri() . '/css/font-awesome.min.css', '', '', 'screen');
-  wp_enqueue_style('fontAwesome');
   wp_register_style('css', get_template_directory_uri() . '/css/site.css', '', '', 'screen');
   wp_enqueue_style('css');
   wp_register_style('fonts', get_template_directory_uri() . '/css/fonts.css', '', '', 'screen');
