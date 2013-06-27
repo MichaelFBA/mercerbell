@@ -37,7 +37,7 @@
 						<input type="text" class="span6 pvm bran" placeholder="PHONE">
 						<input type="text" class="span5 pvm bran mrm" placeholder="WEBSITE">
 					</div>
-					<div class="span12 mbl bss bc-color6">
+					<div class="span12 mbl bbt bc-color6 pbl">
 						<textarea rows="6" class="span12 pvm bran" placeholder="MESSAGE"></textarea>
 						<label class="checkbox"><input type="checkbox" value=""><i>I would like to receive the MercerBell Sauce eNewsletter.</i></label>
 						<i class="icon-circle"></i> <i>Required fields.</i>
@@ -50,21 +50,24 @@
 				<!-- Work items -->
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
-				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
+				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<hr class="bc-color6">
+				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
+				<hr class="bc-color6">
 			</div>
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
-				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
+				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<hr class="bc-color6">
+				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
+				<hr class="bc-color6">
 			</div>
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
-				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
+				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<hr class="bc-color6">
+				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
+				<hr class="bc-color6">
 			</div>
 			</section>
 			

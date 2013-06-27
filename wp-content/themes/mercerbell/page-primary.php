@@ -192,7 +192,7 @@
 					<iframe class="desaturate" width="1170" height="540" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=MercerBell,+York+Street,+Sydney,+New+South+Wales,+Australia&amp;aq=0&amp;oq=mercer+bell&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,84.199219&amp;ie=UTF8&amp;hq=MercerBell,+York+Street,&amp;hnear=Sydney+New+South+Wales,+Australia&amp;t=k&amp;ll=-33.866977,151.206293&amp;spn=0.009621,0.027037&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
 				</div>
 					
-				<!--	Logo -->
+				<!--	back to top -->
 				<div class="span12 txtC mvl">
 					<h5 class="fwNormal uppercase">Back to top</h5>
 					<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>

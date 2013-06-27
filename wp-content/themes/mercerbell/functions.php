@@ -34,8 +34,15 @@ register_sidebar(array(
   'before_widget' => '',
   'after_widget' => ''
 ));
+
 //Add Custom image size
-add_image_size('micro', 67, 67, true);
+add_image_size('square-large', 406, 406, true);
+
+//Image sizes for work page
+add_image_size('span4', 370, 300, true);
+add_image_size('span5', 470, 300, true);
+add_image_size('span7', 670, 300, true);
+add_image_size('span8', 770, 300, true);
 
 /* ========================================================================================================================
 
@@ -74,6 +81,9 @@ function starkers_script_enqueuer()
   wp_enqueue_script('site');
   wp_register_script('bootstrapJS', get_template_directory_uri() . '/js/bootstrap.js', '', '', true);
   wp_enqueue_script('bootstrapJS');
+  wp_register_script('isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', '', '', true);
+  wp_enqueue_script('isotope');
+  
   
   /* Style Sheets */
   wp_register_style('reset', get_template_directory_uri() . '/css/reset.css', '', '', 'screen');
