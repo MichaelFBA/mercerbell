@@ -13,19 +13,25 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd', sans-serif;line-height: 1.5em; color: #4c4c4c; }
-header{margin-top: 75px;}
+body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c; }
+header{margin-top: 120px;}
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
+a{color: #777777;}
+a:hover, a:focus{color: #333333;text-decoration: none;}
 
 /* Generic */
+strong{font-family: 'GillSansStd', sans-serif;}
 .uppercase{text-transform: uppercase;}
 .capitalize{text-transform: capitalize;}
 .underline{text-decoration: underline;}
 .fwNormal{font-weight: normal;}
-.df-light{font-family:'Conv_GillSansStd-Light',Sans-Serif;}
+.df-light{font-family:'GillSansStd-Light',Sans-Serif;}
+.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .arrows{width: 20px;}
 .smallhr{width: 30px; border-bottom: none; margin: 10px auto 10px auto;}
 .desaturate{-webkit-filter: saturate(0%);filter: saturate(0%)}
+.patternOverlay{background: url(../img/patternOverlay.png) repeat;top: 0;left: 0;bottom: 0;right: 0;}
+
 
 /* Colors */
 .bg-color1{background-color: #ffffff;} /* white */
@@ -55,6 +61,13 @@ hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
 header .container{height: 75px}
 .navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
 .navbar .nav > li.current-menu-item a{color: #333333}
+/* Subnav */
+.navbar .sub-menu{display: none;}
+.navbar .page-item-8 .sub-menu{display: block}
+.navbar .current-menu-ancestor .sub-menu{display: block;}
+.sub-menu li{display: inline;padding-left: 30px;}
+.sub-menu{position: fixed;background-color: #fbfbfb;padding: 15px 0px 15px 170px;left: 0px;top: 75px;width: 100%;margin: 0px; text-align: center;}
+.sub-menu .current-menu-item a{color:#009ce8;}
 
 
 /* Carousel */
@@ -71,6 +84,8 @@ Page specific         ----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 #article4 textarea, #article4 input[type="text"]{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
+#clientLogos .span3{min-height: 200px;line-height: 180px;}
+
 
 
 /* ---------------------------------------------------------------------------------------------------------- 

@@ -32,7 +32,7 @@
 	</div><!-- close row -->
 
 	<!-- isotope rows -->
-	<div id="isotope" class="row transition">
+	<div id="isotope-expand" class="row transition">
 	
 		<!-- 	Use WP-Query as the main loop, its better than get-posts etc -->
 		<?php

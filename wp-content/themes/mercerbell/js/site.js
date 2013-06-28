@@ -89,7 +89,20 @@ $('.toggle').on('click',function(e){
 	ISOTOPE
 	
 ======================================================================================================================== */
+var $container-expand = $('#isotope-expand');
+$container.imagesLoaded( function(){
+	$($container).isotope({
+		layoutMode: 'masonryColumnShift'
+		itemSelector : '.element'
+	});
+	$($container).isotope( 'shuffle' )
+})
+
+
 var $container = $('#isotope');
+
+
+
 $container.imagesLoaded( function(){
 	$($container).isotope({
 		layoutMode: 'fitRows',
