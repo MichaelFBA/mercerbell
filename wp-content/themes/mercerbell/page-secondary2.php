@@ -51,7 +51,7 @@
 				<div class="span4 transition element mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	        <img src="<?php echo $Imageurl[0]; ?>" />
-					<h4 class="uppercase fwNormal mtm fsl"><?php the_title(); ?></h4>
+					<h4 class="uppercase df-regular mtm fsl"><?php the_title(); ?></h4>
 					<hr>
 					<p class="man capitalize"><?php the_field('position_held') ?><a href="#" class="null toggle"><i class="icon-angle-down pull-right"></i></a></p>
 					<div class="hide mvm">

@@ -14,7 +14,7 @@ Start here           -----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
 body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c; }
-header{margin-top: 120px;}
+header{margin-top: 75px;}
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
 a{color: #777777;}
 a:hover, a:focus{color: #333333;text-decoration: none;}
@@ -31,7 +31,11 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .smallhr{width: 30px; border-bottom: none; margin: 10px auto 10px auto;}
 .desaturate{-webkit-filter: saturate(0%);filter: saturate(0%)}
 .patternOverlay{background: url(../img/patternOverlay.png) repeat;top: 0;left: 0;bottom: 0;right: 0;}
-
+.fs-half{font-size: 0.5em}
+.r0{right:0px;}
+.l0{left:0px;}
+.t0{top:0px;}
+.b0{bottom:0px;}
 
 /* Colors */
 .bg-color1{background-color: #ffffff;} /* white */
@@ -79,14 +83,24 @@ header .container{height: 75px}
 /* GoogleMap */
 #contact iframe{width:100%;}
 
+/* Form Validation */
+span.wpcf7-not-valid-tip {position: absolute;top: auto;left: 0px;z-index: 100;background-color: #60bdb9;border: 1px dashed #000000;width: 100%;padding: 20px 0 20px 0;text-indent: 20px}
+div.wpcf7-validation-errors {border: none;}
+span.wpcf7-list-item {margin-left: 0px;}
+
 /* ---------------------------------------------------------------------------------------------------------- 
 Page specific         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
-#article4 textarea, #article4 input[type="text"]{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
+#article4 textarea, #article4 input[type="text"],#article4 input[type="email"]{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
+#article4 .span2 label{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
+#article4 input[type="file"]{position: absolute;left: -9999px;}
 #clientLogos .span3{min-height: 200px;line-height: 180px;}
 
-
+#article4 textarea::-webkit-input-placeholder,#article4 input[type="email"]::-webkit-input-placeholder,#article4 input[type="text"]::-webkit-input-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
+#article4 textarea::-moz-placeholder,#article4 input[type="email"]::-moz-placeholder,#article4 input[type="text"]::-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* firefox 19+ */
+#article4 textarea:-ms-input-placeholder,#article4 input[type="email"]:-ms-input-placeholder,#article4 input[type="text"]:-ms-input-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* ie */
+#article4 textarea input:-moz-placeholder ,#article4 input[type="email"]input:-moz-placeholder ,#article4 input[type="text"]input:-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------

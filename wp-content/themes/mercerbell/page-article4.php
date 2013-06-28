@@ -14,7 +14,6 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<?php the_content(); ?>
 
 	<div class="bg-color5">
 		<div class="container" id="article4">	
@@ -28,43 +27,27 @@
 			</section>
 			
 			<section class="row color6">
-				<form>
-					<div class="span6">
-						<input type="text" class="span6 pvm bran fss" placeholder="NAME">
-						<input type="text" class="span6 pvm bran" placeholder="EMAIL">
-					</div>
-					<div class="span6">
-						<input type="text" class="span6 pvm bran" placeholder="PHONE">
-						<input type="text" class="span5 pvm bran mrm" placeholder="WEBSITE">
-					</div>
-					<div class="span12 mbl bbt bc-color6 pbl">
-						<textarea rows="6" class="span12 pvm bran" placeholder="MESSAGE"></textarea>
-						<label class="checkbox"><input type="checkbox" value=""><i>I would like to receive the MercerBell Sauce eNewsletter.</i></label>
-						<i class="icon-circle"></i> <i>Required fields.</i>
-						<a href="#" class="pull-right color6">SEND <i class="icon-angle-right"></i></a>
-						
-					</div>
-				</form>
+			<?php the_content(); ?>
 			</section>
 			<section class="row">
 				<!-- Work items -->
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<h4 class="uppercase df-regular mtm fsl">Art director</h4>
 				<hr class="bc-color6">
 				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
 				<hr class="bc-color6">
 			</div>
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<h4 class="uppercase df-regular mtm fsl">Art director</h4>
 				<hr class="bc-color6">
 				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
 				<hr class="bc-color6">
 			</div>
 			<div class="span4 pbm transition">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl">Art director</h4>
+				<h4 class="uppercase df-regular mtm fsl">Art director</h4>
 				<hr class="bc-color6">
 				<p class="fss man uppercase">Creative <i class="icon-angle-down pull-right"></i></p>
 				<hr class="bc-color6">

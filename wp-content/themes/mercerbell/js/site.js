@@ -89,20 +89,17 @@ $('.toggle').on('click',function(e){
 	ISOTOPE
 	
 ======================================================================================================================== */
-var $container-expand = $('#isotope-expand');
-$container.imagesLoaded( function(){
-	$($container).isotope({
-		layoutMode: 'masonryColumnShift'
+var $containerExpand = $('#isotope-expand');
+$containerExpand.imagesLoaded( function(){
+	$($containerExpand).isotope({
+		layoutMode: 'masonryColumnShift',
 		itemSelector : '.element'
 	});
-	$($container).isotope( 'shuffle' )
+	$($containerExpand).isotope( 'shuffle' )
 })
 
 
 var $container = $('#isotope');
-
-
-
 $container.imagesLoaded( function(){
 	$($container).isotope({
 		layoutMode: 'fitRows',

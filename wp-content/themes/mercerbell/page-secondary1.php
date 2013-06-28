@@ -38,7 +38,7 @@
 		<?php
 			$queryHome = new WP_Query(array(
 	    	'posts_per_page' => -1,
-	    	'order'					 => 'ASC',
+	    	'order'					 => 'DESC',
 	    	'orderby'				 => 'date',
 	    	'category_name'  => 'work',
 	    	'post_status'		 => 'publish'

@@ -83,6 +83,10 @@ function starkers_script_enqueuer()
   wp_enqueue_script('bootstrapJS');
   wp_register_script('isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', '', '', true);
   wp_enqueue_script('isotope');
+  wp_register_script('form', get_template_directory_uri() . '/js/jquery.form.js', '', '', true);
+  wp_enqueue_script('form');
+  wp_register_script( 'contactForm', get_template_directory_uri().'/js/scripts.js','','', true );
+	wp_enqueue_script( 'contactForm' );
   
   
   /* Style Sheets */
