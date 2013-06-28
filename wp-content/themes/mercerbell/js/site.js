@@ -234,6 +234,44 @@ $('#filters a').click(function(){
 
   });
 
+  /* ========================================================================================================================
+	
+	Custom Youtube
+	
+======================================================================================================================== */
+var params = { allowScriptAccess: "always" };
+swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1&playerapiid=ytplayer&version=3", "ytplayer", "425", "365", "8", null, null, params);
+
+
+function play() {
+	if (ytplayer) {
+		ytplayer.playVideo();
+	}
+}
+
+function pause() {
+	if (ytplayer) {
+		ytplayer.pauseVideo();
+	}
+}
+
+function stop() {
+	if (ytplayer) {
+		ytplayer.stopVideo();
+	}
+}
+$('.loadVideo').on('click',function(){
+console.log('here')
+		ytplayer.loadVideoById('tFI7JAybF6E', 0);
+})
+
+
+
+
+
+
+
+
 
   /* ========================================================================================================================
 	

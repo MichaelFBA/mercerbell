@@ -87,6 +87,8 @@ function starkers_script_enqueuer()
   wp_enqueue_script('form');
   wp_register_script( 'contactForm', get_template_directory_uri().'/js/scripts.js','','', true );
 	wp_enqueue_script( 'contactForm' );
+	wp_register_script( 'swfObject', get_template_directory_uri().'/lib/swfobject/swfobject.js','','', true );
+	wp_enqueue_script( 'swfObject' );
   
   
   /* Style Sheets */

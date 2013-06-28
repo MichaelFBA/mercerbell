@@ -15,6 +15,8 @@
 			<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css" type="text/css" media="screen">
 		<![endif]-->
 		
+		
+		
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
