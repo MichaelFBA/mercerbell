@@ -19,6 +19,95 @@ jQuery(document).ready(function ($) {
     }
   });
 
+/* ========================================================================================================================
+
+	Menu Scroll
+
+======================================================================================================================== */
+	  
+  var distanceFromTop = 150; // top spacer - can be adjusted
+  var menuPos =  $(".sidenav").offset().top + $(".sidenav").height() - $(window).scrollTop() + 14; // total menu height
+  
+  $(window).on('scroll',function(){
+		
+		//Get's the top position of an element
+		var aboutTopOffset = $("#about").offset().top - $(window).scrollTop();
+		var pressTopOffset = $("#press").offset().top - $(window).scrollTop();
+		var contactTopOffset = $("#contact").offset().top - $(window).scrollTop();
+		
+		//Gets top position of sidebar text items
+		$(".sidenav a").each(function(i,j){
+			var item = $(this).offset().top - $(window).scrollTop(); 
+			
+			if(aboutTopOffset < item){ 
+				$(this).addClass('color3')
+				
+			}else{
+				$(this).removeClass('color3')
+			}
+			
+			if(pressTopOffset < item){ 
+				$(this).addClass('color1')
+				
+			}else{
+				$(this).removeClass('color1')
+			}
+			
+			if(contactTopOffset < item){ 
+				$(this).addClass('color5')
+				
+			}else{
+				$(this).removeClass('color5')
+			}
+			
+		})
+		
+		
+		
+		// Checks if the top of the element is at the bottom of the side nav 
+		//if so it adjusts the height of the side nav 
+		if(aboutTopOffset < menuPos){ 
+			menuResizer( '.element1', aboutTopOffset )
+		}
+		else{ 
+			$('.element1').css('height',210);
+		}
+		
+		if(pressTopOffset < menuPos){ 
+			menuResizer( '.element2', pressTopOffset )
+		}else{ 
+			$('.element2').css('height',210);
+		}
+		
+		if(contactTopOffset < menuPos){ 
+			menuResizer( '.element3', contactTopOffset )
+		}
+		else{ 
+			$('.element3').css('height',210);
+		}
+
+})
+  
+  function removeAllColours(){
+	  $( '.sidenav a').each(function( index ) {
+			$(this).removeClass('color1');
+			$(this).removeClass('color2');
+			$(this).removeClass('color3');
+			$(this).removeClass('color4');
+			$(this).removeClass('color5');
+			$(this).removeClass('color6');
+			$(this).removeClass('color7');
+			
+		});
+
+  }
+  
+  function menuResizer(element, offset){
+	  $(element).css('height', offset - distanceFromTop) 
+  }
+  
+  
+
 
 /* ========================================================================================================================
 
@@ -239,35 +328,7 @@ $('#filters a').click(function(){
 	Custom Youtube
 	
 ======================================================================================================================== */
-var params = { allowScriptAccess: "always" };
-swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1&playerapiid=ytplayer&version=3", "ytplayer", "425", "365", "8", null, null, params);
-
-
-function play() {
-	if (ytplayer) {
-		ytplayer.playVideo();
-	}
-}
-
-function pause() {
-	if (ytplayer) {
-		ytplayer.pauseVideo();
-	}
-}
-
-function stop() {
-	if (ytplayer) {
-		ytplayer.stopVideo();
-	}
-}
-$('.loadVideo').on('click',function(){
-console.log('here')
-		ytplayer.loadVideoById('tFI7JAybF6E', 0);
-})
-
-
-
-
+$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
 
 
 

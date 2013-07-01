@@ -44,6 +44,7 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .bg-color4{background-color: #cc3333;} /* red */
 .bg-color5{background-color: #60bdb9;} /* aqua */
 .bg-color6{background-color: #564c78;} /* purple */
+.bg-color7{background-color: #c2d63e;} /* lightGreen */
 
 .bc-color1{border-color: #ffffff;} /* white */
 .bc-color2{border-color: #4c4c4c;} /* medium grey */
@@ -51,6 +52,7 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .bc-color4{border-color: #cc3333;} /* red */
 .bc-color5{border-color: #60bdb9;} /* aqua */
 .bc-color6{border-color: #564c78;} /* purple */
+.bc-color7{border-color: #c2d63e;} /* lite green */
 
 .color1{color: #ffffff} /* white */
 .color2{color: #4c4c4c} /* medium grey */
@@ -58,10 +60,11 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .color4{color: #cc3333} /* Red */
 .color5{color: #60bdb9} /* aqua */
 .color6{color: #564c78} /* purple */
+.color7{color: #c2d63e} /* liteGreen */
 
 /* Navbar */
 .navbar .nav > li > a {padding: 30px 15px 26px;}
-.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;text-indent: 9999px; padding:0px; margin-left: 0px;left: -286px;top: 7px;}
+.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
 .navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
 .navbar .nav > li.current-menu-item a{color: #333333}
@@ -72,6 +75,21 @@ header .container{height: 75px}
 .sub-menu li{display: inline;padding-left: 30px;}
 .sub-menu{position: fixed;background-color: #fbfbfb;padding: 15px 0px 15px 170px;left: 0px;top: 75px;width: 100%;margin: 0px; text-align: center;}
 .sub-menu .current-menu-item a{color:#009ce8;}
+
+
+/* Side Nav */
+.spacer{height: 150px} /* This is used to space the nav from the top */
+.sidenav{position: fixed; width: 40px; top:150px;left: 0px}
+.sidenav .nav-list > li > a {padding: 0px}
+.sidenav .nav > li > a:hover, .nav > li > a:focus {background-color: transparent}
+.sidenav .circles{border-radius: 5px;width: 8px;height: 8px;margin: 10px 0 15px 4px}
+.circles a{color: white}
+.sidenav .backgroundNav{width: 40px; height: 210px}
+.zi1{z-index: 10}
+.zi2{z-index: 20}
+.zi3{z-index: 30}
+.zi4{z-index: 40}
+.zi5{z-index: 50}
 
 
 /* Carousel */
@@ -160,28 +178,39 @@ Isotope           --------------------------------------------------------------
           transition-property:         transform, opacity;
 }
 
+
 /* ---------------------------------------------------------------------------------------------------------- 
 Responsive           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 
 /* Large desktop */
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { 
+	#player .flashContainer, #player .flashContainer object{width:1170px !important; height: 658px !important }
+}
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
 	header{margin-top: 0px}
+	#player .flashContainer, #player .flashContainer object{width:724px !important; height: 406px !important }
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+	body {padding: 0px;}
 	header{margin-top: 0px}
+	.container{padding: 0 20px 0 20px;}
+	#player .flashContainer, #player .flashContainer object{width:100% !important; height: auto !important }
+
+	
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	body {padding: 0px;}
 	header{margin-top: 0px}
 }
+
 
 
 /* ---------------------------------------------------------------------------------------------------------- 
@@ -193,4 +222,76 @@ Retina           ---------------------------------------------------------------
 
 .navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat top left;background-size: 482px 61px;}
 
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+Custom Youtube           ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+.flashContainer{
+
+	/*	Setting the container to relative positioning
+		so we can center the control div */
+
+	position:relative;
+	overflow:hidden;
+}
+
+.progressBar{
+	position:absolute;
+	width:auto;
+	height:8px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:#c2d63e;
+	overflow:hidden;
+	cursor:pointer;
+	
+	/* A light CSS3 bottom highlight */
+	
+	-moz-box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+	box-shadow:0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.progressBar .elapsed{
+	position:absolute;
+	width:0;
+	height:100%;
+	background-color:#ff9933;
+	border-right:1px solid #ff9933;
+}
+
+.controlDiv{
+	/* Centering the control div */
+	position:absolute;
+	width:155px;
+	height:155px;
+	cursor:pointer;
+	top:50%;
+	left:50%;
+	margin:-75px 0 0 -75px;
+}
+
+.controlDiv.play{
+	background:url('../img/youtube/play.png') no-repeat center center;
+}
+
+.controlDiv.replay{
+	background:url('../img/youtube/replay.png') no-repeat center center;
+}
+
+.controlDiv.pause{
+	background:url('../img/youtube/pause.png') no-repeat -99999px;
+}
+
+.flashContainer:hover .controlDiv.pause{
+	background-position:center center;
+}
+
+/* Only show the progress bar when the video is playing */
+
+.flashContainer.playing:hover .progressBar{
+	display:block;
 }

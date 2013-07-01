@@ -25,11 +25,7 @@ foreach($post_categories as $c){
 	<div class="row">
 		<div class="span12">
 		
-			<div id="ytplayer"></div>
-			<a href="#" onclick="play();">Play</a>
-			<a href="#" onclick="pause();">Pause</a>
-			<a href="#" onclick="stop();">Stop</a>
-			<a href="#" class="loadVideo null">load</a>
+			<div id="player"></div>
 
 
 		
