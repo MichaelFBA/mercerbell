@@ -81,7 +81,7 @@ header .container{height: 75px}
 .spacer{height: 150px} /* This is used to space the nav from the top */
 .sidenav{position: fixed; width: 40px; top:150px;left: 0px}
 .sidenav .nav-list > li > a {padding: 0px}
-.sidenav .nav > li > a:hover, .nav > li > a:focus {background-color: transparent}
+.sidenav .nav > li > a:hover, .nav > li > a:focus {}
 .sidenav .circles{border-radius: 5px;width: 8px;height: 8px;margin: 10px 0 15px 4px}
 .circles a{color: white}
 .sidenav .backgroundNav{width: 40px; height: 210px}
@@ -90,6 +90,15 @@ header .container{height: 75px}
 .zi3{z-index: 30}
 .zi4{z-index: 40}
 .zi5{z-index: 50}
+.sidenav .socialIcons,.sidenav .socialIcons:hover{background-color: transparent !important;}
+.sidenav .active .color1,.sidenav .active .color1:hover,.sidenav .color1:hover {color: #ffffff; background-color: #ffffff} /* white */
+.sidenav .active .color2,.sidenav .active .color2:hover,.sidenav .color2:hover{color: #4c4c4c; background-color: #4c4c4c} /* medium grey */
+.sidenav .active .color3,.sidenav .active .color3:hover,.sidenav .color3:hover{color: #009ce8; background-color: #009ce8} /* blue */
+.sidenav .active .color4,.sidenav .active .color4:hover,.sidenav .color4:hover{color: #cc3333; background-color: #cc3333} /* Red */
+.sidenav .active .color5,.sidenav .active .color5:hover,.sidenav .color5:hover{color: #60bdb9; background-color: #60bdb9} /* aqua */
+.sidenav .active .color6,.sidenav .active .color6:hover,.sidenav .color6:hover{color: #564c78; background-color: #564c78} /* purple */
+.sidenav .active .color7,.sidenav .active .color7:hover,.sidenav .circles .color7:hover{color: #c2d63e; background-color: #c2d63e} /* liteGreen */
+
 
 
 /* Carousel */

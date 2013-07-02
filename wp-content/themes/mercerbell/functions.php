@@ -92,6 +92,10 @@ function starkers_script_enqueuer()
 	wp_enqueue_script( 'swfObject' );
 	wp_register_script( 'youtube', get_template_directory_uri().'/js/youTubeEmbed-jquery-1.0.js','','', true );
 	wp_enqueue_script( 'youtube' );
+	wp_register_script( 'easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js','','', true );
+	wp_enqueue_script( 'easing' );
+	
+	
 	
   
   

@@ -19,4 +19,4 @@
 		
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
+	<body <?php body_class(); ?> data-spy="scroll" data-target=".sidenav" data-offset="75">

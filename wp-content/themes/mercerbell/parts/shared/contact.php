@@ -5,21 +5,21 @@
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-					<h5 class="uppercase lsm fwNormal color1">Contact</h5>
+					<h5 class="uppercase lsm df-regular color6">Contact</h5>
 				</div>
 			</section>
 			
 			<section class="row color6 txtC">
 				<div class="span4 ">
-					<h4 class="fsl uppercase color6">GENERAL INQUIRIES</h4>
+					<h4 class="fsl uppercase df-regular color6">GENERAL INQUIRIES</h4>
 					<p>Just want to say "hi"? Drop us a line. mercerbell@mercerbell.com.au</p>
 				</div>
 				<div class="span4">
-					<h4 class="fsl uppercase color6">Work for us</h4>
+					<h4 class="fsl uppercase df-regular color6">Work for us</h4>
 					<p>We are always looking for talented, creative, ambitious individuals to join our team <i class="icon-angle-right"></i></p>
 				</div>
 				<div class="span4">
-					<h4 class="fsl uppercase color6">Follow us</h4>
+					<h4 class="fsl uppercase df-regular color6">Follow us</h4>
 					<p>Stay in the loop <i class="icon-facebook"></i> <i class="icon-twitter mrt"></i><i class="icon-pinterest mrt"></i><i class="icon-instagram"></i> </p>
 				</div>
 				

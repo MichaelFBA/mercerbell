@@ -20,13 +20,13 @@
 	<div class="bg-color4 absolute backgroundNav element3 zi2"></div>
 	<div class="bg-color6 absolute backgroundNav element4 zi1"></div>
 	<ul class="nav nav-list txtC pas front relative">
-	  <li><a class="circles bat color1" href="#"></a></li>
-	  <li><a class="circles bat color1" href="#"></a></li>
-	  <li><a class="circles bat color1" href="#"></a></li>
-	  <li><a class="circles bat color1" href="#"></a></li>
-	  <li><a class="color1" href="#"><i class="icon-facebook"></i></a></li>
-	  <li><a class="color1" href="#"><i class="icon-twitter mrt"></i></a></li>
-	  <li><a class="color1" href="#"><i class="icon-pinterest mrt"></i></a></li>
+	  <li><a class="circles bat color1 scroll" href="#work"></a></li>
+	  <li><a class="circles bat color1 scroll" href="#about"></a></li>
+	  <li><a class="circles bat color1 scroll" href="#press"></a></li>
+	  <li><a class="circles bat color1 scroll" href="#contact"></a></li>
+	  <li><a class="color1 socialIcons" href="https://www.facebook.com/mercerbell‎" target="_blank"><i class="icon-facebook"></i></a></li>
+	  <li><a class="color1 socialIcons" href="https://twitter.com/MercerBell‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
+	  <li><a class="color1 socialIcons" href="#"><i class="icon-pinterest mrt"></i></a></li>
 	</ul>
 </section>	 
 
@@ -67,7 +67,7 @@
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-				<h5 class="uppercase lsm fwNormal">Work</h5>
+				<h5 class="uppercase lsm df-regular">Work</h5>
 			</div>
 			
 			<!-- Work items -->
@@ -113,7 +113,7 @@
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-					<h5 class="uppercase lsm fwNormal color1">About</h5>
+					<h5 class="uppercase lsm df-regular color1">About</h5>
 				</div>
 			</section>
 			<section class="row">
@@ -140,7 +140,7 @@
 			<!--	Logo -->
 			<div class="span12 mvl">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-				<h5 class="uppercase lsm fwNormal color4">Hot off the press</h5>
+				<h5 class="uppercase lsm df-regular color4">Hot off the press</h5>
 			</div>
 			
 			<!-- Work items -->

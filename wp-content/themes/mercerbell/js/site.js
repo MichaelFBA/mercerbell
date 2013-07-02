@@ -6,18 +6,13 @@ jQuery(document).ready(function ($) {
 
 ======================================================================================================================== */
 
-  jQuery('.scroll').bind('click', function (event) {
-    var jQueryanchor = jQuery(this);
-    jQuery('html, body').stop().animate({
-      scrollTop: 0
-    }, 1000, 'easeInOutExpo');
+$(".scroll").on('click', function(e){
+	var toggleTarget = $(this).attr("href");
+	console.log(toggleTarget)
+	pde(e);
+	$('html, body').animate({scrollTop: $(toggleTarget).offset().top - 75}, 1600, 'easeInOutExpo')
+});
 
-    if (event.preventDefault) {
-      event.preventDefault();
-    } else {
-      event.returnValue = false;
-    }
-  });
 
 /* ========================================================================================================================
 
@@ -41,28 +36,22 @@ jQuery(document).ready(function ($) {
 			
 			if(aboutTopOffset < item){ 
 				$(this).addClass('color3')
-				
 			}else{
 				$(this).removeClass('color3')
 			}
 			
-			if(pressTopOffset < item){ 
-				$(this).addClass('color1')
-				
-			}else{
-				$(this).removeClass('color1')
+			if(pressTopOffset < item){
+				$(this).removeClass('color3')
+				$(this).addClass('color1')				
 			}
 			
 			if(contactTopOffset < item){ 
 				$(this).addClass('color5')
-				
 			}else{
 				$(this).removeClass('color5')
 			}
 			
 		})
-		
-		
 		
 		// Checks if the top of the element is at the bottom of the side nav 
 		//if so it adjusts the height of the side nav 
@@ -88,19 +77,6 @@ jQuery(document).ready(function ($) {
 
 })
   
-  function removeAllColours(){
-	  $( '.sidenav a').each(function( index ) {
-			$(this).removeClass('color1');
-			$(this).removeClass('color2');
-			$(this).removeClass('color3');
-			$(this).removeClass('color4');
-			$(this).removeClass('color5');
-			$(this).removeClass('color6');
-			$(this).removeClass('color7');
-			
-		});
-
-  }
   
   function menuResizer(element, offset){
 	  $(element).css('height', offset - distanceFromTop) 
