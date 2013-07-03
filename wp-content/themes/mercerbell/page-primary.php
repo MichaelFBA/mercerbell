@@ -82,10 +82,7 @@
 	       ) 
 	    );
 	    
-	    
-
-			while ( $queryHome->have_posts() ) : $queryHome->the_post();
-			
+	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
 			<div class="span4 bg-color1 transition">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
@@ -93,7 +90,7 @@
 				<div class="pam">
 					<h5 class="uppercase fwNormal uppercase man"><?php the_title(); ?></h5>
 					<hr>
-					<p class="fss man"><?php  the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
+					<p class="fss man"><?php the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
 				</div>
 			</div>
 			<?php
@@ -114,7 +111,7 @@
 	
 	<div class="bg-color3" id="about">
 		<div class="container">	
-					<!-- About use -->
+				<!-- About us -->
 			<section class="row">
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
@@ -124,7 +121,15 @@
 			</section>
 			<section class="row">
 				<div class="span8 offset2">
-					<h2 class="df-light fwNormal color1">MercerBell is an independent marketing and communications agency of passionate, creative people working together to build committed relationships between brands and customers for our clients. </h2>
+					<?php
+					$queryHome = new WP_Query(array('pagename' => 'about') );
+			    
+			    while ( $queryHome->have_posts() ) : $queryHome->the_post();
+					?>
+						<h2 class="df-light fwNormal color1"><?php echo get_the_content(); ?></h2>
+					<?php
+					endwhile;
+					?>
 				</div>
 					
 				<!--	Logo -->
@@ -153,24 +158,28 @@
 			</div>
 			
 			<!-- Work items -->
+			<?php
+			$queryHome = new WP_Query(array(
+	    	'posts_per_page' => 3,
+	    	'post_type'			 => 'news',
+	    	'order'					 => 'DESC',
+	    	'orderby'				 => 'date',
+	    	'post_status'		 => 'publish'
+	       ) 
+	    );
+	    
+	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
+			?>
 			<div class="span4 pbm transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
+				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
+	      <img src="<?php echo $Imageurl[0]; ?>" />
+				<h4 class="uppercase df-regular mtm fsl phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h4>
 				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
+				<p class="fss man uppercase">Read <?php the_author(); ?> Article</p>
 			</div>
-			<div class="span4 pbm transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
-				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
-			</div>
-			<div class="span4 pbm transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/press1.jpg" alt=""/>
-				<h4 class="uppercase fwNormal mtm fsl phm">WORK FROM HOME ISN’T THE ONLY OPTION FOR FLEXIBILITY<br/><span class=" capitalize fwNormal df-light">Mar 20, 2013</span></h4>
-				<hr class="smallhr">
-				<p class="fss man uppercase">Read Jule's Article</p>
-			</div>
+			<?php
+			endwhile;
+			?>
 			
 			<!--	Logo -->
 			<div class="span12 txtC mvl">

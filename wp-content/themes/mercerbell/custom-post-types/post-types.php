@@ -42,6 +42,25 @@
 		)
 	);
 	
+	register_post_type( 'news',
+		array(
+			'labels' => array(
+				'name' => __( 'News' ),
+				'singular_name' => __( 'Item' ),
+				'add_new' => __( 'New Item' ),
+				'all_items' => __( 'All Items' ),
+				'add_new_item' => __( 'Add New Item' ),
+				'edit_item' => __( 'Edit Item' ),
+				'new_item' => __( 'New Item' ),
+				'view_item' => __( 'View Now (development only)' )
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array("slug" => "news"),
+		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		)
+	);
+	
 	register_post_type( 'people',
 		array(
 			'labels' => array(
@@ -67,7 +86,7 @@
 	  'work',
 	  array(
 	      'hierarchical' => true,
-	      'label' => 'Categories',
+	      'label' => 'Work Categories',
 	      'query_var' => true,
 	      'rewrite' => array('slug' => 'work')
 	  )
