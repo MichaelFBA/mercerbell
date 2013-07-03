@@ -4,7 +4,7 @@
 			<section class="row">
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+					<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 					<h5 class="uppercase lsm df-regular color6">Contact</h5>
 				</div>
 			</section>
@@ -35,8 +35,11 @@
 					
 				<!--	back to top -->
 				<div class="span12 txtC mvl">
-					<h5 class="fwNormal uppercase">Back to top</h5>
-					<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
+					<h5 class="df-regular uppercase color6 man">Back to top</h5>
+					<ul class="unstyled inline">
+						<li class="pan"><a class="scroll block transition arrowBorder brah color6" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color6"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah color6" href="<?php echo get_home_url() ?>/contact"><h4 class="ico-arrowRight pas man color6"></h4></a></li>
+					</ul>
 				</div>
 			</section>
 			

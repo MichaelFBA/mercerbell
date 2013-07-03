@@ -10,7 +10,12 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="container">
+
+
+
+
+
+<div class="container" id="top">
 	
 	<div class="row">
 		<div class="span12">
@@ -25,11 +30,17 @@
 		<div class="span6"><?php echo $content[0]; ?></div>
 		<div class="span6"><?php echo $content[1]; ?></div>
 	</div>
-	
+
 	<div class="row">
 		<div class="span12 txtC mvl btt">
-			<h5 class="fwNormal uppercase mtl">Back to top</h5>
-			<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
+			<!--	Logo -->
+				<div class="span12 txtC mvl">
+					<h5 class="df-regular man uppercase">Back to top</h5>
+					<ul class="unstyled inline">
+						<li class="pan"><a class="scroll block transition arrowBorder brah" href="#top"><h4 class="ico-arrowUp pas man"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo getNextPrevious(get_queried_object_id()) ?>"><h4 class="ico-arrowRight pas man"></h4></a></li>
+				</ul>
+				</div>
 		</div>
 	</div>
 

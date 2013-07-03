@@ -19,7 +19,7 @@ $(".scroll").on('click', function(e){
 	Menu Scroll
 
 ======================================================================================================================== */
-	  
+	function sidebar(){  
   var distanceFromTop = 150; // top spacer - can be adjusted
   var menuPos =  $(".sidenav").offset().top + $(".sidenav").height() - $(window).scrollTop() + 14; // total menu height
   
@@ -75,12 +75,19 @@ $(".scroll").on('click', function(e){
 			$('.element3').css('height',210);
 		}
 
-})
-  
+		})
   
   function menuResizer(element, offset){
 	  $(element).css('height', offset - distanceFromTop) 
   }
+  
+  }
+  
+  if( $(location).attr('href') == "http://localhost/clients/mercerbell/" ){
+	  sidebar()
+  }
+  
+  
   
   
 

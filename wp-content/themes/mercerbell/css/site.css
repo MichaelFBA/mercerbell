@@ -46,21 +46,56 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .bg-color6{background-color: #564c78;} /* purple */
 .bg-color7{background-color: #c2d63e;} /* lightGreen */
 
-.bc-color1{border-color: #ffffff;} /* white */
-.bc-color2{border-color: #4c4c4c;} /* medium grey */
-.bc-color3{border-color: #009ce8;} /* blue */
-.bc-color4{border-color: #cc3333;} /* red */
-.bc-color5{border-color: #60bdb9;} /* aqua */
-.bc-color6{border-color: #564c78;} /* purple */
-.bc-color7{border-color: #c2d63e;} /* lite green */
+.bc-color1{border-color: #ffffff !important;} /* white */
+.bc-color2{border-color: #4c4c4c !important;} /* medium grey */
+.bc-color3{border-color: #009ce8 !important;} /* blue */
+.bc-color4{border-color: #cc3333 !important;} /* red */
+.bc-color5{border-color: #60bdb9 !important;} /* aqua */
+.bc-color6{border-color: #564c78 !important;} /* purple */
+.bc-color7{border-color: #c2d63e !important;} /* lite green */
 
-.color1{color: #ffffff} /* white */
-.color2{color: #4c4c4c} /* medium grey */
-.color3{color: #009ce8} /* blue */
-.color4{color: #cc3333} /* Red */
-.color5{color: #60bdb9} /* aqua */
-.color6{color: #564c78} /* purple */
-.color7{color: #c2d63e} /* liteGreen */
+.color1{color: #ffffff !important} /* white */
+.color2{color: #4c4c4c !important} /* medium grey */
+.color3{color: #009ce8 !important} /* blue */
+.color4{color: #cc3333 !important} /* Red */
+.color5{color: #60bdb9 !important} /* aqua */
+.color6{color: #564c78 !important} /* purple */
+.color7{color: #c2d63e !important} /* liteGreen */
+
+/* Arrow Font */
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'Arrows';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+
+.ico-arrowLeft, .ico-arrowUp, .ico-arrowRight {
+	font-family: 'Arrows';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.ico-arrowLeft:before {
+	content: "\e000";
+}
+.ico-arrowUp:before {
+	content: "\e001";
+}
+.ico-arrowRight:before {
+	content: "\e002";
+}
 
 /* Navbar */
 .navbar .nav > li > a {padding: 30px 15px 26px;}
@@ -99,10 +134,17 @@ header .container{height: 75px}
 .sidenav .active .color6,.sidenav .active .color6:hover,.sidenav .color6:hover{color: #564c78; background-color: #564c78} /* purple */
 .sidenav .active .color7,.sidenav .active .color7:hover,.sidenav .circles .color7:hover{color: #c2d63e; background-color: #c2d63e} /* liteGreen */
 
-
+/* Arrows */
+.arrowUp{width: 35px;height: 35px; background-image: url('../img/arrowUp.png');background-position: center center;background-repeat: no-repeat;}
+.arrowRight{width: 35px;height: 35px;background-image: url('../img/arrowRight.png');;background-position: center center;background-repeat: no-repeat;}
+.arrowLeft{width: 35px;height: 35px;background-image: url('../img/arrowLeft.png');;background-position: center center;background-repeat: no-repeat;}
+ul .arrowBorder:hover, ul .arrowBorder:focus{
+-moz-box-shadow: inset 0px 0px 1px 1px;
+-webkit-box-shadow:inset 0px 0px 1px 1px;
+box-shadow:inset 0px 0px 1px 1px;}
 
 /* Carousel */
-.carousel-indicators {top:auto; bottom: -25px;right: 0px;}
+.carousel-indicators {top:auto; bottom: 18px;right: 0px;}
 .carousel-indicators .active{background-color: #c2d53d;}
 .carousel-indicators li {background-color: #ff9933;}
 .primary-caption{}
@@ -144,6 +186,27 @@ transition: all .5s;
 
 .element img{opacity: 0.4}
 .element:hover img{opacity: 1}
+
+.rotate{
+-webkit-transition-duration: 0.8s;
+-moz-transition-duration: 0.8s;
+-o-transition-duration: 0.8s;
+transition-duration: 0.8s;
+ 
+-webkit-transition-property: -webkit-transform;
+-moz-transition-property: -moz-transform;
+-o-transition-property: -o-transform;
+transition-property: transform;
+ 
+overflow:hidden;
+}  
+ 
+.rotate:hover  
+{
+-webkit-transform:rotate(40deg);
+-moz-transform:rotate(400deg);
+-o-transform:rotate(40deg);
+}  
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Isotope           ----------------------------------------------------------------------------------------

@@ -66,41 +66,47 @@
 		<section class="row" id="work">
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 				<h5 class="uppercase lsm df-regular">Work</h5>
 			</div>
 			
+			
 			<!-- Work items -->
-			<div class="span4 bg-color1 transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
-				<div class="pam">
-					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
-					<hr>
-					<p class="fss man">digital campaign, print</p>
-				</div>
-			</div>
+			<?php
+			$queryHome = new WP_Query(array(
+	    	'posts_per_page' => 3,
+	    	'post_type'			 => 'work',
+	    	'order'					 => 'DESC',
+	    	'orderby'				 => 'date',
+	    	'post_status'		 => 'publish'
+	       ) 
+	    );
+	    
+	    
+
+			while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			
+			?>
 			<div class="span4 bg-color1 transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
+				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
+	      <img src="<?php echo $Imageurl[0]; ?>" />
 				<div class="pam">
-					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
+					<h5 class="uppercase fwNormal uppercase man"><?php the_title(); ?></h5>
 					<hr>
-					<p class="fss man">digital campaign, print</p>
+					<p class="fss man"><?php  the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
 				</div>
 			</div>
-			
-			<div class="span4 bg-color1 transition">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/work1.jpg" alt=""/>
-				<div class="pam">
-					<h5 class="uppercase fwNormal uppercase man">lazy ad - fairfax</h5>
-					<hr>
-					<p class="fss man">digital campaign, print</p>
-				</div>
-			</div>
+			<?php
+			endwhile;
+			?>
+
 			
 			<div class="span12 txtC mvl">
-				<h5 class="fwNormal uppercase">View All</h5>
-				<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
+				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h5 class="df-regular man uppercase">View All</h5></a>
+				<ul class="unstyled inline">
+					<li class="pan"><a class="scroll block transition arrowBorder brah" href="#primaryCarousel"><h4 class="ico-arrowUp pas man"></h4></a></li>
+					<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo get_home_url() ?>/work"><h4 class="ico-arrowRight pas man"></h4></a></li>
+				</ul>
 			</div>
 		</section>
 		
@@ -112,7 +118,7 @@
 			<section class="row">
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+					<img class="rotate"  src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 					<h5 class="uppercase lsm df-regular color1">About</h5>
 				</div>
 			</section>
@@ -123,8 +129,11 @@
 					
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
-					<h5 class="fwNormal color1 uppercase">Back to top</h5>
-					<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
+					<h5 class="df-regular man color1 uppercase">Back to top</h5>
+					<ul class="unstyled inline">
+						<li class="pan"><a class="scroll block transition arrowBorder brah color1" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color1"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah color1" href="<?php echo get_home_url() ?>/about"><h4 class="ico-arrowRight pas man color1"></h4></a></li>
+					</ul>
 				</div>
 			</section>
 			
@@ -139,7 +148,7 @@
 		<section class="row txtC" id="press">
 			<!--	Logo -->
 			<div class="span12 mvl">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 				<h5 class="uppercase lsm df-regular color4">Hot off the press</h5>
 			</div>
 			
@@ -165,9 +174,11 @@
 			
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
-				<h5 class="fwNormal uppercase">View All</h5>
-				<i class="icon-angle-up"></i> <i class="icon-angle-right"></i>
-			</div>
+				<a href="<?php echo get_home_url() ?>/news" target="_blank"><h5 class="df-regular man uppercase color4">View All</h5></a>
+					<ul class="unstyled inline">
+						<li class="pan"><a class="scroll block transition arrowBorder brah color4" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color4"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah color4" href="<?php echo get_home_url() ?>/news"><h4 class="ico-arrowRight pas man color4"></h4></a></li>
+					</ul>
 		</section>
 		
 	</div><!-- close container -->

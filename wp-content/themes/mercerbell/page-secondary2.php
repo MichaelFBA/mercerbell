@@ -68,8 +68,11 @@
 	
 	<div class="row">
 		<div class="span12 txtC mvl">
-			<h5 class="fwNormal uppercase">More work</h5>
-			<i class="icon-angle-up"></i> <i class="icon-angle-down"></i> <i class="icon-angle-right"></i>
+			<h5 class="df-regular man uppercase">More Work</h5>
+					<ul class="unstyled inline">
+						<li class="pan"><a class="scroll block transition arrowBorder brah" href="#top"><h4 class="ico-arrowUp pas man"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo getNextPrevious(get_queried_object_id()) ?>"><h4 class="ico-arrowRight pas man"></h4></a></li>
+				</ul>
 		</div>
 	</div>
 	

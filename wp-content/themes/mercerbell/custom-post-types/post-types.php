@@ -21,28 +21,61 @@
 
 
 
-/*	uncomment to enable 
-		(Note - the custom post type rewrite rule cannot be the same as a page)
 
 
-	register_post_type( 'directory',
+	register_post_type( 'work',
 		array(
 			'labels' => array(
-				'name' => __( 'Directory' ),
-				'singular_name' => __( 'Listing' ),
-				'add_new' => __( 'New Listing' ),
-				'all_items' => __( 'All Listings' ),
-				'add_new_item' => __( 'Add New Listing' ),
-				'edit_item' => __( 'Edit Listing' ),
-				'new_item' => __( 'New Listing' ),
+				'name' => __( 'Work' ),
+				'singular_name' => __( 'Item' ),
+				'add_new' => __( 'New Item' ),
+				'all_items' => __( 'All Items' ),
+				'add_new_item' => __( 'Add New Item' ),
+				'edit_item' => __( 'Edit Item' ),
+				'new_item' => __( 'New Item' ),
 				'view_item' => __( 'View Now (development only)' )
 			),
 		'public' => true,
 		'has_archive' => false,
-		'rewrite' => array("slug" => "directories"),
+		'rewrite' => array("slug" => "work"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
 		)
 	);
+	
+	register_post_type( 'people',
+		array(
+			'labels' => array(
+				'name' => __( 'People' ),
+				'singular_name' => __( 'Item' ),
+				'add_new' => __( 'New Item' ),
+				'all_items' => __( 'All Items' ),
+				'add_new_item' => __( 'Add New Item' ),
+				'edit_item' => __( 'Edit Item' ),
+				'new_item' => __( 'New Item' ),
+				'view_item' => __( 'View Now (development only)' )
+			),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array("slug" => "people"),
+		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		)
+	);
+	
+	function custom_taxonomy() {
+	 register_taxonomy(
+	  'work',
+	  'work',
+	  array(
+	      'hierarchical' => true,
+	      'label' => 'Categories',
+	      'query_var' => true,
+	      'rewrite' => array('slug' => 'work')
+	  )
+	);
+    }
+    
+    add_action( 'init', 'custom_taxonomy' );
+
 
 
 	
@@ -52,7 +85,7 @@
       register_taxonomy_for_object_type('category', 'directory');
   }
   
- */ 
+ 
 
   
 	

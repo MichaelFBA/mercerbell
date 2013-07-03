@@ -290,6 +290,22 @@ function split_content() {
 	return $content;
 }
 
+//
+// Get next and previous page link for bottom of page
+function getNextPrevious($id){
+	$pagelist = get_pages('sort_column=menu_order&child_of=8');
+	$pages = array();
+	foreach ($pagelist as $page) {
+	   $pages[] += $page->ID;
+	}
+	$current = array_search($id, $pages);
+	$prevID = $pages[$current-1];
+	$nextID = $pages[$current+1];
+	if (!empty($nextID)) {
+		return get_permalink($nextID);
+	}
+}
+
 
 
 ?>
