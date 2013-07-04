@@ -14,7 +14,7 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<section class="sidenav zi1">
+<section class="sidenav zi1 hidden-phone">
 	<div class="bg-color7 absolute backgroundNav element1 zi4"></div>
 	<div class="bg-color1 absolute backgroundNav element2 zi3"></div>
 	<div class="bg-color4 absolute backgroundNav element3 zi2"></div>
@@ -84,11 +84,11 @@
 	    
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-			<div class="span4 bg-color1 transition">
+			<div class="span4 bg-color1 transition mbm">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	      <img src="<?php echo $Imageurl[0]; ?>" />
 				<div class="pam">
-					<h5 class="uppercase fwNormal uppercase man"><?php the_title(); ?></h5>
+					<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
 					<hr>
 					<p class="fss man"><?php the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
 				</div>
@@ -170,12 +170,12 @@
 	    
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-			<div class="span4 pbm transition">
+			<div class="span4 pbm transition mbm">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	      <img src="<?php echo $Imageurl[0]; ?>" />
-				<h4 class="uppercase df-regular mtm fsl phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h4>
+				<h5 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h5>
 				<hr class="smallhr">
-				<p class="fss man uppercase">Read <?php the_author(); ?> Article</p>
+				<p class="fst man uppercase">Read <?php the_author(); ?> Article</p>
 			</div>
 			<?php
 			endwhile;

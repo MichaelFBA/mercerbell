@@ -19,7 +19,7 @@
 	        <form class="navbar-search pull-right mtm">
 					  <input type="text" class="uppercase" placeholder=""> 
 					  <i class="icon-search"></i>
-					  <i class="icon-envelope-alt"></i>
+					  <a href="mailto:mercerbell@mercerbell.com.au"><i class="icon-envelope-alt"></i></a>
 					</form>
 					
 	        <?php 

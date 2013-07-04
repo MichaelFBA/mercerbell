@@ -37,6 +37,7 @@ register_sidebar(array(
 
 //Add Custom image size
 add_image_size('square-large', 406, 406, true);
+add_image_size('people-large', 460, 530, true);
 add_image_size('large', 1170, 450, true);
 
 //Image sizes for work page
@@ -82,8 +83,6 @@ function starkers_script_enqueuer()
   wp_enqueue_script('site');
   wp_register_script('bootstrapJS', get_template_directory_uri() . '/js/bootstrap.js', '', '', true);
   wp_enqueue_script('bootstrapJS');
-  wp_register_script('isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', '', '', true);
-  wp_enqueue_script('isotope');
   wp_register_script('form', get_template_directory_uri() . '/js/jquery.form.js', '', '', true);
   wp_enqueue_script('form');
   wp_register_script( 'contactForm', get_template_directory_uri().'/js/scripts.js','','', true );
@@ -161,8 +160,8 @@ function our_ajax_function()
 {
   
   switch ($_REQUEST['fn']) {
-    case 'get_more_galleries':
-      $output = ajax_get_more_galleries($_REQUEST['category'], $_REQUEST['trackOffset']);
+    case 'get_more_items':
+      $output = ajax_get_more_items($_REQUEST['posttype'], $_REQUEST['trackOffset'], $_REQUEST['term']);
       break;
     
     default:
@@ -186,41 +185,56 @@ function our_ajax_function()
 
 // AJAX FUNCTIONS
 
-function ajax_get_more_galleries($category, $trackOffset)
+function ajax_get_more_items($postType, $trackOffset, $term)
 {
   $args = array(
-    'cat' => $category,
-    'posts_per_page' => 2,
-    'post_status' => 'publish',
-    'offset' => $trackOffset
+    'offset' 				 => $trackOffset,
+    'posts_per_page' => 7,
+  	'post_type'			 => $postType,
+  	'order'					 => 'DESC',
+  	'orderby'				 => 'date',
+  	'post_status'		 => 'publish',
+  	'taxonomy' 			 => $postType,
+		'term' 					 => $term
   );
   
   $arr = array();
   
-  $catloop = new WP_Query($args);
+  $loop = new WP_Query($args);
   
-  while ($catloop->have_posts()):
-    $catloop->the_post(); {
+  while ($loop->have_posts()):
+    $loop->the_post(); {
     $queryAttachments   = array();
     $entry              = array();
-    $entry['id']        = get_the_ID();
-    $entry['category']  = get_the_category();
+    $entry['id']        = get_the_id();
+    //$entry['category']  = get_the_category();
     $entry['link']      = get_permalink();
     $entry['title']     = get_the_title();
-    $entry['thumbnail'] = get_the_post_thumbnail(null, 'medium');
+    $entry['thumbnail']['span4'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span4');
+    $entry['thumbnail']['span5'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span5');
+    $entry['thumbnail']['span7'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span7');
+    $entry['thumbnail']['span8'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span8');
+    $entry['terms']			= get_terms( $postType );
     
     $attachments = get_posts(array(
       'post_type' => 'attachment',
       'posts_per_page' => -1,
-      'post_parent' => get_the_ID()
+      'post_parent' => get_the_id()
     ));
-    
-    if ($attachments) {
+    //if ($attachments) {
+    	$count = 0;
       foreach ($attachments as $attachment) {
-        $queryAttachments[] = wp_get_attachment_image($attachment->ID, 'large');
+      	
+      	$queryAttachments['span4'] = wp_get_attachment_image_src($attachment->ID, 'span4');
+        $queryAttachments['span5'] = wp_get_attachment_image_src($attachment->ID, 'span5');
+        $queryAttachments['span7'] = wp_get_attachment_image_src($attachment->ID, 'span7');
+        $queryAttachments['span8'] = wp_get_attachment_image_src($attachment->ID, 'span8');
+        $imageAttachments[$count] = $queryAttachments;
+        unset($queryAttachments);
+        $count++;
       }
-      $entry['attachments'] = $queryAttachments;
-    }
+      $entry['attachments'] = $imageAttachments;
+    //}
     
     $entry['acf'] = get_fields();
     $arr[]        = $entry;

@@ -98,7 +98,7 @@ $(".scroll").on('click', function(e){
 
 ======================================================================================================================== */
 $('.toggle').on('click',function(e){
-	console.log($(e.target).siblings('.hide'))
+	//console.log($(e.target).siblings('.hide'))
 	$(e.target).parent().parent().siblings('.hide').slideToggle('300')
 })
 
@@ -127,6 +127,92 @@ $('.toggle').on('click',function(e){
 	
 ======================================================================================================================== */
 
+function galleryAjax(posttype, offsetNum,term){
+     jQuery.ajax({
+          url: 'http://localhost/clients/mercerbell/wp-admin/admin-ajax.php',
+          data:{
+               'action':'do_ajax',
+               'fn':'get_more_items',
+               'posttype':posttype,
+               'trackOffset':offsetNum,
+               'term':term,
+               },
+          dataType: 'JSON',
+          success:function(data){
+          	console.log(data);
+          	var workContent = '';
+          	var terms = '';
+          	var sizeArray = ['span8','span4','span7','span5','span4','span4','span4'];
+          	console.log( data[0].thumbnail[sizeArray[0]][0] );
+          	for(i = 0 ; i < data.length ; i++){
+          		terms = '';
+          		
+          		for(j = 0 ; j < data[i].terms.length ; j++){
+          			terms += data[i].terms[j].name + ', ';
+          		}
+								
+          		workContent += '<a href="'+ data[i].link +'" target="_parent">'+
+														 '<div class="bg-color1 transition element mbm '+ sizeArray[i] +'">'+
+														 		'<img src="'+data[i].thumbnail[sizeArray[i]][0] + '"/>'+ //'<img src="'+data[i].attachments[0][sizeArray[i]][0] + '"/>'+
+													        '<div class="pam">'+
+																		'<h5 class="uppercase df-regular uppercase man">'+ data[i].title +'</h5>'+
+																		'<hr>' +
+																		'<p class="fss man uppercase">'+ terms +'</p>'+
+																	'</div>'+
+																'</div>'+
+															'</a>';
+
+	              }
+	         if(filtered){
+		          $("#appendAjaxContent").empty();
+	         }
+	         $("#appendAjaxContent").hide().append(workContent).fadeIn('slow');
+          		//console.log(data);
+          		//After finished
+          		hasFinished = true;
+          		trackCount = trackCount + 7;
+          		$('.loadingSpinner').remove();
+          },
+          error: function(errorThrown){
+               //alert('error');
+               console.log(errorThrown);
+          }
+     });
+}
+
+
+
+
+//Load more Ajax
+var hasFinished = true;
+var filtered = false;
+
+var trackCount = 7;
+$('#moreViaAjax').on('click', function(){
+	filtered = false;
+	if(hasFinished){
+	galleryAjax( $('#moreViaAjax').attr('data-postType'), trackCount );
+	hasFinished = false;
+	}
+})	
+
+//Filter items
+$('#filters a').on('click', function(){
+	//Filtered is used to remove all the content from the container before readding all the new items
+	filtered = true;
+	//this variable tracks how many jobs to offset = 0
+	trackCount = 0;
+	//Will only run if ajax is finished
+	if(hasFinished){
+	galleryAjax( $('#moreViaAjax').attr('data-postType'), trackCount, $(this).attr('data-taxonomy') );
+	hasFinished = false;
+	}
+	$('#filters a').removeClass('df-regular');
+	$('#filters a').children().removeClass('color7');
+	$(this).addClass('df-regular');
+	$(this).children().addClass('color7');
+	
+})	
 
   /*  Uncomment to use
 
@@ -156,155 +242,7 @@ $('.toggle').on('click',function(e){
 
 */
 
-/* ========================================================================================================================
-	
-	ISOTOPE
-	
-======================================================================================================================== */
-var $containerExpand = $('#isotope-expand');
-$containerExpand.imagesLoaded( function(){
-	$($containerExpand).isotope({
-		layoutMode: 'masonryColumnShift',
-		itemSelector : '.element'
-	});
-	$($containerExpand).isotope( 'shuffle' )
-})
 
-
-var $container = $('#isotope');
-$container.imagesLoaded( function(){
-	$($container).isotope({
-		layoutMode: 'fitRows',
-		itemSelector : '.element'
-	});
-	$($container).isotope( 'shuffle' )
-})
-
-
-$('.reshuffle').on('click',function(){
-	$($container).isotope( 'shuffle' )
-})
-
-$('#filters a').click(function(){
-  var selector = $(this).attr('data-filter');
-  $container.isotope({ filter: selector });
-  return false;
-});
-
-
-// -------------------------- Masonry Column Shift -------------------------- //
-  
-  // custom layout mode
-  $.Isotope.prototype._masonryColumnShiftReset = function() {
-    // layout-specific props
-    var props = this.masonryColumnShift = {
-      columnBricks: []
-    };
-    // FIXME shouldn't have to call this again
-    this._getSegments();
-    var i = props.cols;
-    props.colYs = [];
-    while (i--) {
-      props.colYs.push( 0 );
-      // push an array, for bricks in each column
-      props.columnBricks.push([])
-    }
-  };
-  
-  $.Isotope.prototype._masonryColumnShiftLayout = function( $elems ) {
-    var instance = this,
-        props = instance.masonryColumnShift;
-    $elems.each(function(){
-      var $brick  = $(this);
-      var setY = props.colYs;
-
-      // get the minimum Y value from the columns
-      var minimumY = Math.min.apply( Math, setY ),
-          shortCol = 0;
-
-      // Find index of short column, the first from the left
-      for (var i=0, len = setY.length; i < len; i++) {
-        if ( setY[i] === minimumY ) {
-          shortCol = i;
-          break;
-        }
-      }
-
-      // position the brick
-      var x = props.columnWidth * shortCol,
-          y = minimumY;
-      instance._pushPosition( $brick, x, y );
-      // keep track of columnIndex
-      $.data( this, 'masonryColumnIndex', i );
-      props.columnBricks[i].push( this );
-
-      // apply setHeight to necessary columns
-      var setHeight = minimumY + $brick.outerHeight(true),
-          setSpan = props.cols + 1 - len;
-      for ( i=0; i < setSpan; i++ ) {
-        props.colYs[ shortCol + i ] = setHeight;
-      }
-
-    });
-  };
-  
- $.Isotope.prototype._masonryColumnShiftGetContainerSize = function() {
-    var containerHeight = Math.max.apply( Math, this.masonryColumnShift.colYs );
-    return { height: containerHeight };
-  };
-
-  $.Isotope.prototype._masonryColumnShiftResizeChanged = function() {
-    return this._checkIfSegmentsChanged();
-  };
-  
-  $.Isotope.prototype.shiftColumnOfItem = function( itemElem, callback ) {
-    
-    var columnIndex = $.data( itemElem, 'masonryColumnIndex' );
-    
-    // don't proceed if no columnIndex
-    if ( !isFinite(columnIndex) ) {
-      return;
-    }
-
-    var props = this.masonryColumnShift;
-    var columnBricks = props.columnBricks[ columnIndex ];
-    var $brick;
-    var x = props.columnWidth * columnIndex;
-    var y = 0;
-    for (var i=0, len = columnBricks.length; i < len; i++) {
-      $brick = $( columnBricks[i] );
-      this._pushPosition( $brick, x, y );
-      y += $brick.outerHeight(true);
-    }
-
-    // set the size of the container
-    if ( this.options.resizesContainer ) {
-      var containerStyle = this._masonryColumnShiftGetContainerSize();
-      containerStyle.height = Math.max( y, containerStyle.height );
-      this.styleQueue.push({ $el: this.element, style: containerStyle });
-    }
-
-    this._processStyleQueue( $(columnBricks), callback )
-
-  };
-
-  $(function(){
-
-
-
-    $container.find('.shifty-item').hover(
-      function() {
-        $(this).css({ height: "+=100" });
-        // note that element is passed in, not jQuery object
-        $container.isotope( 'shiftColumnOfItem', this );
-      },
-      function() {
-        $(this).css({ height: "-=100" });
-        $container.isotope( 'shiftColumnOfItem', this );
-      }
-    );
-
-  });
 
   /* ========================================================================================================================
 	
