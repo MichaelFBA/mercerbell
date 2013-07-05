@@ -90,7 +90,7 @@
 				<div class="pam">
 					<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
 					<hr>
-					<p class="fss man"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
+					<p class="fss man"><?php the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
 				</div>
 			</div>
 			<?php
@@ -188,6 +188,7 @@
 						<li class="pan"><a class="scroll block transition arrowBorder brah color4" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color4"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color4" href="<?php echo get_home_url() ?>/news"><h4 class="ico-arrowRight pas man color4"></h4></a></li>
 					</ul>
+			</div>
 		</section>
 		
 	</div><!-- close container -->

@@ -320,6 +320,15 @@ function getNextPrevious($id){
 	}
 }
 
+//Get the terms / categories assigned to the passed taxonomy
+function mercerBellTerms($tax){
+	$terms = wp_get_post_terms( get_the_id(), $tax );
+	foreach ($terms as $a){
+		$output[] = $a->name;
+	}
+	return implode(', ', $output);
+	unset($output);
+}
 
 
 ?>

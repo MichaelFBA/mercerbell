@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 
 $(".scroll").on('click', function(e){
 	var toggleTarget = $(this).attr("href");
-	console.log(toggleTarget)
+	//console.log(toggleTarget)
 	pde(e);
 	$('html, body').animate({scrollTop: $(toggleTarget).offset().top - 75}, 1600, 'easeInOutExpo')
 });
@@ -139,11 +139,10 @@ function galleryAjax(posttype, offsetNum,term){
                },
           dataType: 'JSON',
           success:function(data){
-          	console.log(data);
+          	//console.log(data);
           	var workContent = '';
           	var terms = '';
           	var sizeArray = ['span8','span4','span7','span5','span4','span4','span4'];
-          	console.log( data[0].thumbnail[sizeArray[0]][0] );
           	for(i = 0 ; i < data.length ; i++){
           		terms = '';
           		
@@ -175,7 +174,7 @@ function galleryAjax(posttype, offsetNum,term){
           },
           error: function(errorThrown){
                //alert('error');
-               console.log(errorThrown);
+               //console.log(errorThrown);
           }
      });
 }
@@ -249,7 +248,7 @@ $('#filters a').on('click', function(){
 	Custom Youtube
 	
 ======================================================================================================================== */
-$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
+//$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
 
 
 
