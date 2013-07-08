@@ -13,7 +13,7 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
 <!-- 	Work Section  -->
-<section class="container" id="top">
+<section class="container aboutSectionTopMargin" id="top">
 	<div class="row">
 		<div class="span12 txtC mvl">
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />

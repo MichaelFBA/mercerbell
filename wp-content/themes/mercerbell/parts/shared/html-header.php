@@ -15,6 +15,9 @@
 			<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css" type="text/css" media="screen">
 		<![endif]-->
 		
+		<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXd4C6yW3sv8dzu17bmO5qT6UABeidvXc&sensor=false">
+    </script>
 		
 		
 		<?php wp_head(); ?>

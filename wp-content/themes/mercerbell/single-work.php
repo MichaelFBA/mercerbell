@@ -36,7 +36,7 @@ foreach($post_categories as $c){
 	
 	<div class="row mtl">
 		<div class="span6 mvm">
-			<h4 class="uppercase fwNormal uppercase man df-regular mbm"><?php the_title(); ?> / <span class="fss man df-light capitalize"><?php foreach($catArray as $d){ echo $d['name'] . ", "; }; ?></span></h4>
+			<h4 class="uppercase fwNormal uppercase man df-regular mbm"><?php the_title(); ?> / <span class="fss man df-light capitalize"><?php echo mercerBellTerms('work'); #outputs categories ?></span></h4>
 			<ul class="unstyled inline">
 				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/aimia.png" alt="aimia" width="53" height="38" /></li>
 				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/adma.png" alt="adma" width="50" height="14" /></li>
@@ -98,7 +98,7 @@ foreach($post_categories as $c){
 					<div class="pam">
 						<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
 						<hr>
-						<p class="fss man"><?php foreach($catArray as $d){ echo $d['name'] . ", "; }; ?></p>
+						<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
 					</div>
 				</div>
 			</a>

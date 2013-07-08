@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="span3">
 			
-			<ul id="filters" class="unstyled uppercase">
+			<ul id="filters" class="unstyled uppercase mtm">
 			  <li><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
 			  <li><a href="#" class="null" data-taxonomy="digital"><i class="icon-minus"></i> digital</a></li>
 			  <li><a href="#" class="null" data-taxonomy="campaign"><i class="icon-minus"></i> campaign</a></li>
@@ -58,7 +58,7 @@
 					<div class="pam">
 						<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
 						<hr>
-						<p class="fss man uppercase"><?php the_terms( get_the_id(), 'work', '', ', ', '' );?></p>
+						<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
 					</div>
 				</div>
 			</a>

@@ -13,8 +13,7 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c; }
-header{margin-top: 75px;}
+body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; }
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
 a{color: #777777;}
 a:hover, a:focus{color: #333333;text-decoration: none;}
@@ -36,6 +35,7 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .l0{left:0px;}
 .t0{top:0px;}
 .b0{bottom:0px;}
+.aboutSectionTopMargin{margin-top: 50px;}
 
 
 /* Colors */
@@ -99,18 +99,21 @@ strong{font-family: 'GillSansStd', sans-serif;}
 }
 
 /* Navbar */
-.navbar .nav > li > a {padding: 30px 15px 26px;}
+.navbar .nav > li > a {margin-top: 20px}
 .navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
 .navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
 .navbar .nav > li.current-menu-item a{color: #333333}
+.navbar .btn-navbar {background-color: transparent;background-image: none;border: none;margin-right: 10px;}
 /* Subnav */
+
 .navbar .sub-menu{display: none;}
 .navbar .page-item-8 .sub-menu{display: block}
 .navbar .current-menu-ancestor .sub-menu{display: block;}
 .sub-menu li{display: inline;padding-left: 30px;}
 .sub-menu{position: fixed;background-color: #fbfbfb;padding: 15px 0px 15px 170px;left: 0px;top: 75px;width: 100%;margin: 0px; text-align: center;}
 .sub-menu .current-menu-item a{color:#009ce8;}
+
 
 
 /* Side Nav */
@@ -174,6 +177,9 @@ Page specific         ----------------------------------------------------------
 #article4 textarea input:-moz-placeholder ,#article4 input[type="email"]input:-moz-placeholder ,#article4 input[type="text"]input:-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
 .icon-minus {background-position: center top;}
 
+
+#map-canvas{width: 1170px; height: 500px;}
+
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
@@ -230,6 +236,13 @@ Responsive           -----------------------------------------------------------
 @media (min-width: 768px) and (max-width: 979px) {
 	header{margin-top: 0px}
 	#player .flashContainer, #player .flashContainer object{width:724px !important; height: 406px !important }
+	body{padding-top: 0px;}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
+	.sub-menu li {display: block;}
+	.navbar .nav > li > a {margin-top: 0px;}
 }
  
 /* Landscape phone to portrait tablet */
@@ -238,14 +251,26 @@ Responsive           -----------------------------------------------------------
 	header{margin-top: 0px}
 	.container{padding: 0 20px 0 20px;}
 	#player .flashContainer, #player .flashContainer object{width:100% !important; height: auto !important }
-
-	
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
+	body{padding-top: 0px;}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+	/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
+	.sub-menu li {display: block;}
+	.navbar .nav > li > a {margin-top: 0px;}
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	body {padding: 0px;}
 	header{margin-top: 0px}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+	/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
+	.sub-menu li {display: block;}
+	.navbar .nav > li > a {margin-top: 0px;}
 }
 
 

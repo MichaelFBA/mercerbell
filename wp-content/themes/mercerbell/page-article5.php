@@ -15,7 +15,7 @@
 
 
 
-<div class="container" id="top">
+<div class="container aboutSectionTopMargin" id="top">
 	
 	<div class="row">
 		<div class="span12">

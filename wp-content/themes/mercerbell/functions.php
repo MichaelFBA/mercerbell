@@ -29,11 +29,14 @@ add_theme_support('post-thumbnails');
 //Add menu Support
 add_theme_support('menus');
 //Register Sidebar Widget
+/*
 register_sidebar(array(
-  'name' => 'First Widget',
+  'name' => 'Contact Left',
   'before_widget' => '',
   'after_widget' => ''
 ));
+*/
+
 
 //Add Custom image size
 add_image_size('square-large', 406, 406, true);
@@ -93,6 +96,9 @@ function starkers_script_enqueuer()
 	wp_enqueue_script( 'youtube' );
 	wp_register_script( 'easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js','','', true );
 	wp_enqueue_script( 'easing' );
+
+	
+	
 	
 	
 	

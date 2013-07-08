@@ -29,30 +29,42 @@
 	  <li><a class="color1 socialIcons" href="#"><i class="icon-pinterest mrt"></i></a></li>
 	</ul>
 </section>	 
-
+ <?php
+	$queryHome = new WP_Query(array(
+  	'posts_per_page' => -1,
+  	'category_name'			 => 'home-page-slider',
+  	'order'					 => 'DESC',
+  	'orderby'				 => 'date',
+  	'post_status'		 => 'publish'
+     ) 
+  );
+  $count = 0; // count for carousel markers
+  $active = true; // so we can append an active class
+	?>
 	<div class="container ofh">
 		<!-- 	Carousel -->
-	
 		<section class="row">
 			<div class="span12">
 				<div id="primaryCarousel" class="carousel loose slide">
           <ol class="carousel-indicators">
-            <li data-target="#primaryCarousel" data-slide-to="0" class=""></li>
-            <li data-target="#primaryCarousel" data-slide-to="1" class="active"></li>
+          	<?php while ( $queryHome->have_posts() ) : $queryHome->the_post();?>
+	            <li data-target="#primaryCarousel" data-slide-to="<?php echo $count; $count++; ?>" class="<?php if($active == true){echo 'active'; $active = false;} ?>"></li>
+            <?php endwhile; ?>
           </ol>
           <div class="carousel-inner bbt bcDark">
-            <div class="item">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/demo/Bridge-Nature.jpg" alt="">
-              <div class="primary-caption">
-                <p class="pvs df-light man">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
-            <div class="item active">
-              <img src="http://as1.wdpromedia.com/media/abd/europe/3-night-barcelona-vacations/474064785_Montserrat_1260x540.jpg" alt="">
-              <div class="primary-caption">
-                <p class="pvs df-light man">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
+	         <?php 
+	         $active = true;
+				    while ( $queryHome->have_posts() ) : $queryHome->the_post();
+						?>
+							<div class="item <?php if($active == true){echo ' active'; $active = false;} ?>">
+	              <?php the_post_thumbnail('large'); ?>
+	              <div class="primary-caption">
+	                <p class="pvs df-light man"><?php echo get_the_content(); ?></p>
+	              </div>
+	            </div>
+						<?php
+						endwhile;
+						?>
           </div>
           <!-- Carousel Controls 
           <a class="left carousel-control" href="#primaryCarousel" data-slide="prev">‹</a>
@@ -84,6 +96,7 @@
 	    
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
+			<a href="<?php the_permalink(); ?>" target="_parent">
 			<div class="span4 bg-color1 transition mbm">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	      <img src="<?php echo $Imageurl[0]; ?>" />
@@ -93,6 +106,7 @@
 					<p class="fss man"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
 				</div>
 			</div>
+			</a>
 			<?php
 			endwhile;
 			?>
@@ -137,7 +151,7 @@
 					<h5 class="df-regular man color1 uppercase">Back to top</h5>
 					<ul class="unstyled inline">
 						<li class="pan"><a class="scroll block transition arrowBorder brah color1" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color1"></h4></a></li>
-						<li class="pan"><a class="block transition arrowBorder brah color1" href="<?php echo get_home_url() ?>/about"><h4 class="ico-arrowRight pas man color1"></h4></a></li>
+						<li class="pan"><a class="block transition arrowBorder brah color1" href="<?php echo get_home_url() ?>about/we-create-committed-customer-relationships/"><h4 class="ico-arrowRight pas man color1"></h4></a></li>
 					</ul>
 				</div>
 			</section>
@@ -170,13 +184,15 @@
 	    
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-			<div class="span4 pbm transition mbm">
-				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-	      <img src="<?php echo $Imageurl[0]; ?>" />
-				<h5 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h5>
-				<hr class="smallhr">
-				<p class="fst man uppercase">Read <?php the_author(); ?> Article</p>
-			</div>
+			<a href="<?php the_permalink(); ?>" target="_parent">
+				<div class="span4 pbm transition mbm">
+					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
+		      <img src="<?php echo $Imageurl[0]; ?>" />
+					<h5 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h5>
+					<hr class="smallhr">
+					<p class="fst man uppercase">Read <?php the_author(); ?> Article</p>
+				</div>
+			</a>
 			<?php
 			endwhile;
 			?>

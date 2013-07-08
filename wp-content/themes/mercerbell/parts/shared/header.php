@@ -4,7 +4,7 @@
 	    <div class="container relative">
 	 
 	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar mtm" data-toggle="collapse" data-target=".nav-collapse">
+	      <a class="btn btn-navbar mts pam" data-toggle="collapse" data-target=".nav-collapse">
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
 	      <a class="brand absolute" href="<?php get_home_url(); ?>">Mercerbell</a>
 	 
 	      <!-- Everything you want hidden at 940px or less, place within here -->
-	      <div class="nav-collapse collapse">
+	      <div class="nav-collapse collapse front bg-color1">
 	        
 	        <form class="navbar-search pull-right mtm">
 					  <input type="text" class="uppercase" placeholder=""> 

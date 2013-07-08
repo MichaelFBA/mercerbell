@@ -9,7 +9,7 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
 
-<div class="container" id="clientLogos">
+<div class="container aboutSectionTopMargin" id="clientLogos">
 	
 	<section class="row" id="top">
 	<!--	Logo -->

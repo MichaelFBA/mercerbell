@@ -251,6 +251,54 @@ $('#filters a').on('click', function(){
 //$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
 
 
+  /* ========================================================================================================================
+	
+	Google Maps
+	
+======================================================================================================================== */
+
+function initialize() {
+  var mapOptions = {
+    zoom: 16,
+    center: new google.maps.LatLng(-33.868263, 151.205727),
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                mapOptions);
+
+  setMarkers(map);
+}
+
+function setMarkers(map, locations) {
+
+  var image = {
+    url: './wp-content/themes/mercerbell/img/mbIcon.png',
+    // This marker is 20 pixels wide by 32 pixels tall.
+    size: new google.maps.Size(42, 57),
+    // The origin for this image is 0,0.
+    origin: new google.maps.Point(0,0),
+    // The anchor for this image is the base of the flagpole at 0,32.
+    anchor: new google.maps.Point(0, 57)
+  };
+
+  var shape = {
+      coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+      type: 'poly'
+  };
+    var myLatLng = new google.maps.LatLng( -33.868263, 151.205727);
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        //shadow: shadow,
+        icon: image,
+        shape: shape,
+        title: 'Mercerbell',
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 
 
