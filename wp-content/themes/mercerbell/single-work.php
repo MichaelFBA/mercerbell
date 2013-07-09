@@ -12,53 +12,97 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-<?php
-$post_categories = wp_get_post_categories( get_the_id() );
-$catArray = array();
-	
-foreach($post_categories as $c){
-	$cat = get_category( $c );
-	$catArray[] = array( 'name' => $cat->name );
-}
-?>
+
 <div class="container">
 	<div class="row">
 		<div class="span12">
 		
-			<div id="player"></div>
+			<div id="workCarousel" class="carousel loose slide">
+	      <ol class="carousel-indicators">
+	    <?php #Repeater field to echo out a list of awards if any
+				$rows = get_field('mbwork_items');
+				$first = true;
+				$count = 0;
+			?>
+				<?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
+					<li data-target="#workCarousel" data-slide-to="<?php echo $count; $count++; ?>" class="<?php if($first == true){echo 'active'; $first = false;} ?>"></li>
+				<?php endif; ?>
+				
+				<?php # detect work images
+				if($rows):
+					foreach($rows as $row){ ?>
+					<li data-target="#workCarousel" data-slide-to="<?php echo $count; $count++; ?>" class="<?php if($first == true){echo 'active'; $first = false;} ?>"></li>
+					<?php } ?>
+				<?php endif; ?>
+	   
+	   
+	   
+	      </ol>
+	      <div class="carousel-inner">
+	      <?php $first = true; ?>
+	      
+	      <?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
+				  <div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
+				  	
 
+				  </div>
+				  <?php endif; ?>
+				  
+				  <?php
+				  $rows = get_field('mbwork_items');
+					$count = 0;
+					if($rows):
+						foreach($rows as $row){ ?>
+							<div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
+								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'work-large' ); ?>
+							</div>
 
-		
-			<?php $singleImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-			<img src="<?php echo $singleImage[0]; ?>" />
+						<?php } ?>
+					<?php endif; ?>
+				</div>
+	      <!-- Carousel Controls 
+	      <a class="left carousel-control" href="#primaryCarousel" data-slide="prev">‹</a>
+	      <a class="right carousel-control" href="#primaryCarousel" data-slide="next">›</a> -->
+	    </div>
 		</div>
 	</div>
 	
 	<div class="row mtl">
-		<div class="span6 mvm">
-			<h4 class="uppercase fwNormal uppercase man df-regular mbm"><?php the_title(); ?> / <span class="fss man df-light capitalize"><?php echo mercerBellTerms('work'); #outputs categories ?></span></h4>
-			<ul class="unstyled inline">
-				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/aimia.png" alt="aimia" width="53" height="38" /></li>
-				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/adma.png" alt="adma" width="50" height="14" /></li>
-				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/one.png" alt="one" width="36" height="29" /></li>
-				<li><img src="<?php echo get_stylesheet_directory_uri() ?>/img/awards/webby.png" alt="webby" width="51" height="29" /></li>
-			</ul>
+		<div class="span6 mvl">
+			<h4 class="uppercase fwNormal uppercase man df-regular mbm"><?php the_title(); ?> / <span class="fss man df-light uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></span></h4>
+			
+			<?php #Repeater field to echo out a list of awards if any
+			$rows = get_field('mb_awards');
+			if($rows): ?>
+				<ul class="unstyled inline"> <?php
+				foreach($rows as $row){ ?>
+					<li><img src="<?php echo $row['mb_award_images'] ?>" alt="awards"/></li>
+				<?php } ?>
+				</ul>
+			<?php endif; ?>
+			
 			
 
 		</div>
-		<div class="span6 mvm">
+		<div class="span6 mbm">
 			<?php the_content(); ?>
 			<p class="uppercase fss">
 				<a href="<?php print $_SERVER['HTTP_REFERER'];?>" target="_parent">Back <i class="icon-angle-right txtM"></i></a>
-				<span class="pull-right">Share: <i class="icon-facebook txtT mlt"></i> <i class="icon-twitter mrt txtT"></i><i class="icon-pinterest mrt txtT"></i><i class="icon-instagram txtT"></i></span>
+				<span class="pull-right">Share: 
+					<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6"></i></a>
+					<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6"></i></a>
+					<a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php print($Imageurl[0])  ?>&url=<?php  print(urlencode( the_permalink() )) ?>&is_video=false&description=<?php print(urlencode(the_title())); ?>
+" target="_blank"><i class="icon-pinterest mrt color6"></i></a>
+
+				</span>
 			</p>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="span12 txtC btt pvl">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-			<h5 class="uppercase lsm fwNormal">Work</h5>
+			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+			<h4 class="uppercase lsm df-regular">Work</h4>
 		</div>
 	</div>
 	
@@ -78,25 +122,12 @@ foreach($post_categories as $c){
 
 			while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-			<!-- 	Get Value of advanced custom fields -->
-			<?php $value = get_field('image_size'); ?>
-			<!-- Get all categories associated with post and adds them to an array so we can use then later -->
-			<?php
-				$post_categories = wp_get_post_categories( get_the_id() );
-				$catArray = array();
-					
-				foreach($post_categories as $c){
-					$cat = get_category( $c );
-					$catArray[] = array( 'name' => $cat->name );
-				}
-			?>
-			<!-- add array classes so they can be filtered in menu -->
 			<a href="<?php the_permalink(); ?>" target="_parent">
 				<div class="span4 bg-color1 transition element mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-	        <img src="<?php echo $Imageurl[0]; ?>" />
+	        <span class="patternOverlay block"><img class="transition" src="<?php echo $Imageurl[0]; ?>" /></span>
 					<div class="pam">
-						<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
+						<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
 						<hr>
 						<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
 					</div>

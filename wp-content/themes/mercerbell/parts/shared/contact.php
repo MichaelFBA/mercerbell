@@ -5,7 +5,7 @@
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
 					<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-					<h5 class="uppercase lsm df-regular color6">Contact</h5>
+					<h4 class="uppercase lsm df-regular color6 mtm">Contact</h4>
 				</div>
 			</section>
 			
@@ -37,13 +37,13 @@
 				
 				
 				<!--	Google Maps -->
-				<div class="span12 desaturate">
+				<div class="span12 desaturate patternOverlay block">
 					<div id="map-canvas"></div>
 				</div>
 					
 				<!--	back to top -->
 				<div class="span12 txtC mvl">
-					<h5 class="df-regular uppercase color6 man">Back to top</h5>
+					<h4 class="df-regular uppercase color6 man">Back to top</h4>
 					<ul class="unstyled inline">
 						<li class="pan"><a class="scroll block transition arrowBorder brah color6" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color6"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color6" href="<?php echo get_home_url() ?>/contact"><h4 class="ico-arrowRight pas man color6"></h4></a></li>

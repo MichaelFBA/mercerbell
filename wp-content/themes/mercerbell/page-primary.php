@@ -79,7 +79,7 @@
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
 				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-				<h5 class="uppercase lsm df-regular">Work</h5>
+				<h4 class="uppercase lsm df-regular mtm">Work</h4>
 			</div>
 			
 			
@@ -97,13 +97,13 @@
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
 			<a href="<?php the_permalink(); ?>" target="_parent">
-			<div class="span4 bg-color1 transition mbm">
+			<div class="span4 bg-color1 transition mbm element">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-	      <img src="<?php echo $Imageurl[0]; ?>" />
+	      <span class="patternOverlay block"><img class="transition" src="<?php echo $Imageurl[0]; ?>" /></span>
 				<div class="pam">
-					<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
+					<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
 					<hr>
-					<p class="fss man"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
+					<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
 				</div>
 			</div>
 			</a>
@@ -113,7 +113,7 @@
 
 			
 			<div class="span12 txtC mvl">
-				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h5 class="df-regular man uppercase">View All</h5></a>
+				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h4 class="df-regular man uppercase">View All</h4></a>
 				<ul class="unstyled inline">
 					<li class="pan"><a class="scroll block transition arrowBorder brah" href="#primaryCarousel"><h4 class="ico-arrowUp pas man"></h4></a></li>
 					<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo get_home_url() ?>/work"><h4 class="ico-arrowRight pas man"></h4></a></li>
@@ -130,7 +130,7 @@
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
 					<img class="rotate"  src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-					<h5 class="uppercase lsm df-regular color1">About</h5>
+					<h4 class="uppercase lsm df-regular color1 mtm">About</h4>
 				</div>
 			</section>
 			<section class="row">
@@ -148,7 +148,7 @@
 					
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
-					<h5 class="df-regular man color1 uppercase">Back to top</h5>
+					<h4 class="df-regular man color1 uppercase">Back to top</h4>
 					<ul class="unstyled inline">
 						<li class="pan"><a class="scroll block transition arrowBorder brah color1" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color1"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color1" href="<?php echo get_home_url() ?>about/we-create-committed-customer-relationships/"><h4 class="ico-arrowRight pas man color1"></h4></a></li>
@@ -168,7 +168,7 @@
 			<!--	Logo -->
 			<div class="span12 mvl">
 				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-				<h5 class="uppercase lsm df-regular color4">Hot off the press</h5>
+				<h4 class="uppercase lsm df-regular color4 mtm">Hot off the press</h4>
 			</div>
 			
 			<!-- Work items -->
@@ -188,7 +188,7 @@
 				<div class="span4 pbm transition mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 		      <img src="<?php echo $Imageurl[0]; ?>" />
-					<h5 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h5>
+					<h4 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h4>
 					<hr class="smallhr">
 					<p class="fst man uppercase">Read <?php the_author(); ?> Article</p>
 				</div>
@@ -199,7 +199,7 @@
 			
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
-				<a href="<?php echo get_home_url() ?>/news" target="_blank"><h5 class="df-regular man uppercase color4">View All</h5></a>
+				<a href="<?php echo get_home_url() ?>/news" target="_blank"><h4 class="df-regular man uppercase color4">View All</h4></a>
 					<ul class="unstyled inline">
 						<li class="pan"><a class="scroll block transition arrowBorder brah color4" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color4"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color4" href="<?php echo get_home_url() ?>/news"><h4 class="ico-arrowRight pas man color4"></h4></a></li>

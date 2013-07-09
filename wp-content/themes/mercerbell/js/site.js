@@ -152,9 +152,9 @@ function galleryAjax(posttype, offsetNum,term){
 								
           		workContent += '<a href="'+ data[i].link +'" target="_parent">'+
 														 '<div class="bg-color1 transition element mbm '+ sizeArray[i] +'">'+
-														 		'<img src="'+data[i].thumbnail[sizeArray[i]][0] + '"/>'+ //'<img src="'+data[i].attachments[0][sizeArray[i]][0] + '"/>'+
+														 		'<span class="patternOverlay block"><img class="transition" src="'+data[i].thumbnail[sizeArray[i]][0] + '"/></span>'+ //'<img src="'+data[i].attachments[0][sizeArray[i]][0] + '"/>'+
 													        '<div class="pam">'+
-																		'<h5 class="uppercase df-regular uppercase man">'+ data[i].title +'</h5>'+
+																		'<h4 class="uppercase df-regular uppercase man">'+ data[i].title +'</h4>'+
 																		'<hr>' +
 																		'<p class="fss man uppercase">'+ terms +'</p>'+
 																	'</div>'+
@@ -249,6 +249,7 @@ $('#filters a').on('click', function(){
 	
 ======================================================================================================================== */
 //$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
+
 
 
   /* ========================================================================================================================

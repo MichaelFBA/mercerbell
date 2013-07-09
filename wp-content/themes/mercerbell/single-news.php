@@ -33,7 +33,7 @@
 		</div>
 			
 			<div class="span12 txtC mvl">
-				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h5 class="df-regular man uppercase">Load More</h5></a>
+				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h4 class="df-regular man uppercase">Load More</h4></a>
 				<ul class="unstyled inline">
 					<li class="pan"><a class="scroll block transition arrowBorder brah" href="#top"><h4 class="ico-arrowUp pas man"></h4></a></li>
 					<li class="pan"><a class="block transition arrowBorder brah" href="<?php $nextPost=get_next_post(); echo $nextPost->guid; ?>"><h4 class="ico-arrowRight pas man"></h4></a></li>

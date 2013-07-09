@@ -58,7 +58,7 @@ foreach($post_categories as $c){
 	<div class="row">
 		<div class="span12 txtC btt pvl">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-			<h5 class="uppercase lsm fwNormal">Work</h5>
+			<h4 class="uppercase lsm fwNormal">Work</h4>
 		</div>
 	</div>
 	
@@ -96,7 +96,7 @@ foreach($post_categories as $c){
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	        <img src="<?php echo $Imageurl[0]; ?>" />
 					<div class="pam">
-						<h5 class="uppercase df-regular uppercase man"><?php the_title(); ?></h5>
+						<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
 						<hr>
 						<p class="fss man"><?php foreach($catArray as $d){ echo $d['name'] . ", "; }; ?></p>
 					</div>

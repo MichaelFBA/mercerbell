@@ -22,7 +22,7 @@
 				<!--	Logo -->
 				<div class="span12 txtC mvl">
 					<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-					<h5 class="uppercase lsm df-regular color6">Join Us</h5>
+					<h4 class="uppercase lsm df-regular color6">Join Us</h4>
 				</div>
 			</section>
 			

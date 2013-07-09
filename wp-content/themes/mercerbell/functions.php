@@ -39,9 +39,11 @@ register_sidebar(array(
 
 
 //Add Custom image size
+add_image_size('thumbnail', 50, 50, false);
 add_image_size('square-large', 406, 406, true);
 add_image_size('people-large', 460, 530, true);
 add_image_size('large', 1170, 450, true);
+add_image_size('work-large', 1170, 658, true);
 
 //Image sizes for work page
 add_image_size('span4', 370, 300, true);
@@ -90,18 +92,8 @@ function starkers_script_enqueuer()
   wp_enqueue_script('form');
   wp_register_script( 'contactForm', get_template_directory_uri().'/js/scripts.js','','', true );
 	wp_enqueue_script( 'contactForm' );
-	wp_register_script( 'swfObject', get_template_directory_uri().'/js/jquery.swfobject.1-1-1.min.js','','', true );
-	wp_enqueue_script( 'swfObject' );
-	wp_register_script( 'youtube', get_template_directory_uri().'/js/youTubeEmbed-jquery-1.0.js','','', true );
-	wp_enqueue_script( 'youtube' );
 	wp_register_script( 'easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js','','', true );
 	wp_enqueue_script( 'easing' );
-
-	
-	
-	
-	
-	
   
   
   /* Style Sheets */

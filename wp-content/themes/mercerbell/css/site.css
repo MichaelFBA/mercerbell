@@ -13,10 +13,11 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; }
+body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 18px; }
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
 a{color: #777777;}
 a:hover, a:focus{color: #333333;text-decoration: none;}
+h4,.h4{font-size: 18px;}
 
 /* Generic */
 strong{font-family: 'GillSansStd', sans-serif;}
@@ -25,7 +26,7 @@ strong{font-family: 'GillSansStd', sans-serif;}
 .underline{text-decoration: underline;}
 .fwNormal{font-weight: normal;}
 .df-light{font-family:'GillSansStd-Light',Sans-Serif;}
-.df-regular{font-family:'GillSansStd',Sans-Serif;}
+b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .arrows{width: 20px;}
 .smallhr{width: 30px; border-bottom: none; margin: 10px auto 10px auto;}
 .desaturate{-webkit-filter: saturate(0%);filter: saturate(0%)}
@@ -151,7 +152,7 @@ box-shadow:inset 0px 0px 1px 1px;}
 .carousel-indicators {top:auto; bottom: 18px;right: 0px;}
 .carousel-indicators .active{background-color: #c2d53d;}
 .carousel-indicators li {background-color: #ff9933;}
-.primary-caption{}
+#workCarousel .carousel-indicators {bottom: -22px;}
 
 /* GoogleMap */
 #contact iframe{width:100%;}
@@ -193,7 +194,7 @@ transition: all .5s;
 #press .span4:hover{background-color: white;}
 
 .element img{opacity: 0.4}
-.element:hover img{opacity: 1}
+.element img:hover{opacity: 1}
 
 .rotate{
 -webkit-transition-duration: 0.8s;
