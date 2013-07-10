@@ -15,11 +15,11 @@
 
 
 
-<div class="container aboutSectionTopMargin" id="top">
+<div class="container aboutSectionTopMargin page-article5" id="top">
 	
 	<div class="row">
-		<div class="span12">
-		<h1 class="uppercase color1 absolute span4 offset4 fsh veryTight bbm pth"><?php the_title(); ?></h1>
+		<div class="span12 relative">
+		<h1 class=" uppercase color1 absolute span4 offset4 veryTight bbm"><?php the_title(); ?></h1>
 		<?php $featureImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
 		<img src="<?php echo $featureImage[0]; ?>" />
 		</div>

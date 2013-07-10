@@ -58,7 +58,7 @@
 					<div class="pam">
 						<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
 						<hr>
-						<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
+						<p class="fss man uppercase"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?></p>
 					</div>
 				</div>
 			</a>

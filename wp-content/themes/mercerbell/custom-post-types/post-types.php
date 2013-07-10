@@ -122,6 +122,28 @@
 	  )
 		);
 		
+		register_taxonomy(
+	  'news',
+	  'news',
+	  array(
+	      'hierarchical' => true,
+	      'label' => 'News Categories',
+	      'query_var' => true,
+	      'rewrite' => array('slug' => 'news')
+	  )
+		);
+		
+		register_taxonomy(
+	  'people',
+	  'people',
+	  array(
+	      'hierarchical' => true,
+	      'label' => 'People Categories',
+	      'query_var' => true,
+	      'rewrite' => array('slug' => 'people')
+	  )
+		);
+		
    }
     
     add_action( 'init', 'custom_taxonomy' );

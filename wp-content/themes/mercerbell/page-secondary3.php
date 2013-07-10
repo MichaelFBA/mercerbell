@@ -46,7 +46,7 @@
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
 					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
-					<p class="man capitalize"><?php echo mercerBellTerms('jobs'); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
+					<p class="man capitalize"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
 					<div class="hide mvm">
 						<p><?php $content = get_the_content(); print $content; ?></p>
 						<p class="mtm">Share: 

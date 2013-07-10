@@ -16,11 +16,12 @@
 	      <!-- Everything you want hidden at 940px or less, place within here -->
 	      <div class="nav-collapse collapse front bg-color1">
 	        
-	        <form class="navbar-search pull-right mtm">
-					  <input type="text" class="uppercase" placeholder=""> 
+	        <form class="navbar-search pull-right mtm" action="<?php echo home_url( '/' ); ?>" method="get">
+					  <input type="text" class="uppercase" placeholder="" name="s" id="search" value="<?php the_search_query(); ?>"> 
 					  <i class="icon-search"></i>
 					  <a href="mailto:mercerbell@mercerbell.com.au"><i class="icon-envelope-alt"></i></a>
 					</form>
+
 					
 	        <?php 
 				    wp_nav_menu( array(

@@ -32,7 +32,7 @@
 				</div>
 				
 				<div class="span12 bts bc-color6 mtm">
-					<p class="mvl">Level 3, 71 York Street, Sydney, NSW, 2000    |   +612 92990802</p>
+					<p class="mvl"><?php the_field('mb_address','options') ?></p>
 				</div>
 				
 				

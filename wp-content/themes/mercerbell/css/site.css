@@ -176,10 +176,10 @@ Page specific         ----------------------------------------------------------
 #article4 textarea::-moz-placeholder,#article4 input[type="email"]::-moz-placeholder,#article4 input[type="text"]::-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* firefox 19+ */
 #article4 textarea:-ms-input-placeholder,#article4 input[type="email"]:-ms-input-placeholder,#article4 input[type="text"]:-ms-input-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* ie */
 #article4 textarea input:-moz-placeholder ,#article4 input[type="email"]input:-moz-placeholder ,#article4 input[type="text"]input:-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
-.icon-minus {background-position: center top;}
 
+.page-article5 h1{font-size: 50px;top:60px;}
 
-#map-canvas{width: 1170px; height: 500px;}
+#map-canvas{width: 100%; height: 500px;}
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------
@@ -230,13 +230,15 @@ Responsive           -----------------------------------------------------------
 
 /* Large desktop */
 @media (min-width: 1200px) { 
-	#player .flashContainer, #player .flashContainer object{width:1170px !important; height: 658px !important }
+	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
+	#map-canvas {height:500px }
+	.page-article5 h1{font-size: 60px;top:70px;}
 }
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
 	header{margin-top: 0px}
-	#player .flashContainer, #player .flashContainer object{width:724px !important; height: 406px !important }
+	.flashContainer #player, .flashContainer{width:724px !important; height: 406px !important }
 	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
@@ -244,6 +246,9 @@ Responsive           -----------------------------------------------------------
 	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
 	.sub-menu li {display: block;}
 	.navbar .nav > li > a {margin-top: 0px;}
+	#map-canvas {height:400px }
+	.page-article5 h1{font-size: 40px;top:50px;}
+	
 }
  
 /* Landscape phone to portrait tablet */
@@ -251,7 +256,7 @@ Responsive           -----------------------------------------------------------
 	body {padding: 0px;}
 	header{margin-top: 0px}
 	.container{padding: 0 20px 0 20px;}
-	#player .flashContainer, #player .flashContainer object{width:100% !important; height: auto !important }
+	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
 	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
 	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}
@@ -260,18 +265,27 @@ Responsive           -----------------------------------------------------------
 	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
 	.sub-menu li {display: block;}
 	.navbar .nav > li > a {margin-top: 0px;}
+	#map-canvas {height:400px }
+	.carousel-indicators {bottom: -22px}
+	.page-article5 h1{font-size: 30px;top:auto; position: relative; color:#4c4c4c !important; margin: 20px 0 20px 0; border-bottom: 2px solid;}
+	
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	h2{font-size: 25px}
 	body {padding: 0px;}
 	header{margin-top: 0px}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
+	.flashContainer #player, .flashContainer{width:100% !important; height: auto !important }
 	/* 	Submenu */
 	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
 	.sub-menu li {display: block;}
 	.navbar .nav > li > a {margin-top: 0px;}
+	.controlDiv{background-size: 75% 75% !important}
+	#map_canvas{height:300px }
+	.carousel-indicators {bottom: -22px}
 }
 
 
@@ -290,7 +304,7 @@ Retina           ---------------------------------------------------------------
 /* ---------------------------------------------------------------------------------------------------------- 
 Custom Youtube           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
-
+.flashContainer #player, .flashContainer{width:940px;height: 528px}
 .flashContainer{
 
 	/*	Setting the container to relative positioning

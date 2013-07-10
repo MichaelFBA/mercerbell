@@ -2,6 +2,21 @@ jQuery(document).ready(function ($) {
 
 /* ========================================================================================================================
 
+	TouchEvents
+
+======================================================================================================================== */
+
+$('.carousel').bind('swipeleft',function(e){
+	$(this).carousel('next')
+});
+
+$('.carousel').bind('swiperight',function(e){
+	$(this).carousel('prev')
+});
+
+
+/* ========================================================================================================================
+
 	Scroll to 
 
 ======================================================================================================================== */
@@ -83,7 +98,7 @@ $(".scroll").on('click', function(e){
   
   }
   
-  if( $(location).attr('href') == "http://localhost/clients/mercerbell/" ){
+  if( $(location).attr('href') == "http://localhost/clients/mercerbell/" || $(location).attr('href') == "http://mb2013.mercerbell.com.au/" ||  $(location).attr('href') == "http://mercerbell.com.au/"){
 	  sidebar()
   }
   
@@ -248,9 +263,12 @@ $('#filters a').on('click', function(){
 	Custom Youtube
 	
 ======================================================================================================================== */
-//$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
+	//$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
 
-
+$('#workCarousel').on('slide',function(){
+	player.stopVideo();
+})
+      
 
   /* ========================================================================================================================
 	
@@ -297,9 +315,11 @@ function setMarkers(map, locations) {
     });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
 
 
+if($("#map-canvas").length == 1) {
+	initialize();
+}
 
 
 
