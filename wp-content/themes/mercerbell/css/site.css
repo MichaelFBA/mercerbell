@@ -101,11 +101,15 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 
 /* Navbar */
 .navbar .nav > li > a {margin-top: 20px}
-.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat top left;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
+.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat 0 0;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
-.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
-.navbar .nav > li.current-menu-item a{color: #333333}
+.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;box-shadow: none;}
+.navbar-search button{border: none;background-color: transparent;}
+/* .navbar .nav > li.current-menu-item a{color: #333333} */
 .navbar .btn-navbar {background-color: transparent;background-image: none;border: none;margin-right: 10px;}
+.navbar input[type="text"]:focus{border: none;box-shadow: none;border-bottom: 1px solid #000000;}
+.icon-search {background-position: 14px 14px;}
+[class^="icon-"], [class*=" icon-"] { background-image: none; }
 /* Subnav */
 
 .navbar .sub-menu{display: none;}
@@ -130,7 +134,7 @@ header .container{height: 75px}
 .zi3{z-index: 30}
 .zi4{z-index: 40}
 .zi5{z-index: 50}
-.sidenav .socialIcons,.sidenav .socialIcons:hover{background-color: transparent !important;}
+.sidenav .socialIcons,.sidenav .socialIcons:hover{background-color: transparent !important;ont-size: 15px;margin-bottom: 6px;}
 .sidenav .active .color1,.sidenav .active .color1:hover,.sidenav .color1:hover {color: #ffffff; background-color: #ffffff} /* white */
 .sidenav .active .color2,.sidenav .active .color2:hover,.sidenav .color2:hover{color: #4c4c4c; background-color: #4c4c4c} /* medium grey */
 .sidenav .active .color3,.sidenav .active .color3:hover,.sidenav .color3:hover{color: #009ce8; background-color: #009ce8} /* blue */
@@ -268,7 +272,7 @@ Responsive           -----------------------------------------------------------
 	#map-canvas {height:400px }
 	.carousel-indicators {bottom: -22px}
 	.page-article5 h1{font-size: 30px;top:auto; position: relative; color:#4c4c4c !important; margin: 20px 0 20px 0; border-bottom: 2px solid;}
-	
+	.element img, .imgStretch img{width: 100%;}
 }
  
 /* Landscape phones and down */
@@ -286,6 +290,7 @@ Responsive           -----------------------------------------------------------
 	.controlDiv{background-size: 75% 75% !important}
 	#map_canvas{height:300px }
 	.carousel-indicators {bottom: -22px}
+	.element img, .imgStretch img{width: 100%;}
 }
 
 
@@ -297,7 +302,7 @@ Retina           ---------------------------------------------------------------
 @media (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
 
-.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat top left;background-size: 482px 61px;}
+.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat 0 0;background-size: 482px 61px;}
 
 }
 

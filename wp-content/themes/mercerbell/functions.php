@@ -41,7 +41,7 @@ register_sidebar(array(
 //Add Custom image size
 add_image_size('thumbnail', 50, 50, false);
 add_image_size('square-large', 406, 406, true);
-add_image_size('people-large', 460, 530, true);
+add_image_size('people-large', 570, 530, true);
 add_image_size('large', 1170, 450, true);
 add_image_size('work-large', 1170, 658, true);
 
@@ -216,7 +216,7 @@ function ajax_get_more_items($postType, $trackOffset, $term)
     $entry['thumbnail']['span5'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span5');
     $entry['thumbnail']['span7'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span7');
     $entry['thumbnail']['span8'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'span8');
-    $entry['terms']			= get_terms( $postType );
+    $entry['terms']			= wp_get_post_terms( get_the_id() , $postType , array('fields'=>'names' ) );
     
     $attachments = get_posts(array(
       'post_type' => 'attachment',
@@ -330,6 +330,26 @@ function mercerBellTerms($tax){
 	}
 	return implode(', ', $output);
 	unset($output);
+}
+
+
+//Clean up empty search
+add_filter( 'request', 'my_request_filter' );
+function my_request_filter( $query_vars ) {
+    if( isset( $_GET['s'] ) && empty( $_GET['s'] ) ) {
+        $query_vars['s'] = " ";
+    }
+    return $query_vars;
+}
+
+//Get pageID from slug
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
 }
 
 

@@ -20,8 +20,9 @@
 	 **/
 
 
+add_action('init', 'register_mb_post_types');
 
-
+function register_mb_post_types() {
 
 	register_post_type( 'work',
 		array(
@@ -33,12 +34,14 @@
 				'add_new_item' => __( 'Add New Item' ),
 				'edit_item' => __( 'Edit Item' ),
 				'new_item' => __( 'New Item' ),
-				'view_item' => __( 'View Now (development only)' )
+				'view_item' => __( 'View Now' )
 			),
+		'menu_position'=>5,
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array("slug" => "work"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies' => array('post_tag') 
 		)
 	);
 	
@@ -52,12 +55,14 @@
 				'add_new_item' => __( 'Add New Item' ),
 				'edit_item' => __( 'Edit Item' ),
 				'new_item' => __( 'New Item' ),
-				'view_item' => __( 'View Now (development only)' )
+				'view_item' => __( 'View Now' )
 			),
+		'menu_position'=>5,
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array("slug" => "news"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies' => array('post_tag') 
 		)
 	);
 	
@@ -71,12 +76,15 @@
 				'add_new_item' => __( 'Add New Item' ),
 				'edit_item' => __( 'Edit Item' ),
 				'new_item' => __( 'New Item' ),
-				'view_item' => __( 'View Now (development only)' )
+				'view_item' => __( 'View Now' )
+				
 			),
+		'menu_position'=>5,
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array("slug" => "jobs"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies' => array('post_tag') 
 		)
 	);
 	
@@ -92,12 +100,15 @@
 				'new_item' => __( 'New Item' ),
 				'view_item' => __( 'View Now (development only)' )
 			),
+		'menu_position'=>5,
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array("slug" => "people"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies' => array('category', 'post_tag') 
 		)
 	);
+}
 	
 	function custom_taxonomy() {
 	 register_taxonomy(

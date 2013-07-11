@@ -46,9 +46,9 @@
 					<h4 class="uppercase df-regular mtm fsl"><?php the_title(); ?></h4>
 					<hr>
 					<p class="man capitalize"><?php the_field('position_held') ?><a href="#" class="null toggle"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide mvm">
-						<p><?php $content = get_the_content(); print $content; ?></p>
-						<p class="mtm">Follow: 
+					<div class="hide">
+						<p class="mtm"><?php $content = get_the_content(); print $content; ?></p>
+						<p class="man pan">Follow: 
 						<?php if( get_field('facebook') ){ ?><a href="<?php the_field('facebook'); ?>" target="_blank"><i class=" mlt prt icon-facebook"></i></a><?php } ?>
 						<?php if( get_field('twitter') ){ ?><a href="<?php the_field('twitter'); ?>" target="_blank"><i class="icon-twitter mrt"></i></a><?php } ?>
 						<?php if( get_field('pinterest') ){ ?><a href="<?php the_field('pinterest'); ?>" target="_blank"><i class="icon-pinterest mrt"></i></a><?php } ?>

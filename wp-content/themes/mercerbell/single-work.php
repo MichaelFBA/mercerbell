@@ -44,9 +44,9 @@
 	      <?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
 				  <div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
 				  	
-					 <div class="flashContainer">
-					 	<div class="progressBar"><div class="elapsed"></div></div>
-					 	<div class="controlDiv play"></div>
+					 <div class="flashContainer ">
+					 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
+					 	<div class="controlDiv play hidden-phone"></div>
 					 	<div id="player"></div>
 					 </div>
 					 

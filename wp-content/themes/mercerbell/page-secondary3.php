@@ -14,11 +14,23 @@
 
 <!-- 	Work Section  -->
 <div class="bg-color5">
-<section class="container" id="top">
+<section class="container aboutSectionTopMargin" id="top">
 	<div class="row">
-		<div class="span12 txtC mvl">
+		<div class="span3">
+			
+			<ul id="filters" class="unstyled uppercase mtl">
+				<li class="tight"><a href="#" class="null df-regular color6" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
+					<?php # use page name to filter for categories
+					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
+					foreach ($categories as $a){ ?>
+						<li class="tight"><a href="#" class="null color6" data-taxonomy="<?php echo $a->slug; ?>"><i class="icon-minus"></i> <?php echo $a->name; ?></a></li>
+					<?php } ?>
+			</ul>			
+		
+		</div>
+		<div class="span6 txtC mvl">
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-			<h4 class="uppercase lsm df-regular"><?php the_title(); ?></h4>
+			<h4 class="uppercase lsm df-regular color6"><?php the_title(); ?></h4>
 		</div>
 	</div><!-- close row -->
 
@@ -41,15 +53,15 @@
 			# Object streaming appends content to a variable at the end. these are the 3 columns we need to start content inside of
 			ob_start();
 			?>
-				<div class="transition mbm">
+				<div class="transition mbm imgStretch">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large');  ?>
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
 					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
 					<p class="man capitalize"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide mvm">
-						<p><?php $content = get_the_content(); print $content; ?></p>
-						<p class="mtm">Share: 
+					<div class="hide">
+						<p class="mtm"><?php $content = get_the_content(); print $content; ?></p>
+						<p class="man pan">Share: 
 						
 						<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6"></i></a>
 						<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6"></i></a>

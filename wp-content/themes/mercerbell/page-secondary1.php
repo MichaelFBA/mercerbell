@@ -18,17 +18,18 @@
 		<div class="span3">
 			
 			<ul id="filters" class="unstyled uppercase mtm">
-			  <li><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
-			  <li><a href="#" class="null" data-taxonomy="digital"><i class="icon-minus"></i> digital</a></li>
-			  <li><a href="#" class="null" data-taxonomy="campaign"><i class="icon-minus"></i> campaign</a></li>
-			  <li><a href="#" class="null" data-taxonomy="social-media"><i class="icon-minus"></i> Social media</a></li>
-			  <li><a href="#" class="null" data-taxonomy="direct"><i class="icon-minus"></i> direct</a></li>
+				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
+					<?php # use page name to filter for categories
+					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
+					foreach ($categories as $a){ ?>
+						<li class="tight"><a href="#" class="null" data-taxonomy="<?php echo $a->slug; ?>"><i class="icon-minus"></i> <?php echo $a->name; ?></a></li>
+					<?php } ?>
 			</ul>			
 		
 		</div>
 		<div class="span6 txtC mvl">
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-			<h4 class="uppercase lsm df-regular">Work</h4>
+			<h4 class="uppercase lsm df-regular"><?php echo $pageTitle = get_the_title() ?></h4>
 		</div>
 	</div><!-- close row -->
 
@@ -39,7 +40,7 @@
 		<?php
 			$queryHome = new WP_Query(array(
 	    	'posts_per_page' => 7,
-	    	'post_type'			 => 'work',
+	    	'post_type'			 => strtolower(get_the_title()), #use the page title to filter for custom post type
 	    	'order'					 => 'DESC',
 	    	'orderby'				 => 'date',
 	    	'post_status'		 => 'publish'
@@ -71,10 +72,10 @@
 	
 	<div class="row">
 		<div class="span12 txtC mvl">
-			<a id="moreViaAjax" href="#" class="null" data-postType="<?php echo get_post_type( get_the_id() ); ?>"><h4 class="df-regular man uppercase">More Work</h4></a>
+			<a id="moreViaAjax" href="#" class="null" data-postType="<?php echo get_post_type( get_the_id() ); ?>"><h4 class="df-regular man uppercase">More <?php echo $pageTitle; ?></h4></a>
 			<ul class="unstyled inline">
 				<li class="pan"><a class="scroll block transition arrowBorder brah" href="#top"><h4 class="ico-arrowUp pas man"></h4></a></li>
-				<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo get_home_url() ?>/about"><h4 class="ico-arrowRight pas man"></h4></a></li>
+				<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo get_home_url() ?>/about/we-create-committed-customer-relationships/"><h4 class="ico-arrowRight pas man"></h4></a></li>
 			</ul>
 		</div>
 	</div>

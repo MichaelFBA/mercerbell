@@ -17,9 +17,9 @@
 	      <div class="nav-collapse collapse front bg-color1">
 	        
 	        <form class="navbar-search pull-right mtm" action="<?php echo home_url( '/' ); ?>" method="get">
-					  <input type="text" class="uppercase" placeholder="" name="s" id="search" value="<?php the_search_query(); ?>"> 
-					  <i class="icon-search"></i>
-					  <a href="mailto:mercerbell@mercerbell.com.au"><i class="icon-envelope-alt"></i></a>
+					  <input type="text" class="df-light pan pts uppercase fss" placeholder="" name="s" id="search" value="<?php echo trim( get_search_query() ); ?>"> 
+					  <button type="submit"><i class="icon-search"></i></button>
+					  <a href="mailto:mercerbell@mercerbell.com.au"><i class="icon-envelope-alt mls"></i></a>
 					</form>
 
 					

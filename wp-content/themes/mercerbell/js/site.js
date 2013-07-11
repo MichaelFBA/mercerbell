@@ -14,6 +14,11 @@ $('.carousel').bind('swiperight',function(e){
 	$(this).carousel('prev')
 });
 
+$('#primaryCarousel').carousel({
+  interval: 3000,
+  pause: 'hover'
+})
+
 
 /* ========================================================================================================================
 
@@ -154,7 +159,7 @@ function galleryAjax(posttype, offsetNum,term){
                },
           dataType: 'JSON',
           success:function(data){
-          	//console.log(data);
+          	console.log(data);
           	var workContent = '';
           	var terms = '';
           	var sizeArray = ['span8','span4','span7','span5','span4','span4','span4'];
@@ -162,9 +167,11 @@ function galleryAjax(posttype, offsetNum,term){
           		terms = '';
           		
           		for(j = 0 ; j < data[i].terms.length ; j++){
-          			terms += data[i].terms[j].name + ', ';
+          			terms += data[i].terms[j];
+          			if(j < data[i].terms.length - 1){
+          				terms += ', ';
+          			}
           		}
-								
           		workContent += '<a href="'+ data[i].link +'" target="_parent">'+
 														 '<div class="bg-color1 transition element mbm '+ sizeArray[i] +'">'+
 														 		'<span class="patternOverlay block"><img class="transition" src="'+data[i].thumbnail[sizeArray[i]][0] + '"/></span>'+ //'<img src="'+data[i].attachments[0][sizeArray[i]][0] + '"/>'+

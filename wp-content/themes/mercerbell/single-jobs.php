@@ -56,9 +56,9 @@ while ( $query->have_posts() ) : $query->the_post();
 					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
 					<p class="man capitalize"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide mvm">
-						<p><?php $content = get_the_content(); print $content; ?></p>
-						<p class="mtm">Share: 
+					<div class="hide">
+						<p class="mtm"><?php $content = get_the_content(); print $content; ?></p>
+						<p class="man pan">Share: 
 						
 						<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6"></i></a>
 						<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6"></i></a>

@@ -24,15 +24,15 @@
 	  <li><a class="circles bat color1 scroll" href="#about"></a></li>
 	  <li><a class="circles bat color1 scroll" href="#press"></a></li>
 	  <li><a class="circles bat color1 scroll" href="#contact"></a></li>
-	  <li><a class="color1 socialIcons" href="https://www.facebook.com/mercerbell‎" target="_blank"><i class="icon-facebook"></i></a></li>
-	  <li><a class="color1 socialIcons" href="https://twitter.com/MercerBell‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
-	  <li><a class="color1 socialIcons" href="#"><i class="icon-pinterest mrt"></i></a></li>
+	  <li><a class="color1 socialIcons" href="<?php the_field('mb_facebook','options') ?>‎" target="_blank"><i class="icon-facebook"></i></a></li>
+	  <li><a class="color1 socialIcons" href="<?php the_field('mb_twitter','options') ?>‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
+	  <li><a class="color1 socialIcons" href="<?php the_field('mb_pinterest','options') ?>"><i class="icon-pinterest mrt"></i></a></li>
 	</ul>
 </section>	 
  <?php
 	$queryHome = new WP_Query(array(
-  	'posts_per_page' => -1,
-  	'category_name'			 => 'home-page-slider',
+  	'posts_per_page' => 6,
+  	'category_name'	 => 'home-page-slider',
   	'order'					 => 'DESC',
   	'orderby'				 => 'date',
   	'post_status'		 => 'publish'
@@ -76,13 +76,6 @@
 <!-- 	Work Section  -->
 		
 		<section class="row" id="work">
-			<!--	Logo -->
-			<div class="span12 txtC mvl">
-				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
-				<h4 class="uppercase lsm df-regular mtm">Work</h4>
-			</div>
-			
-			
 			<!-- Work items -->
 			<?php
 			$queryHome = new WP_Query(array(
@@ -93,7 +86,15 @@
 	    	'post_status'		 => 'publish'
 	       ) 
 	    );
+	    ?>
 	    
+	    <!--	Logo -->
+			<div class="span12 txtC mvl">
+				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+				<h4 class="uppercase lsm df-regular mtm">Work</h4>
+			</div>
+	    
+	    <?php
 	    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
 			<a href="<?php the_permalink(); ?>" target="_parent">
