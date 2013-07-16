@@ -13,7 +13,7 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 18px; }
+body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 16px; }
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
 a{color: #777777;}
 a:hover, a:focus{color: #333333;text-decoration: none;}
@@ -231,12 +231,22 @@ overflow:hidden;
 Responsive           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
+/* Extra Large desktop */
+@media (min-width: 1400px) {
+	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1268px}
+	.span12{width: 1268px}
+	.span4{width: 402px}
+	
+	body{font-size: 18px;}
+}
+
 
 /* Large desktop */
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) and( max-width: 1399px ) { 
 	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
 	#map-canvas {height:500px }
 	.page-article5 h1{font-size: 60px;top:70px;}
+	body{font-size: 18px;}
 }
  
 /* Portrait tablet to landscape and desktop */

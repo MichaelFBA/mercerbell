@@ -55,16 +55,16 @@ while ( $query->have_posts() ) : $query->the_post();
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
 					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
-					<p class="man capitalize"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
+					<p class="man uppercase fss"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
 					<div class="hide">
-						<p class="mtm"><?php $content = get_the_content(); print $content; ?></p>
-						<p class="man pan">Share: 
+						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
+						<p class="man pan fss">Share: 
 						
-						<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6"></i></a>
-						<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6"></i></a>
+						<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6 txtT"></i></a>
+						<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6 txtT"></i></a>
 						<a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php print($Imageurl[0])  ?>&url=<?php  print(urlencode( the_permalink() )) ?>&is_video=false&description=<?php print(urlencode(the_title())); ?>
-" target="_blank"><i class="icon-pinterest mrt color6"></i></a>
-						<a class="color6" href="<?php the_permalink(); ?>" target="_parent" ><span class="pull-right">Apply Now</span></a>
+" target="_blank"><i class="icon-pinterest mrt color6 txtT"></i></a>
+						<a class="color6" href="<?php the_permalink(); ?>" target="_parent" ><span class="pull-right">Apply Now <i class=" plt icon-angle-right txtT"></i></span></a>
 						</p>
 					</div>
 					<hr class="bc-color6">
