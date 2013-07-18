@@ -40,16 +40,16 @@ register_sidebar(array(
 
 //Add Custom image size
 add_image_size('thumbnail', 50, 50, false);
-add_image_size('square-large', 406, 406, true);
-add_image_size('people-large', 570, 530, true);
-add_image_size('large', 1170, 450, true);
-add_image_size('work-large', 1170, 658, true);
+add_image_size('square-large', 398, 398, true);
+add_image_size('people-large', 612, 530, true);
+add_image_size('large', 1254, 545, true);
+add_image_size('work-large', 1254, 545, true);
 
 //Image sizes for work page
-add_image_size('span4', 370, 300, true);
-add_image_size('span5', 470, 300, true);
-add_image_size('span7', 670, 300, true);
-add_image_size('span8', 770, 300, true);
+add_image_size('span4', 398, 300, true);
+add_image_size('span5', 505, 300, true);
+add_image_size('span7', 719, 300, true);
+add_image_size('span8', 826, 300, true);
 
 /* ========================================================================================================================
 

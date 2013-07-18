@@ -28,7 +28,8 @@
 	  <li><a class="color1 socialIcons" href="<?php the_field('mb_twitter','options') ?>‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
 	  <li><a class="color1 socialIcons" href="<?php the_field('mb_pinterest','options') ?>"><i class="icon-pinterest mrt"></i></a></li>
 	</ul>
-</section>	 
+</section>
+	 
  <?php
 	$queryHome = new WP_Query(array(
   	'posts_per_page' => 6,

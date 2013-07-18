@@ -33,7 +33,22 @@ $(".scroll").on('click', function(e){
 	$('html, body').animate({scrollTop: $(toggleTarget).offset().top - 75}, 1600, 'easeInOutExpo')
 });
 
+/* ========================================================================================================================
 
+	Header form
+
+======================================================================================================================== */
+var collapsed = true;
+$(".searchIcon").on('click', function(e){
+	$('.nav-collapse').collapse()
+	if(collapsed){
+		$('.navbar-search').stop().animate({width: 206+'px'}, 800);
+		collapsed = false;
+	}else{
+		$('.navbar-search').stop().animate({width: 0+'px'}, 800);
+		collapsed = true;
+	}
+});
 /* ========================================================================================================================
 
 	Menu Scroll

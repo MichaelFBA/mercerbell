@@ -103,13 +103,19 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .navbar .nav > li > a {margin-top: 20px}
 .navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat 0 0;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
 header .container{height: 75px}
-.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;box-shadow: none;}
+.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;box-shadow: none;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center;}
 .navbar-search button{border: none;background-color: transparent;}
 /* .navbar .nav > li.current-menu-item a{color: #333333} */
-.navbar .btn-navbar {background-color: transparent;background-image: none;border: none;margin-right: 10px;}
-.navbar input[type="text"]:focus{border: none;box-shadow: none;border-bottom: 1px solid #000000;}
+.navbar .btn-navbar {background-color: transparent;background-image: none;border: 2px solid #4c4c4c;margin-right: 10px;border-radius: 0px}
+.navbar input[type="text"]:focus{border: none;box-shadow: none;border-bottom: 1px solid #000000;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center; }
 .icon-search {background-position: 14px 14px;}
 [class^="icon-"], [class*=" icon-"] { background-image: none; }
+.navbar-search{width: 0px;overflow: hidden;}
+
+.navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {background-color: transparent;}
+.navbar .btn-navbar .icon-bar {background-color: #4c4c4c;width: 13px;border-radius: 0px;border: none;}
+
+
 /* Subnav */
 
 .navbar .sub-menu{display: none;}
@@ -228,95 +234,6 @@ overflow:hidden;
 
 
 /* ---------------------------------------------------------------------------------------------------------- 
-Responsive           ----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------- */
-
-/* Extra Large desktop */
-@media (min-width: 1400px) {
-	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1268px}
-	.span12{width: 1268px}
-	.span4{width: 402px}
-	
-	body{font-size: 18px;}
-}
-
-
-/* Large desktop */
-@media (min-width: 1200px) and( max-width: 1399px ) { 
-	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
-	#map-canvas {height:500px }
-	.page-article5 h1{font-size: 60px;top:70px;}
-	body{font-size: 18px;}
-}
- 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-	header{margin-top: 0px}
-	.flashContainer #player, .flashContainer{width:724px !important; height: 406px !important }
-	body{padding-top: 0px;}
-	.aboutSectionTopMargin{margin-top: 0px;}
-	.navbar-fixed-top {margin-bottom: 0px;}
-/* 	Submenu */
-	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
-	.sub-menu li {display: block;}
-	.navbar .nav > li > a {margin-top: 0px;}
-	#map-canvas {height:400px }
-	.page-article5 h1{font-size: 40px;top:50px;}
-	
-}
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-	body {padding: 0px;}
-	header{margin-top: 0px}
-	.container{padding: 0 20px 0 20px;}
-	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
-	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
-	body{padding-top: 0px;}
-	.aboutSectionTopMargin{margin-top: 0px;}
-	.navbar-fixed-top {margin-bottom: 0px;}
-	/* 	Submenu */
-	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
-	.sub-menu li {display: block;}
-	.navbar .nav > li > a {margin-top: 0px;}
-	#map-canvas {height:400px }
-	.carousel-indicators {bottom: -22px}
-	.page-article5 h1{font-size: 30px;top:auto; position: relative; color:#4c4c4c !important; margin: 20px 0 20px 0; border-bottom: 2px solid;}
-	.element img, .imgStretch img{width: 100%;}
-}
- 
-/* Landscape phones and down */
-@media (max-width: 480px) {
-	h2{font-size: 25px}
-	body {padding: 0px;}
-	header{margin-top: 0px}
-	.aboutSectionTopMargin{margin-top: 0px;}
-	.navbar-fixed-top {margin-bottom: 0px;}
-	.flashContainer #player, .flashContainer{width:100% !important; height: auto !important }
-	/* 	Submenu */
-	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
-	.sub-menu li {display: block;}
-	.navbar .nav > li > a {margin-top: 0px;}
-	.controlDiv{background-size: 75% 75% !important}
-	#map_canvas{height:300px }
-	.carousel-indicators {bottom: -22px}
-	.element img, .imgStretch img{width: 100%;}
-}
-
-
-
-/* ---------------------------------------------------------------------------------------------------------- 
-Retina           ----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------- */
-
-@media (-webkit-min-device-pixel-ratio: 2), 
-(min-resolution: 192dpi) { 
-
-.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat 0 0;background-size: 482px 61px;}
-
-}
-
-/* ---------------------------------------------------------------------------------------------------------- 
 Custom Youtube           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 .flashContainer #player, .flashContainer{width:940px;height: 528px}
@@ -386,4 +303,113 @@ Custom Youtube           -------------------------------------------------------
 
 .flashContainer.playing:hover .progressBar{
 	display:block;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+Responsive           ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+/* Extra Large desktop */
+@media (min-width: 1350px){
+	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container{width: 1254px}
+	.span1{width: 77px;}
+	.span2{width: 184px;} /* span1 * 2 + 30margin */
+	.span3{width: 291px;}
+	.span4{width: 398px;}
+	.span5{width: 505px;}
+	.span6{width: 612px;}
+	.span7{width: 719px;}
+	.span8{width: 826px;}
+	.span9{width: 933px;}
+	.span10{width: 1040px;}
+	.span11{width: 1147px;}
+	.span12{width: 1254px;}
+	body{font-size: 18px;}
+}
+
+
+/* Large desktop */
+@media (min-width: 980px) and( max-width: 1170px ) { 
+	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1170px}
+	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
+	#map-canvas {height:500px }
+	.page-article5 h1{font-size: 60px;top:70px;}
+	body{font-size: 18px;}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	header{margin-top: 0px}
+	.flashContainer #player, .flashContainer{width:724px !important; height: 406px !important }
+	body{padding-top: 0px;}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: left;}
+	.sub-menu li {display: block;padding-left: 0px;}
+	.navbar .nav > li > a {margin-top: 0px;}
+	#map-canvas {height:400px }
+	.page-article5 h1{font-size: 40px;top:50px;}
+	.searchIcon{margin-right: 40px;}
+	#menu-main{text-align: center;}
+	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	body {padding: 0px;}
+	header{margin-top: 0px}
+	.container{padding: 0 20px 0 20px;}
+	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
+	body{padding-top: 0px;}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+	/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: middle;}
+	.sub-menu li {display: block;padding-left: 0px;}
+	.navbar .nav > li > a {margin-top: 0px;}
+	#map-canvas {height:400px }
+	.carousel-indicators {bottom: -22px}
+	.page-article5 h1{font-size: 30px;top:auto; position: relative; color:#4c4c4c !important; margin: 20px 0 20px 0; border-bottom: 2px solid;}
+	.element img, .imgStretch img{width: 100%;}
+	.searchIcon{margin-right: 40px;}
+	.searchIcon{margin-right: 40px;}
+	#menu-main{text-align: center;}
+	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	h2{font-size: 25px}
+	body {padding: 0px;}
+	header{margin-top: 0px}
+	.aboutSectionTopMargin{margin-top: 0px;}
+	.navbar-fixed-top {margin-bottom: 0px;}
+	.flashContainer #player, .flashContainer{width:100% !important; height: auto !important }
+	/* 	Submenu */
+	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: middle;}
+	.sub-menu li {display: block;padding-left: 0px;}
+	.navbar .nav > li > a {margin-top: 0px;}
+	.controlDiv{background-size: 75% 75% !important}
+	#map_canvas{height:300px }
+	.carousel-indicators {bottom: -22px}
+	.element img, .imgStretch img{width: 100%;}
+	.searchIcon{margin-right: 40px;}
+	#menu-main{text-align: center;}
+	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+Retina           ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat 0 0;background-size: 482px 61px;}
+
 }
