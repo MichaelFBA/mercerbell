@@ -40,12 +40,14 @@ $(".scroll").on('click', function(e){
 ======================================================================================================================== */
 var collapsed = true;
 $(".searchIcon").on('click', function(e){
-	$('.nav-collapse').collapse()
+	
 	if(collapsed){
 		$('.navbar-search').stop().animate({width: 206+'px'}, 800);
+		$('.nav-collapse').collapse('show')
 		collapsed = false;
 	}else{
 		$('.navbar-search').stop().animate({width: 0+'px'}, 800);
+		$('.nav-collapse').collapse('hide')
 		collapsed = true;
 	}
 });

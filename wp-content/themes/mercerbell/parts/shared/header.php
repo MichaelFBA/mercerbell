@@ -13,7 +13,7 @@
 				</div>
 				
 				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar mtm pat" data-toggle="collapse" data-target=".nav-collapse">
+	      <a class="btn btn-navbar mvm pat" data-toggle="collapse" data-target=".nav-collapse">
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>

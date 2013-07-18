@@ -311,10 +311,11 @@ Responsive           -----------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 /* Extra Large desktop */
-@media (min-width: 1350px){
+
+@media (min-width: 1450px){
 	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container{width: 1254px}
 	.span1{width: 77px;}
-	.span2{width: 184px;} /* span1 * 2 + 30margin */
+	.span2{width: 184px;} 
 	.span3{width: 291px;}
 	.span4{width: 398px;}
 	.span5{width: 505px;}
@@ -329,8 +330,9 @@ Responsive           -----------------------------------------------------------
 }
 
 
+
 /* Large desktop */
-@media (min-width: 980px) and( max-width: 1170px ) { 
+@media (min-width: 1200px) and (max-width: 1449px) {
 	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1170px}
 	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
 	#map-canvas {height:500px }
@@ -360,7 +362,7 @@ Responsive           -----------------------------------------------------------
 @media (max-width: 767px) {
 	body {padding: 0px;}
 	header{margin-top: 0px}
-	.container{padding: 0 20px 0 20px;}
+	.container{padding: 0 ;}
 	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
 	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
 	body{padding-top: 0px;}
