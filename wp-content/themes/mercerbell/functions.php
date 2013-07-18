@@ -42,8 +42,8 @@ register_sidebar(array(
 add_image_size('thumbnail', 50, 50, false);
 add_image_size('square-large', 398, 398, true);
 add_image_size('people-large', 612, 530, true);
-add_image_size('large', 1254, 545, true);
-add_image_size('work-large', 1254, 545, true);
+add_image_size('large', 1254, 745, true);
+add_image_size('work-large', 1254, 745, true);
 
 //Image sizes for work page
 add_image_size('span4', 398, 300, true);

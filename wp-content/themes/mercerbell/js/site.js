@@ -235,7 +235,7 @@ $('#moreViaAjax').on('click', function(){
 })	
 
 //Filter items
-$('#filters a').on('click', function(){
+$('#filters a, #filters-mobile a').on('click', function(){
 	//Filtered is used to remove all the content from the container before readding all the new items
 	filtered = true;
 	//this variable tracks how many jobs to offset = 0
@@ -245,8 +245,8 @@ $('#filters a').on('click', function(){
 	galleryAjax( $('#moreViaAjax').attr('data-postType'), trackCount, $(this).attr('data-taxonomy') );
 	hasFinished = false;
 	}
-	$('#filters a').removeClass('df-regular');
-	$('#filters a').children().removeClass('color7');
+	$('#filters a, #filters-mobile a').removeClass('df-regular');
+	$('#filters a, #filters-mobile a').children().removeClass('color7');
 	$(this).addClass('df-regular');
 	$(this).children().addClass('color7');
 	

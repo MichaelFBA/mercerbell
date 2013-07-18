@@ -58,9 +58,12 @@
 				    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 						?>
 							<div class="item <?php if($active == true){echo ' active'; $active = false;} ?>">
-	              <?php the_post_thumbnail('large'); ?>
+								<h1 class=" uppercase color1 absolute span4 offset4 veryTight bbm"><?php the_title(); ?>
+									<i class="bas brah icon-caret-right pas txtC largeArrow"></i>
+								</h1>
+	              <div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
 	              <div class="primary-caption">
-	                <p class="pvs df-light man"><?php echo get_the_content(); ?></p>
+	                <p class="pvs df-light man prh"><?php echo get_the_content(); ?></p>
 	              </div>
 	            </div>
 						<?php

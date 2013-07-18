@@ -6,7 +6,7 @@
 	      
 	 
 	      <!-- Be sure to leave the brand out there if you want it shown -->
-	      <a class="brand absolute" href="<?php get_home_url(); ?>">Mercerbell</a>
+	      <a class="brand absolute" href="<?php echo get_home_url(); ?>">Mercerbell</a>
 				<div class="pull-right mtm ptt">
 					<a class="searchIcon" href="#"><i class="icon-search"></i></a>
 				  <a class="hidden-phone hidden-tablet" href="mailto:mercerbell@mercerbell.com.au"><i class="icon-envelope-alt mls"></i></a>

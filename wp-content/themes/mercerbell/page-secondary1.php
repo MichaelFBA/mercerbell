@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="span3">
 			
-			<ul id="filters" class="unstyled uppercase mtm">
+			<ul id="filters" class="unstyled uppercase mtm hidden-phone">
 				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
 					<?php # use page name to filter for categories
 					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
@@ -31,6 +31,26 @@
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 			<h4 class="uppercase lsm df-regular"><?php echo $pageTitle = get_the_title() ?></h4>
 		</div>
+		
+<!-- 		iphone filter -->
+		<div class="span12 hidden-tablet hidden-desktop">
+		
+		<div class="btn-group mtm span12 uppercase iphoneFilter">
+      <button class="btn dropdown-toggle span12 txtL df-regular uppercase bg-color2 color1" data-toggle="dropdown"><i class="icon-minus color7"></i> Filter <i class=" pull-right icon-angle-down"></i></button>
+      <ul id="filters-mobile" class="dropdown-menu">
+				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
+					<?php # use page name to filter for categories
+					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
+					foreach ($categories as $a){ ?>
+						<li class="tight"><a href="#" class="null" data-taxonomy="<?php echo $a->slug; ?>"><i class="icon-minus"></i> <?php echo $a->name; ?></a></li>
+					<?php } ?>
+			</ul>	
+    </div>
+		
+			
+		
+		</div>
+		
 	</div><!-- close row -->
 
 	
