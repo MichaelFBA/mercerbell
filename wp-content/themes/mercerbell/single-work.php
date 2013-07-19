@@ -136,7 +136,7 @@
 					if($rows):
 						foreach($rows as $row){ ?>
 							<div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
-								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'work-large' ); ?>
+								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?>
 							</div>
 
 						<?php } ?>

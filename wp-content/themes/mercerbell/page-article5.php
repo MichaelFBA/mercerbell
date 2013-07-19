@@ -19,13 +19,15 @@
 	
 	<div class="row">
 		<div class="span12 relative">
-		<h1 class=" uppercase color1 absolute span4 offset4 veryTight bbm"><?php the_title(); ?></h1>
+		<h1 class=" uppercase color1 absolute span6 offset3 veryTight bbm df-regular fwNormal"><?php the_title(); ?>
+		<i class="bas brah icon-caret-right pas txtC largeArrow"></i>
+		</h1>
 		<?php $featureImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-		<img src="<?php echo $featureImage[0]; ?>" />
+		 <div class="imageWrap"><img src="<?php echo $featureImage[0]; ?>" /></div>
 		</div>
 	</div>
 	
-	<div class="row mtl">
+	<div class="row mtl phone-padding">
 		<?php $content = split_content(); // function: Split Content   This function takes the_content and splits it into an array when it sees <-- more --> ?>
 		<div class="span6"><?php echo $content[0]; ?></div>
 		<div class="span6"><?php echo $content[1]; ?></div>

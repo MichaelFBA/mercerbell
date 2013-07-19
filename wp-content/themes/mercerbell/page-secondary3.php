@@ -12,13 +12,12 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
-<!-- 	Work Section  -->
 <div class="bg-color5">
 <section class="container" id="top">
 	<div class="row">
 		<div class="span3">
 			
-			<ul id="filters" class="unstyled uppercase mtl">
+			<ul id="three-col-filter" class="unstyled uppercase mtl hidden-phone">
 				<li class="tight"><a href="#" class="null df-regular color6" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
 					<?php # use page name to filter for categories
 					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
@@ -32,6 +31,24 @@
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 			<h4 class="uppercase lsm df-regular color6"><?php the_title(); ?></h4>
 		</div>
+		
+		
+		<!-- 		iphone filter -->
+		<div class="span12 hidden-tablet hidden-desktop">
+		
+		<div class="btn-group mtm span12 uppercase iphoneFilter">
+      <button class="btn dropdown-toggle span12 txtL df-regular uppercase bg-color2 color1" data-toggle="dropdown"><i class="icon-minus color7"></i> Filter <i class=" pull-right icon-angle-down"></i></button>
+      <ul id="three-col-filter-mobile" class="dropdown-menu">
+				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
+					<?php # use page name to filter for categories
+					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
+					foreach ($categories as $a){ ?>
+						<li class="tight"><a href="#" class="null" data-taxonomy="<?php echo $a->slug; ?>"><i class="icon-minus"></i> <?php echo $a->name; ?></a></li>
+					<?php } ?>
+			</ul>	
+    </div>
+		
+		
 	</div><!-- close row -->
 
 	<!-- rows -->
@@ -44,7 +61,7 @@
 	    	'posts_per_page' => -1,
 	    	'order'					 => 'ASC',
 	    	'orderby'				 => 'date',
-	    	'post_type'  => 'jobs',
+	    	'post_type'  		 => 'jobs',
 	    	'post_status'		 => 'publish'
 	       ) 
 	    );
@@ -56,10 +73,10 @@
 				<div class="transition mbm imgStretch">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large');  ?>
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
-					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
+					<h4 class="uppercase df-regular mtm fsl color6 phone-padding"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
-					<p class="man uppercase fss"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide">
+					<p class="man uppercase fss phone-padding"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
+					<div class="hide phone-padding">
 						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
 						<p class="man pan fss">Share: 
 						
@@ -88,13 +105,13 @@
 		?>
 		
 		<?php #These div columns will contain stacked people ?>
-		<div class="span4">
+		<div class="span4 ajax1">
 			<?php printf($data1);  ?>
 		</div>
-		<div class="span4">
+		<div class="span4 ajax2">
 			<?php printf($data2);  ?>
 		</div>
-		<div class="span4">
+		<div class="span4 ajax3">
 			<?php  printf($data3);  ?>
 		</div>
 		

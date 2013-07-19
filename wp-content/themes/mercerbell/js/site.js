@@ -134,10 +134,12 @@ $(".searchIcon").on('click', function(e){
 	Toggle // Unhides the closest p element with a .hide class
 
 ======================================================================================================================== */
-$('.toggle').on('click',function(e){
-	//console.log($(e.target).siblings('.hide'))
-	$(e.target).parent().parent().siblings('.hide').slideToggle('300')
-})
+function bindToggle(){
+	$('.toggle').on('click',function(e){
+		pde(e);
+		$(e.target).parent().parent().siblings('.hide').slideToggle('300')
+	})
+}
 
 
   /* ========================================================================================================================
@@ -218,6 +220,81 @@ function galleryAjax(posttype, offsetNum,term){
      });
 }
 
+function jobsAjax(posttype,term){
+     jQuery.ajax({
+          url: 'http://localhost/clients/mercerbell/wp-admin/admin-ajax.php',
+          data:{
+               'action':'do_ajax',
+               'fn':'get_more_jobs',
+               'posttype':posttype,
+               'term':term,
+               },
+          dataType: 'JSON',
+          success:function(data){
+          	console.log(data);
+          	var workContent = '';
+          	var container1 = '',container2 = '',container3 ='';
+          	var counter = 1;
+          	var terms = '';
+          	
+          	$(".ajax1,.ajax2,.ajax3").empty();
+          	for(i = 0 ; i < data.length ; i++){
+          	
+          		for(j = 0 ; j < data[i].terms.length ; j++){
+          			terms += data[i].terms[j];
+          			if(j < data[i].terms.length - 1){
+          				terms += ', ';
+          			}
+          		}
+          	
+          		workContent += '<div class="transition mbm imgStretch">'+
+	          									 '<a href="'+ data[i].link +'" target="_parent"><img src="'+ data[i].thumbnail.squarelarge[0] +'" /></a>'+
+	          									 '<h4 class="uppercase df-regular mtm fsl color6 phone-padding">'+data[i].title+'</h4>'+
+															 '<hr class="bc-color6">'+
+															 '<p class="man uppercase fss phone-padding">'+terms+'<a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>'+
+															 '<div class="hide phone-padding">'+
+																 '<p class="mtm mbl">'+data[i].content + '</p>'+
+																 '<p class="man pan fss">Share: '+
+															   '<a href="http://www.facebook.com/share.php?u='+encodeURIComponent(data[i].link)+'&title='+encodeURIComponent(data[i].title)+'" target="_blank"><i class=" mlt prt icon-facebook color6 txtT"></i></a>'+
+															   '<a href="http://twitter.com/home?status='+encodeURIComponent(data[i].link)+'+'+encodeURIComponent(data[i].title)+'" target="_blank"><i class="icon-twitter mrt color6 txtT"></i></a>'+
+															   '<a href="http://pinterest.com/pin/create/bookmarklet/?media='+encodeURIComponent(data[i].thumbnail.squarelarge[0])+'&url='+encodeURIComponent(data[i].link)+'&is_video=false&description='+encodeURIComponent(data[i].title)+'" target="_blank"><i class="icon-pinterest mrt color6 txtT"></i></a>'+
+															   '<a class="color6" href="'+data[i].link+'" target="_parent" ><span class="pull-right">Apply Now <i class=" plt icon-angle-right txtT"></i></span></a>'+
+															   '</p>'+
+															  '</div>'+
+															  '<hr class="bc-color6">'+
+															 '</div>';
+								if(counter == 1){
+									container1 += workContent;
+								}else if(counter == 2){
+									container2 += workContent;
+								}else{
+									container3 += workContent;
+									counter =0;
+								}
+								
+								workContent = '';
+								terms = '';
+								counter++;
+								
+														   
+														   
+          	}	
+          	
+         $(".ajax1").hide().append(container1).fadeIn('slow');
+         $(".ajax2").hide().append(container2).fadeIn('slow');
+         $(".ajax3").hide().append(container3).fadeIn('slow');
+				 bindToggle();
+				 		
+				 },
+          error: function(errorThrown){
+               //alert('error');
+               console.log(errorThrown);
+               
+          }
+     });
+}
+
+
 
 
 
@@ -250,7 +327,19 @@ $('#filters a, #filters-mobile a').on('click', function(){
 	$(this).addClass('df-regular');
 	$(this).children().addClass('color7');
 	
-})	
+})
+//three column ajax
+$('#three-col-filter a, #three-col-filter-mobile a').on('click', function(){
+	jobsAjax('jobs',$(this).attr('data-taxonomy'));
+	
+	$('#three-col-filter a, #three-col-filter-mobile a').removeClass('df-regular');
+	$('#three-col-filter a, #three-col-filter-mobile a').children().removeClass('color7');
+	$(this).addClass('df-regular');
+	$(this).children().addClass('color7');
+	
+});
+
+	
 
   /*  Uncomment to use
 
@@ -349,10 +438,10 @@ if($("#map-canvas").length == 1) {
 
   /* ========================================================================================================================
 	
-	END READY
+	INIT
 	
 ======================================================================================================================== */
-
+bindToggle();
 
 
 

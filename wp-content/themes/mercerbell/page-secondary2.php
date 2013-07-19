@@ -43,10 +43,10 @@
 				<div class="transition mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
-					<h4 class="uppercase df-regular mtm fsl"><?php the_title(); ?></h4>
+					<h4 class="uppercase df-regular mtm fsl phone-padding"><?php the_title(); ?></h4>
 					<hr>
-					<p class="man uppercase fss"><?php the_field('position_held') ?><a href="#" class="null toggle"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide">
+					<p class="man uppercase fss phone-padding"><?php the_field('position_held') ?><a href="#" class="null toggle"><i class="icon-angle-down pull-right"></i></a></p>
+					<div class="hide phone-padding">
 						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
 						<p class="man pan fss">Follow: 
 						<?php if( get_field('facebook') ){ ?><a href="<?php the_field('facebook'); ?>" target="_blank"><i class=" mlt prt icon-facebook"></i></a><?php } ?>

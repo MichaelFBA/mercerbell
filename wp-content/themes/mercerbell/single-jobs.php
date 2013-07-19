@@ -53,10 +53,10 @@ while ( $query->have_posts() ) : $query->the_post();
 				<div class="transition mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large');  ?>
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
-					<h4 class="uppercase df-regular mtm fsl color6"><?php the_title(); ?></h4>
+					<h4 class="uppercase df-regular mtm fsl color6 phone-padding"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
-					<p class="man uppercase fss"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
-					<div class="hide">
+					<p class="man uppercase fss phone-padding"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
+					<div class="hide phone-padding">
 						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
 						<p class="man pan fss">Share: 
 						
