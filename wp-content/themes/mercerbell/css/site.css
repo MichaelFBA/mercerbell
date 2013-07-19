@@ -199,6 +199,10 @@ Page specific         ----------------------------------------------------------
 .iphoneFilter .dropdown-menu {width: 100%; border-radius: 0px; border: 0px;margin-top: 0px;padding: 0px}
 .iphoneFilter .dropdown-menu i{background-position: center center;}
 .iphoneFilter .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {background-color:#4c4c4c; color: #ffffff;background-image: none;} 
+
+/* Admin menu */
+#adminmenu .wp-menu-image img {width: 28px !important;height: 28px;}
+
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
@@ -312,6 +316,8 @@ Custom Youtube           -------------------------------------------------------
 .flashContainer.playing:hover .progressBar{
 	display:block;
 }
+
+
 
 
 /* ---------------------------------------------------------------------------------------------------------- 

@@ -41,7 +41,8 @@ function register_mb_post_types() {
 		'has_archive' => false,
 		'rewrite' => array("slug" => "work"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies' => array('post_tag') 
+		'taxonomies' => array('post_tag'),
+		'menu_icon' => get_stylesheet_directory_uri() . '/img/admin/workIcon@2x.png',
 		)
 	);
 	
@@ -62,7 +63,8 @@ function register_mb_post_types() {
 		'has_archive' => false,
 		'rewrite' => array("slug" => "news"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies' => array('post_tag') 
+		'taxonomies' => array('post_tag'),
+		'menu_icon' => get_stylesheet_directory_uri() . '/img/admin/pressIcon@2x.png',
 		)
 	);
 	
@@ -84,7 +86,8 @@ function register_mb_post_types() {
 		'has_archive' => false,
 		'rewrite' => array("slug" => "jobs"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies' => array('post_tag') 
+		'taxonomies' => array('post_tag'),
+		'menu_icon' => get_stylesheet_directory_uri() . '/img/admin/contactIcon@2x.png',
 		)
 	);
 	
@@ -105,7 +108,8 @@ function register_mb_post_types() {
 		'has_archive' => false,
 		'rewrite' => array("slug" => "people"),
 		'supports' => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies' => array('category', 'post_tag') 
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_icon' => get_stylesheet_directory_uri() . '/img/admin/bellIcon@2x.png',
 		)
 	);
 }
