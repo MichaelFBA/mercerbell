@@ -47,87 +47,10 @@
 					 <div class="flashContainer ">
 					 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
 					 	<div class="controlDiv play hidden-phone"></div>
-					 	<div id="player"></div>
+					 	<div id="player" data-youtube="<?php the_field('mb_youtube') ?>"></div>
 					 </div>
 					 
-					  <script>
-			      // 2. This code loads the IFrame Player API code asynchronously.
-			      var tag = document.createElement('script');
-			
-			      tag.src = "https://www.youtube.com/iframe_api";
-			      var firstScriptTag = document.getElementsByTagName('script')[0];
-			      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-			
-			      // 3. This function creates an <iframe> (and YouTube player)
-			      //    after the API code downloads.
-			      var player;
-			      function onYouTubeIframeAPIReady() {
-			        player = new YT.Player('player', {
-			          height: '658',
-			          width: '1170',
-			          videoId: '<?php the_field('mb_youtube') ?>',
-			          playerVars: { 'autoplay': 0, 'controls': 0,'showinfo':0,'modestbranding':1,'origin':'http://mercerbell.com.au/' },
-			          events: {
-			            'onReady': onPlayerReady,
-			            'onStateChange': onPlayerStateChange
-			          }
-			        });
-			      }
-			
-			      // 4. The API will call this function when the video player is ready.
-			      function onPlayerReady(event) {
-			        //event.target.playVideo();
-			      }
-			      
-			      //Play pause buttons
-			      $('.controlDiv').on('click',function(){
-							if( $(this).hasClass('play') ){
-								
-								// If the video is not currently playing, start it:
-								$(this).removeClass('play replay').addClass('pause');
-								$(this).parent().addClass('playing');
-			     		  player.playVideo();
-								
-								interval = window.setInterval(function(){
-										$('.elapsed').width( player.getCurrentTime()/player.getDuration() * 100 +'%' )
-										
-									},1000);
-								}else {
-								
-								// If the video is currently playing, pause it:
-								$(this).removeClass('pause').addClass('play');
-								$(this).parent().removeClass('playing');
-								player.pauseVideo();
-								
-								window.clearInterval(interval);
-								}
-								
-							})
-							
-					//Seek buttons
-					$('.progressBar').on('click',function(e){
-						$('.controlDiv').removeClass('play replay').addClass('pause');
-						$('.controlDiv').parent().addClass('playing');
-						
-						var ratio = (e.pageX-$(this).offset().left)/$(this).outerWidth();
-						
-						$('.elapsed').width(ratio*100+'%');
-						player.seekTo(Math.round(player.getDuration()*ratio), true);
-						player.playVideo();
-					})
-
-
-			      function onPlayerStateChange(event) {
-
-						};
-						
-			      
-			      
-			      
-			      
-			    </script>
-
-				  </div>
+				</div>
 				  <?php endif; ?>
 				  
 				  <?php
@@ -171,10 +94,10 @@
 			<p class="uppercase fss">
 				<a href="<?php print $_SERVER['HTTP_REFERER'];?>" target="_parent">Back <i class="icon-angle-right txtM"></i></a>
 				<span class="pull-right">Share: 
-					<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class=" mlt prt icon-facebook color6"></i></a>
-					<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="icon-twitter mrt color6"></i></a>
+					<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class="txtT mlt prt icon-facebook color6"></i></a>
+					<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="txtT icon-twitter mrt color6"></i></a>
 					<a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php print($Imageurl[0])  ?>&url=<?php  print(urlencode( the_permalink() )) ?>&is_video=false&description=<?php print(urlencode(the_title())); ?>
-" target="_blank"><i class="icon-pinterest mrt color6"></i></a>
+" target="_blank"><i class=" txtT icon-pinterest mrt color6"></i></a>
 
 				</span>
 			</p>

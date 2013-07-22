@@ -101,7 +101,7 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 
 /* Navbar */
 .navbar .nav > li > a {margin-top: 20px}
-.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat 0 0;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;}
+.navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat 0 0;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;text-indent: -9999px}
 header .container{height: 75px}
 .navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;box-shadow: none;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center;}
 .navbar-search button{border: none;background-color: transparent;}
@@ -190,7 +190,7 @@ Page specific         ----------------------------------------------------------
 #article4 textarea:-ms-input-placeholder,#article4 input[type="email"]:-ms-input-placeholder,#article4 input[type="text"]:-ms-input-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* ie */
 #article4 textarea input:-moz-placeholder ,#article4 input[type="email"]input:-moz-placeholder ,#article4 input[type="text"]input:-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
 
-.page-template-page-primary-php h1, .page-article5 h1,.page-article5 h1{font-size: 50px;margin-top: 10%}
+.page-template-page-primary-php h1, .page-article5 h1{font-size: 50px;top: 25%}
 
 #map-canvas{width: 100%; height: 500px;}
 
@@ -202,6 +202,9 @@ Page specific         ----------------------------------------------------------
 
 /* Admin menu */
 #adminmenu .wp-menu-image img {width: 28px !important;height: 28px;}
+
+
+/* Home page */
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------
@@ -248,6 +251,9 @@ overflow:hidden;
 /* ---------------------------------------------------------------------------------------------------------- 
 Custom Youtube           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
+
+.modal{width: auto;border: none;border-radius:0px;background-color: #000000;margin-left: -470px }
+
 .flashContainer #player, .flashContainer{width:940px;height: 528px}
 .flashContainer{
 
@@ -347,7 +353,7 @@ Responsive           -----------------------------------------------------------
 	
 	
 	body{font-size: 18px;}
-	.page-template-page-primary-php h1, .page-article5 h1, .page-article5 h1{font-size: 60px;margin-top: 10%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
 }
 
@@ -358,7 +364,7 @@ Responsive           -----------------------------------------------------------
 	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1170px}
 	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
 	#map-canvas {height:500px }
-	.page-template-page-primary-php h1, .page-article5 h1, .page-article5 h1{font-size: 60px;margin-top: 10%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
 	body{font-size: 18px;}
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
@@ -378,7 +384,7 @@ Responsive           -----------------------------------------------------------
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
 	#map-canvas {height:400px }
-	.page-template-page-primary-php h1, .page-article5 h1, .page-article5 h1{font-size: 40px;margin-top: 15%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 40px;top: 25%}
 	.searchIcon{margin-right: 40px;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
@@ -402,7 +408,7 @@ Responsive           -----------------------------------------------------------
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
 	#map-canvas {height:400px }
-	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;margin-top: 20%;font-size: 50px;}
+	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;top: 25%;font-size: 50px;}
 	.element img, .imgStretch img{width: 100%;}
 	.searchIcon{margin-right: 20px;font-size: 1.1em;}
 	#menu-main{text-align: center;}
@@ -419,7 +425,7 @@ Responsive           -----------------------------------------------------------
 	.flashContainer #player, .flashContainer{width:100% !important; height: auto !important }
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {overflow: hidden;height: auto;}
-	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;margin-top: 15%;font-size: 25px;}
+	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;top: 25%;font-size: 25px;}
 	.primary-caption p{padding-left: 20px; }
 	.element img{opacity: 1;}
 	.patternOverlay {background-image: none;}
@@ -450,6 +456,6 @@ Retina           ---------------------------------------------------------------
 @media (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
 
-.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat 0 0;background-size: 482px 61px;}
+.navbar .brand{background:url('../img/mercerbell-logo@2x.png') no-repeat 0 0;background-size: 482px 61px;text-indent: -9999px}
 
 }

@@ -77,6 +77,19 @@
 			</div>
 		</section> 
 		
+		
+		<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="flashContainer ">
+ 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
+ 	<div class="controlDiv play hidden-phone"></div>
+ 	<div id="player" data-youtube="UgE138GXuBk"></div>
+ </div>
+</div>
+		
 <!-- 	Work Section  -->
 		
 		<section class="row" id="work">

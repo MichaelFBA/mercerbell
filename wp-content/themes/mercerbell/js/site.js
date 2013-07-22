@@ -22,6 +22,64 @@ $('#primaryCarousel').carousel({
 
 /* ========================================================================================================================
 
+	Youtube
+
+======================================================================================================================== */
+if( $("#player").length == 1 ){
+var YTobject;
+
+	$("#player").tubeplayer({
+	    width: 940, // the width of the player
+	    height: 520, // the height of the player
+	    allowFullScreen: "true", // true by default, allow user to go full screen
+	    initialVideo: $('#player').attr('data-youtube'), // the video that is loaded into the player
+	    preferredQuality: "hd720",// preferred quality: default, small, medium, large, hd720
+	    showControls: false,  
+	    modestbranding: false,
+	    annotations: false,      
+	});
+
+
+	//Control play / pause and elapsed
+	$('.controlDiv').on('click',function(){
+	var interval;
+	if( $(this).hasClass('play') ){
+			// If the video is not currently playing, start it:
+			$(this).removeClass('play replay').addClass('pause');
+			$(this).parent().addClass('playing');
+			$("#player").tubeplayer("play");
+		
+			interval = window.setInterval(function(){
+			var data = $("#player").tubeplayer("data");
+			$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) }, 1000 );
+		}else {
+			// If the video is currently playing, pause it:
+			$(this).removeClass('pause').addClass('play');
+			$(this).parent().removeClass('playing');
+			$("#player").tubeplayer("pause");
+			window.clearInterval(interval);
+		}
+	})
+
+	//Controls seek
+	$('.progressBar').on('click',function(e){
+		YTobject = $("#player").tubeplayer("data");
+		$('.controlDiv').removeClass('play replay').addClass('pause');
+		$('.controlDiv').parent().addClass('playing');
+		var ratio = (e.pageX-$(this).offset().left)/$(this).outerWidth();
+		$('.elapsed').width(ratio*100+'%');
+		jQuery("#player").tubeplayer("seek", Math.round(YTobject.duration * ratio) );
+		$("#player").tubeplayer("play");
+	})
+
+
+}
+
+
+
+
+/* ========================================================================================================================
+
 	Scroll to 
 
 ======================================================================================================================== */
@@ -379,7 +437,7 @@ $('#three-col-filter a, #three-col-filter-mobile a').on('click', function(){
 	//$('#player').youTubeEmbed("http://www.youtube.com/watch?v=e74PdbaZU_c");
 
 $('#workCarousel').on('slide',function(){
-	player.stopVideo();
+	$("#player").tubeplayer("pause");
 })
       
 
