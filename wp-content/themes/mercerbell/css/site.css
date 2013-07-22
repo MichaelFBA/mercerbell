@@ -340,8 +340,15 @@ Responsive           -----------------------------------------------------------
 	.span10{width: 1040px;}
 	.span11{width: 1147px;}
 	.span12{width: 1254px;}
+	
+	input.span4, textarea.span4, .uneditable-input.span4{width: 388px;}
+	input.span6, textarea.span6, .uneditable-input.span6{width: 602px;}
+	input.span12, textarea.span12, .uneditable-input.span12{width: 1244px;}
+	
+	
 	body{font-size: 18px;}
 	.page-template-page-primary-php h1, .page-article5 h1, .page-article5 h1{font-size: 60px;margin-top: 10%}
+	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
 }
 
 
