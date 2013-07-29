@@ -32,13 +32,13 @@
 				</div>
 				
 				<div class="span12 bts bc-color6 mtm">
-					<p class="mvl"><?php the_field('mb_address','options') ?></p>
+				  <p class="mvl"><?php the_field('mb_address','options') ?></p>
 				</div>
 				
 				
 				<!--	Google Maps -->
-				<div class="span12 desaturate patternOverlay block">
-					<div id="map-canvas"></div>
+				<div class="span12 block">
+					<a href="https://maps.google.com/maps?q=Level+3,+71+York+Street,+Sydney,+NSW,+2000&hl=en&ll=-33.868678,151.206948&spn=0.008338,0.015095&sll=37.0625,-95.677068&sspn=63.856965,123.662109&hq=Level+3,&hnear=71+York+St,+Sydney+New+South+Wales+2000,+Australia&t=h&z=17" target="_blank"><?php the_post_thumbnail(); ?></a>
 				</div>
 					
 				<!--	back to top -->

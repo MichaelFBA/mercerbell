@@ -447,6 +447,7 @@ $('#workCarousel').on('slide',function(){
 	
 ======================================================================================================================== */
 
+/*
 function initialize() {
   var mapOptions = {
     zoom: 16,
@@ -491,6 +492,7 @@ function setMarkers(map, locations) {
 if($("#map-canvas").length == 1) {
 	initialize();
 }
+*/
 
 
 

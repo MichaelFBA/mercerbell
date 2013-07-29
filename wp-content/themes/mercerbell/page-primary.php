@@ -58,9 +58,10 @@
 				    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 						?>
 							<div class="item <?php if($active == true){echo ' active'; $active = false;} ?>">
-								<h1 class="fwNormal uppercase color1 absolute span6 offset3 veryTight bbm df-regular"><?php the_title(); ?>
-									<i class="bas brah icon-caret-right pas txtC largeArrow"></i>
-								</h1>
+									<div class="carousel-caption span6 offset3">
+										<h2 class="fwNormal uppercase color1 veryTight bbm df-regular fsh"><?php the_title(); ?><i class="bas brah icon-caret-right pas txtC largeArrow"></i></h2>
+							</div>
+									
 	              <div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
 	              <div class="primary-caption">
 	                <p class="pvs df-light man prh"><?php echo get_the_content(); ?></p>

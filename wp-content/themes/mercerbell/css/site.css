@@ -164,6 +164,7 @@ box-shadow:inset 0px 0px 1px 1px;}
 .carousel-indicators li {background-color: #ff9933;cursor: pointer;}
 #workCarousel .carousel-indicators {bottom: -22px;}
 .carousel-inner > .item .imageWrap, .imageWrap {overflow: hidden;height: 400px;}
+.carousel-caption {bottom: 40%;background-color: transparent;}
 
 /* GoogleMap */
 #contact iframe{width:100%;}
