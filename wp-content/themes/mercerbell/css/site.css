@@ -165,6 +165,7 @@ box-shadow:inset 0px 0px 1px 1px;}
 #workCarousel .carousel-indicators {bottom: -22px;}
 .carousel-inner > .item .imageWrap, .imageWrap {overflow: hidden;height: 400px;}
 .carousel-caption {bottom: 40%;background-color: transparent;}
+.imageWrap img{margin-top: -20%; }
 
 /* GoogleMap */
 #contact iframe{width:100%;}
@@ -300,17 +301,18 @@ Custom Youtube           -------------------------------------------------------
 	top:50%;
 	left:50%;
 	margin:-75px 0 0 -75px;
+	z-index: 250;
 }
 
 .controlDiv.play, .controlPlay.play{
 	background:url('../img/youtube/play.png') no-repeat center center;
 }
 
-.controlDiv.replay{
+.controlDiv.replay, .controlPlay.replay{
 	background:url('../img/youtube/replay.png') no-repeat center center;
 }
 
-.controlDiv.pause{
+.controlDiv.pause, .controlPlay.pause{
 	background:url('../img/youtube/pause.png') no-repeat -99999px;
 }
 
@@ -359,7 +361,6 @@ Responsive           -----------------------------------------------------------
 	
 	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1254px !important; height: 701px !important }
 	.modal{margin-left: -626px;}
-	
 }
 
 
@@ -395,6 +396,7 @@ Responsive           -----------------------------------------------------------
 	.searchIcon{margin-right: 40px;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
+	.imageWrap img{margin-top: -10%; }
 }
  
 /* Landscape phone to portrait tablet */
@@ -424,6 +426,7 @@ Responsive           -----------------------------------------------------------
 	.searchIcon{margin-right: 20px;font-size: 1.1em;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
+	.imageWrap img{margin-top: 0%; }
 }
  
 /* Landscape phones and down */
@@ -455,7 +458,7 @@ Responsive           -----------------------------------------------------------
 	.rotate{width: 40px;height: 40px}
 	.largeArrow{padding: 3px !important; font-size: 20px !important;margin-top: -4px;}
 	.phone-padding{padding: 0 20px 0 20px;}
-	
+	.imageWrap img{margin-top: 0%; }
 }
 
 

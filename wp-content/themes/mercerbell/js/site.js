@@ -37,7 +37,11 @@ var YTobject;
 	    showControls: false,  
 	    modestbranding: false,
 	    annotations: false,  
-	    autoPlay:true    
+	    autoPlay:true,
+	    onPlayerEnded: function(){
+		    console.log('ended')
+		    $('.controlDiv').removeClass('pause').addClass('replay');
+	    },
 	});
 
 
@@ -62,7 +66,7 @@ var YTobject;
 
 function YTVideo(e){
 	var interval;
-	if( $(e).hasClass('play') ){
+	if( $(e).hasClass('play') || $(e).hasClass('replay') ){
 			// If the video is not currently playing, start it:
 			$(e).removeClass('play replay').addClass('pause');
 			$(e).parent().addClass('playing');
