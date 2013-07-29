@@ -253,9 +253,9 @@ overflow:hidden;
 Custom Youtube           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
-.modal{width: auto;border: none;border-radius:0px;background-color: #000000;margin-left: -470px }
+.modal{width: auto;border: none;border-radius:0px;background-color: #000000;margin-left: -470px;top:75px; }
 
-.flashContainer #player, .flashContainer{width:940px;height: 528px}
+.flashContainer #player, .flashContainer, .flashContainer iframe{width:940px;height: 528px}
 .flashContainer{
 
 	/*	Setting the container to relative positioning
@@ -291,7 +291,7 @@ Custom Youtube           -------------------------------------------------------
 	border-right:1px solid #ff9933;
 }
 
-.controlDiv{
+.controlDiv, .controlPlay{
 	/* Centering the control div */
 	position:absolute;
 	width:155px;
@@ -302,7 +302,7 @@ Custom Youtube           -------------------------------------------------------
 	margin:-75px 0 0 -75px;
 }
 
-.controlDiv.play{
+.controlDiv.play, .controlPlay.play{
 	background:url('../img/youtube/play.png') no-repeat center center;
 }
 
@@ -356,6 +356,10 @@ Responsive           -----------------------------------------------------------
 	body{font-size: 18px;}
 	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
+	
+	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1254px !important; height: 701px !important }
+	.modal{margin-left: -626px;}
+	
 }
 
 
@@ -363,18 +367,20 @@ Responsive           -----------------------------------------------------------
 /* Large desktop */
 @media (min-width: 1200px) and (max-width: 1449px) {
 	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1170px}
-	.flashContainer #player, .flashContainer{width:1170px !important; height: 658px !important }
+	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1170px !important; height: 658px !important }
 	#map-canvas {height:500px }
 	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
 	body{font-size: 18px;}
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
+	.modal{margin-left: -584px}
 }
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
 	header{margin-top: 0px}
-	.flashContainer #player, .flashContainer{width:724px !important; height: 406px !important }
+	.flashContainer #player, .flashContainer, .flashContainer iframe {width:724px !important; height: 406px !important }
+	.modal{margin-left: -362px;top:75px;}
 	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
@@ -397,6 +403,10 @@ Responsive           -----------------------------------------------------------
 	header{margin-top: 0px}
 	.container{padding: 0 ;}
 	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
+	.flashContainer iframe {width: 100% !important;height: 300px !important;}
+	.modal{margin: auto;}
+	
+	
 	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
 	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}

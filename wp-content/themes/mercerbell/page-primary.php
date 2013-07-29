@@ -55,14 +55,28 @@
           <div class="carousel-inner bbt bcDark">
 	         <?php 
 	         $active = true;
+	         $youtubeID;
 				    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 						?>
 							<div class="item <?php if($active == true){echo ' active'; $active = false;} ?>">
-									<div class="carousel-caption span6 offset3">
-										<h2 class="fwNormal uppercase color1 veryTight bbm df-regular fsh"><?php the_title(); ?><i class="bas brah icon-caret-right pas txtC largeArrow"></i></h2>
-							</div>
-									
-	              <div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
+								<?php 
+									if( get_field('mb_youtube') ){ ?>
+									  <a href="#myModal" role="button" data-toggle="modal">
+										  <div class="imageWrap">
+										  	<div class="controlPlay play"></div>
+										  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
+										  </div>
+									  </a>
+									<?php
+									}else{ ?>
+										<h1 class="fwNormal uppercase color1 absolute span6 offset3 veryTight bbm df-regular"><?php the_title(); ?>
+											<i class="bas brah icon-caret-right pas txtC largeArrow"></i>
+										</h1>
+										<div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
+									<?php 
+									} 
+								?>
+	              
 	              <div class="primary-caption">
 	                <p class="pvs df-light man prh"><?php echo get_the_content(); ?></p>
 	              </div>
@@ -79,17 +93,16 @@
 		</section> 
 		
 		
-		<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
- 
 <!-- Modal -->
-<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
- <div class="flashContainer ">
- 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
- 	<div class="controlDiv play hidden-phone"></div>
- 	<div id="player" data-youtube="UgE138GXuBk"></div>
- </div>
-</div>
+	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	 <div class="flashContainer ">
+	 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
+	 	<div class="controlDiv play hidden-phone"></div>
+	 	<div id="player" data-youtube="<?php echo $youtubeID; ?>"></div>
+	 </div>
+	</div>
+ 
+
 		
 <!-- 	Work Section  -->
 		

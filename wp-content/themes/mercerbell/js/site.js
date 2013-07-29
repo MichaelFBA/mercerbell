@@ -36,29 +36,14 @@ var YTobject;
 	    preferredQuality: "hd720",// preferred quality: default, small, medium, large, hd720
 	    showControls: false,  
 	    modestbranding: false,
-	    annotations: false,      
+	    annotations: false,  
+	    autoPlay:true    
 	});
 
 
 	//Control play / pause and elapsed
 	$('.controlDiv').on('click',function(){
-	var interval;
-	if( $(this).hasClass('play') ){
-			// If the video is not currently playing, start it:
-			$(this).removeClass('play replay').addClass('pause');
-			$(this).parent().addClass('playing');
-			$("#player").tubeplayer("play");
-		
-			interval = window.setInterval(function(){
-			var data = $("#player").tubeplayer("data");
-			$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) }, 1000 );
-		}else {
-			// If the video is currently playing, pause it:
-			$(this).removeClass('pause').addClass('play');
-			$(this).parent().removeClass('playing');
-			$("#player").tubeplayer("pause");
-			window.clearInterval(interval);
-		}
+		YTVideo('.controlDiv');
 	})
 
 	//Controls seek
@@ -75,6 +60,38 @@ var YTobject;
 
 }
 
+function YTVideo(e){
+	var interval;
+	if( $(e).hasClass('play') ){
+			// If the video is not currently playing, start it:
+			$(e).removeClass('play replay').addClass('pause');
+			$(e).parent().addClass('playing');
+			$("#player").tubeplayer("play");
+		
+			interval = window.setInterval(function(){
+			var data = $("#player").tubeplayer("data");
+			$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) }, 1000 );
+		}else {
+			// If the video is currently playing, pause it:
+			$(e).removeClass('pause').addClass('play');
+			$(e).parent().removeClass('playing');
+			$("#player").tubeplayer("pause");
+			window.clearInterval(interval);
+		}
+}
+
+/* ========================================================================================================================
+
+	Modal / Youtube
+
+======================================================================================================================== */
+
+$('#myModal').bind('show',function(){
+  YTVideo('.controlDiv');
+})
+$('#myModal').bind('hide',function(){
+	$("#player").tubeplayer("pause");
+})
 
 
 
@@ -446,8 +463,8 @@ $('#workCarousel').on('slide',function(){
 	Google Maps
 	
 ======================================================================================================================== */
-
 /*
+
 function initialize() {
   var mapOptions = {
     zoom: 16,

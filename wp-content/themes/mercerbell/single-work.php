@@ -23,6 +23,7 @@
 				$rows = get_field('mbwork_items');
 				$first = true;
 				$count = 0;
+				$youtubeID;
 			?>
 				<?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
 					<li data-target="#workCarousel" data-slide-to="<?php echo $count; $count++; ?>" class="<?php if($first == true){echo 'active'; $first = false;} ?>"></li>
@@ -43,13 +44,12 @@
 	      
 	      <?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
 				  <div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
-				  	
-					 <div class="flashContainer ">
-					 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
-					 	<div class="controlDiv play hidden-phone"></div>
-					 	<div id="player" data-youtube="<?php the_field('mb_youtube') ?>"></div>
-					 </div>
-					 
+				  	<a href="#myModal" role="button" data-toggle="modal">
+						  <div class="imageWrap">
+						  	<div class="controlPlay play"></div>
+						  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
+						  </div>
+					  </a>
 				</div>
 				  <?php endif; ?>
 				  
@@ -59,7 +59,7 @@
 					if($rows):
 						foreach($rows as $row){ ?>
 							<div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
-								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?>
+								<div class="imageWrap"><?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?></div>
 							</div>
 
 						<?php } ?>
@@ -70,6 +70,16 @@
 	      <a class="right carousel-control" href="#primaryCarousel" data-slide="next">›</a> -->
 	    </div>
 		</div>
+	</div>
+	
+	
+	<!-- Modal -->
+	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	 <div class="flashContainer ">
+	 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
+	 	<div class="controlDiv play hidden-phone"></div>
+	 	<div id="player" data-youtube="<?php echo $youtubeID; ?>"></div>
+	 </div>
 	</div>
 	
 	<div class="row mtl">

@@ -38,7 +38,13 @@
 				
 				<!--	Google Maps -->
 				<div class="span12 block">
-					<a href="https://maps.google.com/maps?q=Level+3,+71+York+Street,+Sydney,+NSW,+2000&hl=en&ll=-33.868678,151.206948&spn=0.008338,0.015095&sll=37.0625,-95.677068&sspn=63.856965,123.662109&hq=Level+3,&hnear=71+York+St,+Sydney+New+South+Wales+2000,+Australia&t=h&z=17" target="_blank"><?php the_post_thumbnail(); ?></a>
+					<a href="https://maps.google.com/maps?q=Level+3,+71+York+Street,+Sydney,+NSW,+2000&hl=en&ll=-33.868678,151.206948&spn=0.008338,0.015095&sll=37.0625,-95.677068&sspn=63.856965,123.662109&hq=Level+3,&hnear=71+York+St,+Sydney+New+South+Wales+2000,+Australia&t=h&z=17" target="_blank">
+					<?php 
+					$queryContact = new WP_Query(array( 'posts_per_page' => 3, 'pagename'=>'contact' ));
+					while ( $queryContact->have_posts() ) : $queryContact->the_post();
+					the_post_thumbnail(); 
+					endwhile;?>
+					</a>
 				</div>
 					
 				<!--	back to top -->
