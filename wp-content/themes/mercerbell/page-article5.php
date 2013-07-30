@@ -19,8 +19,8 @@
 	
 	<div class="row">
 		<div class="span12 relative">
-		<h1 class=" uppercase color1 absolute span6 offset3 veryTight bbm df-regular fwNormal"><?php the_title(); ?>
-			<i class="bam brah icon-caret-right largeArrow"></i>
+		<h1 class=" uppercase color1 absolute span5 offset3 veryTight bbm df-regular fwNormal homeh1"><?php the_title(); ?>
+			<img src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
 		</h1>
 		<?php $featureImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
 		 <div class="imageWrap"><img src="<?php echo $featureImage[0]; ?>" /></div>

@@ -16,7 +16,7 @@ $('.carousel').bind('swiperight',function(e){
 
 $('#primaryCarousel').carousel({
   interval: 3000,
-  pause: 'hover'
+  pause:'hover'
 })
 
 

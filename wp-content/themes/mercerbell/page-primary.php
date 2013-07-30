@@ -70,8 +70,8 @@
 									<?php
 									}else{ ?>
 										<a href="<?php the_field('slider_url') ?>" target="_parent">
-											<h1 class="fwNormal uppercase color1 absolute span6 offset3 veryTight bbm df-regular"><?php the_title(); ?>
-												<i class="bam icon-caret-right largeArrowHome"></i>
+											<h1 class="fwNormal uppercase color1 absolute span5 offset3 veryTight bbm df-regular homeh1"><?php the_title(); ?>
+												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
 											</h1>
 											<div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
 										</a>

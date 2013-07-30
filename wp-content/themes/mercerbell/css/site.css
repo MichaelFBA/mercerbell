@@ -181,6 +181,7 @@ span.wpcf7-list-item {margin-left: 0px;}
 /* ---------------------------------------------------------------------------------------------------------- 
 Page specific         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
+.homeh1 img{position: relative;top:-7px; }
 .largeArrowHome{border-radius:30px;position:relative; top:-4px;padding: 0px 15px 0px 15px ;line-height: 1em;width: auto;height: auto;vertical-align: middle;font-size:0.7em }
 .largeArrow{font-size: 26px;margin-bottom: 5px;}
 #article4 textarea, #article4 input[type="text"],#article4 input[type="email"]{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
@@ -372,6 +373,7 @@ Responsive           -----------------------------------------------------------
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
 	.modal{margin-left: -584px}
+	
 }
  
 /* Portrait tablet to landscape and desktop */
@@ -394,6 +396,7 @@ Responsive           -----------------------------------------------------------
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
 	.imageWrap img{margin-top: -10%; }
+	.homeh1 img{width:40px;top:-4px;}
 }
  
 /* Landscape phone to portrait tablet */
@@ -424,6 +427,7 @@ Responsive           -----------------------------------------------------------
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
 	.imageWrap img{margin-top: 0%; }
+	.homeh1 img{width:40px;top:-4px;}
 }
  
 /* Landscape phones and down */
@@ -456,6 +460,7 @@ Responsive           -----------------------------------------------------------
 	.largeArrow{padding: 3px !important; font-size: 20px !important;margin-top: -4px;}
 	.phone-padding{padding: 0 20px 0 20px;}
 	.imageWrap img{margin-top: 0%; }
+	.homeh1 img{width:20px;top:-2px;}
 }
 
 
