@@ -69,10 +69,12 @@
 									  </a>
 									<?php
 									}else{ ?>
-										<h1 class="fwNormal uppercase color1 absolute span6 offset3 veryTight bbm df-regular"><?php the_title(); ?>
-											<i class="bas brah icon-caret-right pas txtC largeArrow"></i>
-										</h1>
-										<div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
+										<a href="<?php the_field('slider_url') ?>" target="_parent">
+											<h1 class="fwNormal uppercase color1 absolute span6 offset3 veryTight bbm df-regular"><?php the_title(); ?>
+												<i class="bam icon-caret-right largeArrowHome"></i>
+											</h1>
+											<div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
+										</a>
 									<?php 
 									} 
 								?>
