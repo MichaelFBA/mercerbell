@@ -75,7 +75,9 @@
 	
 	<!-- Modal -->
 	<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<button type="button" class="close color1 absolute" data-dismiss="modal" aria-hidden="true">&times;</button>
 	 <div class="flashContainer ">
+	 	<div class="transparent"></div>
 	 	<div class="progressBar hidden-phone"><div class="elapsed"></div></div>
 	 	<div class="controlDiv play hidden-phone"></div>
 	 	<div id="player" data-youtube="<?php echo $youtubeID; ?>"></div>

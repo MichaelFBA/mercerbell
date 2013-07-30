@@ -60,6 +60,24 @@ var YTobject;
 		jQuery("#player").tubeplayer("seek", Math.round(YTobject.duration * ratio) );
 		$("#player").tubeplayer("play");
 	})
+	
+	
+	//This controls the autofading video
+	var fadeout = null;
+	$(".transparent").mousemove(function() {
+	  $(".controlDiv.pause").fadeIn("slow");
+	  
+		if (fadeout != null) {
+	    clearTimeout(fadeout);
+	  }
+
+	  fadeout = setTimeout(function() {
+        $(".controlDiv.pause").fadeOut("slow");
+    }, 1000)
+	});
+
+
+
 
 
 }
@@ -71,8 +89,8 @@ function YTVideo(e){
 			$(e).removeClass('play replay').addClass('pause');
 			$(e).parent().addClass('playing');
 			$("#player").tubeplayer("play");
-		
 			interval = window.setInterval(function(){
+			
 			var data = $("#player").tubeplayer("data");
 			$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) }, 1000 );
 		}else {
@@ -96,6 +114,7 @@ $('#myModal').bind('show',function(){
 $('#myModal').bind('hide',function(){
 	$("#player").tubeplayer("pause");
 })
+
 
 
 

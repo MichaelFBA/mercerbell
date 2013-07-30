@@ -255,16 +255,10 @@ Custom Youtube           -------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 
 .modal{width: auto;border: none;border-radius:0px;background-color: #000000;margin-left: -470px;top:75px; }
+.modal .close{top:-20px;right:-20px;}
 
 .flashContainer #player, .flashContainer, .flashContainer iframe{width:940px;height: 528px}
-.flashContainer{
-
-	/*	Setting the container to relative positioning
-		so we can center the control div */
-
-	position:relative;
-	overflow:hidden;
-}
+.flashContainer{position:relative;overflow:hidden;}
 
 .progressBar{
 	position:absolute;
@@ -313,7 +307,7 @@ Custom Youtube           -------------------------------------------------------
 }
 
 .controlDiv.pause, .controlPlay.pause{
-	background:url('../img/youtube/pause.png') no-repeat -99999px;
+	background:url('../img/youtube/pause.png') no-repeat center center;display: none;
 }
 
 .flashContainer:hover .controlDiv.pause{
@@ -325,6 +319,8 @@ Custom Youtube           -------------------------------------------------------
 .flashContainer.playing:hover .progressBar{
 	display:block;
 }
+
+.transparent{position: absolute;top:0px; bottom: 0px; left: 0px; right: 0px; background-color: transparent;}
 
 
 
