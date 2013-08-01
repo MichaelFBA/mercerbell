@@ -36,10 +36,11 @@ var YTobject;
 	    preferredQuality: "hd720",// preferred quality: default, small, medium, large, hd720
 	    showControls: false,  
 	    modestbranding: false,
+	    swfobjectURL: "http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js",
+	    iframed: true,
 	    annotations: false,  
-	    autoPlay:true,
+	    autoPlay:false,
 	    onPlayerEnded: function(){
-		    console.log('ended')
 		    $('.controlDiv').removeClass('pause').addClass('replay');
 	    },
 	});
@@ -82,6 +83,13 @@ var YTobject;
 
 }
 
+
+//Start video when ready
+$.tubeplayer.defaults.afterReady
+	= function($player){
+		$("#player").tubeplayer("play");
+	}
+
 function YTVideo(e){
 	var interval;
 	if( $(e).hasClass('play') || $(e).hasClass('replay') ){
@@ -90,9 +98,9 @@ function YTVideo(e){
 			$(e).parent().addClass('playing');
 			$("#player").tubeplayer("play");
 			interval = window.setInterval(function(){
-			
-			var data = $("#player").tubeplayer("data");
-			$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) }, 1000 );
+				var data = $("#player").tubeplayer("data");
+				$('.elapsed').width( data.currentTime/data.duration * 100 +'%' ) 
+			}, 1000 );
 		}else {
 			// If the video is currently playing, pause it:
 			$(e).removeClass('pause').addClass('play');
@@ -112,7 +120,7 @@ $('#myModal').bind('show',function(){
   YTVideo('.controlDiv');
 })
 $('#myModal').bind('hide',function(){
-	$("#player").tubeplayer("pause");
+	YTVideo('.controlDiv');
 })
 
 
