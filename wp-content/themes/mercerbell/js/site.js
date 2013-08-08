@@ -84,12 +84,6 @@ var YTobject;
 }
 
 
-//Start video when ready
-$.tubeplayer.defaults.afterReady
-	= function($player){
-		$("#player").tubeplayer("play");
-	}
-
 function YTVideo(e){
 	var interval;
 	if( $(e).hasClass('play') || $(e).hasClass('replay') ){

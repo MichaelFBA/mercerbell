@@ -45,10 +45,8 @@
 	      <?php if(get_field('mb_youtube')): #Detect YoutubeLink?>
 				  <div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
 				  	<a href="#myModal" role="button" data-toggle="modal">
-						  <div class="imageWrap">
 						  	<div class="controlPlay play"></div>
 						  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
-						  </div>
 					  </a>
 				</div>
 				  <?php endif; ?>
@@ -59,7 +57,7 @@
 					if($rows):
 						foreach($rows as $row){ ?>
 							<div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
-								<div class="imageWrap"><?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?></div>
+								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?>
 							</div>
 
 						<?php } ?>

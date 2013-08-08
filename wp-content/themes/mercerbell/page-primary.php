@@ -62,10 +62,8 @@
 								<?php 
 									if( get_field('mb_youtube') ){ ?>
 									  <a href="#myModal" role="button" data-toggle="modal">
-										  <div class="imageWrap">
 										  	<div class="controlPlay play"></div>
 										  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
-										  </div>
 									  </a>
 									<?php
 									}else{ ?>
@@ -73,7 +71,7 @@
 											<h1 class="fwNormal uppercase color1 absolute span5 offset3 veryTight bbm df-regular homeh1"><?php the_title(); ?>
 												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
 											</h1>
-											<div class="imageWrap"><?php the_post_thumbnail('large'); ?></div>
+											<?php the_post_thumbnail('large'); ?>
 										</a>
 									<?php 
 									} 
