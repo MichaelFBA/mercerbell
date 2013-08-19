@@ -16,12 +16,38 @@
 <div class="container" id="top">
 	<div class="row">
 		<div class="span6 offset3">
-			<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'people-large' ); ?>
-	    <img src="<?php echo $Imageurl[0]; ?>" />
+			<div class="cycle-slideshow">
+				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'people-large' ); ?>
+				<img src="<?php echo $Imageurl[0]; ?>" />
+			<?php
+					$attachments = get_posts( array(
+						'post_type' => 'attachment',
+						'posts_per_page' => -1,
+						'post_parent' => $post->ID,
+						'exclude'     => get_post_thumbnail_id()
+					) );
+			
+					if ( $attachments ) {
+						foreach ( $attachments as $attachment ) {
+							//print_r($attachment);
+			        	$attr = array(
+			        		 	'src' => $attachment->guid,
+										'class'	=> "",
+										'alt'	=> $attachment->post_title,
+										'title'	=> $attachment->post_title,
+										);
+								the_post_thumbnail( 'people-large', $attr );
+						}
+						
+					}
+			?>
+		
+			
+			</div>
 	    <h4 class="uppercase df-regular uppercase mtm"><?php the_title(); ?></h4>
 			<hr>
 			<p class="fss man mbm uppercase"><?php the_field('position_held');?></p>
-			<p class="fsl"><?php echo get_the_content(); ?></p>
+			<p class="fsl"><?php echo the_content(); ?></p>
 			<hr class="mbm mtl">
 			<?php the_field('footer_information'); ?>
 			<p class="pull-right">Follow: 

@@ -31,11 +31,9 @@
 
 			while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-				<div class="span3 bg-color1 mbm txtC txtM patternOverlay transition">
-					<div class="pas">
+				<div class="span3 bg-color1 mbm txtC txtM transition">
 						<?php $logoUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 						<img src="<?php echo $logoUrl[0]; ?>" />
-					</div>
 				</div>
 			<?php
 			endwhile;	

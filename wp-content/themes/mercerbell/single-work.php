@@ -90,8 +90,9 @@
 			$rows = get_field('mb_awards');
 			if($rows): ?>
 				<ul class="unstyled inline"> <?php
-				foreach($rows as $row){ ?>
-					<li><img src="<?php echo $row['mb_award_images'] ?>" alt="awards"/></li>
+				foreach($rows as $row){?>
+					<?php $Imageurl = wp_get_attachment_image_src($row['mb_award_images'], 'full'); ?>
+					<li class="pbs"><img src="<?php echo $Imageurl[0]; ?>" alt="<?php echo get_post( $row['mb_award_images'] )->post_title; ?>" title="<?php echo get_post( $row['mb_award_images'] )->post_title; ?>"/></li>
 				<?php } ?>
 				</ul>
 			<?php endif; ?>
@@ -123,35 +124,38 @@
 	
 	<!-- Related posts -->
 	<div class="row">
-	<!-- 	Use WP-Query as the main loop, its better than get-posts etc -->
-		<?php
-			$queryHome = new WP_Query(array(
-				'post__not_in'	 => array(get_the_id()), //exclude current post  
-	    	'posts_per_page' => 3, // only 3 related posts
-	    	'order'					 => 'DESC', //sort ascending
-	    	'orderby'				 => 'date', //sort via date
-	    	'post_type'  => 'work', //find posts related to this cat 
-	    	'post_status'		 => 'publish' //only published
-	       ) 
-	    );
 
-			while ( $queryHome->have_posts() ) : $queryHome->the_post();
-			?>
-			<a href="<?php the_permalink(); ?>" target="_parent">
-				<div class="span4 bg-color1 transition element mbm">
-					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-	        <span class="patternOverlay block"><img class="transition" src="<?php echo $Imageurl[0]; ?>" /></span>
-					<div class="pam">
-						<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
-						<hr>
-						<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
-					</div>
-				</div>
-			</a>
-			<?
-			endwhile;
-		?>
-	
+		<?php 	
+			$post_objects = get_field('similar_campaigns');
+		 
+			if( $post_objects ): ?>
+		    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+		        <?php setup_postdata($post); ?>
+		       <a href="<?php the_permalink(); ?>" target="_parent">
+						<div class="span4 bg-color1 transition element mbm">
+							
+			        <span class="patternOverlay block">
+			        	<?php
+			        	$attr = array(
+										'class'	=> "transition",
+										'alt'	=> get_post(get_post_thumbnail_id())->post_title,
+										'title'	=> get_post(get_post_thumbnail_id())->post_title,
+										);
+								?>
+								<?php the_post_thumbnail( 'square-large', $attr ); ?>
+			        	 
+			        </span>
+							<div class="pam">
+								<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
+								<hr>
+								<p class="fss man uppercase"><?php echo mercerBellTerms('work'); #outputs categories ?></p>
+							</div>
+						</div>
+					</a>
+		    <?php endforeach; ?>
+		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		<?php endif; ?>
+			
 	</div>
 	
 	

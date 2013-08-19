@@ -15,11 +15,12 @@ Start here           -----------------------------------------------------------
 /* Overall */
 body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 16px; }
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
-a{color: #777777;}
-a:hover, a:focus{color: #333333;text-decoration: none;}
+a{color: #777777;text-decoration: underline;}
+a:hover, a:focus{color: #333333;}
 h4,.h4{font-size: 18px;}
 
 /* Generic */
+.noUnderline, .noUnderline:hover{text-decoration: none;}
 strong{font-family: 'GillSansStd', sans-serif;}
 .uppercase{text-transform: uppercase;}
 .capitalize{text-transform: capitalize;}
@@ -354,7 +355,7 @@ Responsive           -----------------------------------------------------------
 	
 	
 	body{font-size: 18px;}
-	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 55px;top: 25%}
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
 	
 	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1254px !important; height: 701px !important }
@@ -368,7 +369,7 @@ Responsive           -----------------------------------------------------------
 	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 1170px}
 	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1170px !important; height: 658px !important }
 	#map-canvas {height:500px }
-	.page-template-page-primary-php h1, .page-article5 h1{font-size: 60px;top: 25%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 55px;top: 25%}
 	body{font-size: 18px;}
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
@@ -448,7 +449,7 @@ Responsive           -----------------------------------------------------------
 	.sub-menu{position: relative;background-color: #FFFFFF;padding: 0px;left: auto;top: auto;width: auto;margin: 0px;text-align: middle;}
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
-	.controlDiv{background-size: 75% 75% !important}
+	.controlDiv,.controlPlay{background-size: 50% 50% !important}
 	#map_canvas{height:300px }
 	.element img, .imgStretch img{width: 100%;}
 	.searchIcon{margin-right: 20px;font-size: 1.1em;}

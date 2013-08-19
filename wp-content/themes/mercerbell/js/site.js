@@ -1,5 +1,29 @@
 jQuery(document).ready(function ($) {
 
+  /* ========================================================================================================================
+	
+	People Hover
+	
+======================================================================================================================== */
+$('.cycle-slideshow').on('mouseover',function(){
+	$('.cycle-slideshow').cycle('resume');
+})
+
+$('.cycle-slideshow').on('mouseleave',function(){
+	$('.cycle-slideshow').cycle('pause');
+	$('.cycle-slideshow').cycle('goto', 0);
+})
+
+$('.cycle-slideshow').cycle({
+    speed: 50,
+    timeout: 50,
+    fx: 'none'
+});
+
+$('.cycle-slideshow').cycle('pause');
+
+
+
 /* ========================================================================================================================
 
 	TouchEvents
@@ -268,7 +292,7 @@ function bindToggle(){
 
 function galleryAjax(posttype, offsetNum,term){
      jQuery.ajax({
-          url: 'http://localhost/clients/mercerbell/wp-admin/admin-ajax.php',
+          url: '/wp-admin/admin-ajax.php',
           data:{
                'action':'do_ajax',
                'fn':'get_more_items',
@@ -278,7 +302,7 @@ function galleryAjax(posttype, offsetNum,term){
                },
           dataType: 'JSON',
           success:function(data){
-          	console.log(data);
+          	//console.log(data);
           	var workContent = '';
           	var terms = '';
           	var sizeArray = ['span8','span4','span7','span5','span4','span4','span4'];
@@ -322,7 +346,7 @@ function galleryAjax(posttype, offsetNum,term){
 
 function jobsAjax(posttype,term){
      jQuery.ajax({
-          url: 'http://localhost/clients/mercerbell/wp-admin/admin-ajax.php',
+          url: '/wp-admin/admin-ajax.php',
           data:{
                'action':'do_ajax',
                'fn':'get_more_jobs',
@@ -331,7 +355,7 @@ function jobsAjax(posttype,term){
                },
           dataType: 'JSON',
           success:function(data){
-          	console.log(data);
+          	//console.log(data);
           	var workContent = '';
           	var container1 = '',container2 = '',container3 ='';
           	var counter = 1;
@@ -388,7 +412,7 @@ function jobsAjax(posttype,term){
 				 },
           error: function(errorThrown){
                //alert('error');
-               console.log(errorThrown);
+               //console.log(errorThrown);
                
           }
      });
@@ -468,6 +492,7 @@ $('#three-col-filter a, #three-col-filter-mobile a').on('click', function(){
   }
 
 */
+
 
 
 

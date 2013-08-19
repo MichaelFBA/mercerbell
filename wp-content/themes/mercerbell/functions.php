@@ -97,6 +97,9 @@ function starkers_script_enqueuer()
 	wp_enqueue_script( 'jsgestures' );
 	wp_register_script( 'youtube', get_template_directory_uri().'/js/jQuery.tubeplayer.min.js','','', true );
 	wp_enqueue_script( 'youtube' );
+	wp_register_script( 'cycles', get_template_directory_uri().'/js/jquery.cycle2.min.js','','', true );
+	wp_enqueue_script( 'cycles' );
+	
 
   
   /* Style Sheets */
