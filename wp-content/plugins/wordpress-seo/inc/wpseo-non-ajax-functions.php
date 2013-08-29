@@ -65,7 +65,7 @@ function wpseo_defaults() {
 			'noindex-post_format' => 'on',
 		);
 		foreach ( get_post_types( array( 'public' => true ), 'objects' ) as $pt ) {
-			$opt['title-' . $pt->name] = '%%title%% %%page%% %%sep%% %%sitename%%';
+			$opt['title-' . $pt->name] = '%%title%% | %%sitename%%';
 			if ( $pt->has_archive )
 				$opt['title-ptarchive-' . $pt->name] = sprintf( __( '%s Archive', 'wordpress-seo' ), '%%pt_plural%%' ) . ' %%page%% %%sep%% %%sitename%%';
 		}

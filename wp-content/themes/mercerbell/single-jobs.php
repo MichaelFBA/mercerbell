@@ -26,7 +26,7 @@
 				</div>
 			</section>
 			
-			<section class="row color6">
+			<section class="row color6 mobilePadding">
 			<?php echo do_shortcode('[contact-form-7 id="125" title="MercerBell Contact Form"]'); ?>
 			</section>
 			<section class="row color6">

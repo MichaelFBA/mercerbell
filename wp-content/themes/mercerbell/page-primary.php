@@ -25,7 +25,7 @@
 	  <li><a class="circles bat color1 scroll" href="#press"></a></li>
 	  <li><a class="circles bat color1 scroll" href="#contact"></a></li>
 	  <li><a class="color1 socialIcons" href="<?php the_field('mb_facebook','options') ?>‎" target="_blank"><i class="icon-facebook"></i></a></li>
-	  <li><a class="color1 socialIcons" href="<?php the_field('mb_twitter','options') ?>‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
+	  <li><a class="color1 socialIcons" href="<?php sanitize_title(the_field('mb_twitter','options')) ?>‎" target="_blank"><i class="icon-twitter mrt"></i></a></li>
 	  <li><a class="color1 socialIcons" href="<?php the_field('mb_pinterest','options') ?>"><i class="icon-pinterest mrt"></i></a></li>
 	</ul>
 </section>
@@ -58,20 +58,21 @@
 	         $youtubeID;
 				    while ( $queryHome->have_posts() ) : $queryHome->the_post();
 						?>
-							<div class="item <?php if($active == true){echo ' active'; $active = false;} ?>">
+							<div class="item element <?php if($active == true){echo ' active'; $active = false;} ?>">
 								<?php 
 									if( get_field('mb_youtube') ){ ?>
 									  <a href="#myModal" role="button" data-toggle="modal">
 										  	<div class="controlPlay play"></div>
-										  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
+										  	<span class="patternOverlay block"><?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large',array('class'=> 'transition')); $youtubeID = get_field('mb_youtube'); ?></span>
 									  </a>
 									<?php
 									}else{ ?>
-										<a href="<?php the_field('slider_url') ?>" target="_parent">
-											<h1 class="fwNormal uppercase color1 absolute span5 offset3 veryTight bbm df-regular homeh1"><?php the_title(); ?>
-												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
+										<a class="transition" href="<?php the_field('slider_url') ?>" target="_parent">
+											<h1 class="fwNormal uppercase color1 absolute span5 offset3 veryTight bbm df-regular homeh1 pbm middle"><?php the_field('slider_heading'); ?>
+												<img class="noOpacity" src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
 											</h1>
-											<?php the_post_thumbnail('large'); ?>
+											<span class="hidden-phone patternOverlay block"><?php the_post_thumbnail('large',array('class'=> 'transition')); ?></span>
+											<span class="hidden-desktop hidden-tablet patternOverlay block"><?php the_post_thumbnail('span5',array('class'=> 'transition')); ?></span>
 										</a>
 									<?php 
 									} 
@@ -122,7 +123,7 @@
 	    ?>
 	    
 	    <!--	Logo -->
-			<div class="span12 txtC mvl">
+			<div class="span12 txtC mvh">
 				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 				<h4 class="uppercase lsm df-regular mtm">Work</h4>
 			</div>
@@ -147,7 +148,7 @@
 
 			
 			<div class="span12 txtC mvl">
-				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h4 class="df-regular man uppercase">View All</h4></a>
+				<a class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="View All"  href="<?php echo get_home_url() ?>/work" target="_parent"><h4 class="df-regular man uppercase" >View All</h4></a>
 				<ul class="unstyled inline">
 					<li class="pan"><a class="scroll block transition arrowBorder brah" href="#primaryCarousel"><h4 class="ico-arrowUp pas man"></h4></a></li>
 					<li class="pan"><a class="block transition arrowBorder brah" href="<?php echo get_home_url() ?>/work"><h4 class="ico-arrowRight pas man"></h4></a></li>
@@ -162,7 +163,7 @@
 				<!-- About us -->
 			<section class="row">
 				<!--	Logo -->
-				<div class="span12 txtC mvl">
+				<div class="span12 txtC mvh">
 					<img class="rotate"  src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 					<h4 class="uppercase lsm df-regular color1 mtm">About</h4>
 				</div>
@@ -200,7 +201,7 @@
 		
 		<section class="row txtC" id="press">
 			<!--	Logo -->
-			<div class="span12 mvl">
+			<div class="span12 mvh">
 				<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 				<h4 class="uppercase lsm df-regular color4 mtm">Hot off the press</h4>
 			</div>
@@ -222,7 +223,7 @@
 				<div class="span4 pbm transition mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
 		      <img src="<?php echo $Imageurl[0]; ?>" />
-					<h4 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class=" capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h4>
+					<h4 class="uppercase df-regular mtm phm"><?php the_title(); ?><br/><span class="fsm capitalize fwNormal df-light"><?php echo get_the_date(); ?></span></h4>
 					<hr class="smallhr">
 					<p class="fst man uppercase">Read <?php the_author(); ?> Article</p>
 				</div>
@@ -233,7 +234,7 @@
 			
 			<!--	Logo -->
 			<div class="span12 txtC mvl">
-				<a href="<?php echo get_home_url() ?>/news" target="_blank"><h4 class="df-regular man uppercase color4">View All</h4></a>
+				<a class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="View All" href="<?php echo get_home_url() ?>/news" target="_blank"><h4 class="df-regular man uppercase color4">View All</h4></a>
 					<ul class="unstyled inline">
 						<li class="pan"><a class="scroll block transition arrowBorder brah color4" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color4"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color4" href="<?php echo get_home_url() ?>/news"><h4 class="ico-arrowRight pas man color4"></h4></a></li>

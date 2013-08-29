@@ -31,9 +31,9 @@
 
 			while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
-				<div class="span3 bg-color1 mbm txtC txtM transition">
+				<div class="span3 mbm txtC txtM transition">
 						<?php $logoUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-						<img src="<?php echo $logoUrl[0]; ?>" />
+						<img src="<?php echo $logoUrl[0]; ?>" alt="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>" title="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>"/>
 				</div>
 			<?php
 			endwhile;	

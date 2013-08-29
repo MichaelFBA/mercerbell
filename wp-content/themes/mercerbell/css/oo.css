@@ -74,22 +74,22 @@
  */
 .bat, .btt { border-top: 1px solid; }
 .bas, .bts { border-top: 2px solid; }
-.bam, .btm { border-top: 5px solid; }
+.bam, .btm { border-top: 3px solid; }
 .bal, .btl { border-top: 8px solid; }
 .bah, .bth { border-top: 13px solid; }
 .bat, .brt { border-right: 1px solid; }
 .bas, .brs { border-right: 2px solid; }
-.bam, .brm { border-right: 5px solid; }
+.bam, .brm { border-right: 3px solid; }
 .bal, .brl { border-right: 8px solid; }
 .bah, .brh { border-right: 13px solid; }
 .bat, .bbt { border-bottom: 1px solid; }
 .bas, .bbs { border-bottom: 2px solid; }
-.bam, .bbm { border-bottom: 5px solid; }
+.bam, .bbm { border-bottom: 3px solid; }
 .bal, .bbl { border-bottom: 8px solid; }
 .bah, .bbh { border-bottom: 13px solid; }
 .bat, .blt { border-left: 1px solid; }
 .bas, .bls { border-left: 2px solid; }
-.bam, .blm { border-left: 5px solid; }
+.bam, .blm { border-left: 3px solid; }
 .bal, .bll { border-left: 8px solid; }
 .bah, .blh { border-left: 13px solid; }
 
@@ -367,7 +367,7 @@ h6, .h6 { color: #333333; font-size: 11.9px/1.5em; }
     line-height: 1.5em;
 }
 .fsh {
-    font-size: 3em;
+    font-size: 34px;
     line-height: 1.5em;
 }
 

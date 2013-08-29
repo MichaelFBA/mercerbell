@@ -13,19 +13,21 @@ Author URI: 	http://falsebehavinganimals.com
 Start here           ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 /* Overall */
-body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 16px; }
+body{background-color: #f2f2f2; font-family: 'GillSansStd-Light', sans-serif;line-height: 1.5em; color: #4c4c4c;padding-top: 75px; font-size: 16px;}
 hr {margin: 10px 0;border-top: 1px solid #4c4c4c;border-bottom: none;}
-a{color: #777777;text-decoration: underline;}
-a:hover, a:focus{color: #333333;}
+a{color: #4c4c4c;text-decoration: none;}
+a:hover, a:focus{color: #333333;text-decoration: none;}
 h4,.h4{font-size: 18px;}
-
+.the-content a, .the-content a:hover, .the-content a:focus {text-decoration: underline;}
+.the-content p {margin-bottom: 0;}
 /* Generic */
-.noUnderline, .noUnderline:hover{text-decoration: none;}
+.noUnderline, .noUnderline:hover{text-decoration: none !important;}
 strong{font-family: 'GillSansStd', sans-serif;}
 .uppercase{text-transform: uppercase;}
 .capitalize{text-transform: capitalize;}
 .underline{text-decoration: underline;}
 .fwNormal{font-weight: normal;}
+.fwBold{font-weight: bold !important;}
 .df-light{font-family:'GillSansStd-Light',Sans-Serif;}
 b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .arrows{width: 20px;}
@@ -38,6 +40,7 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .t0{top:0px;}
 .b0{bottom:0px;}
 .aboutSectionTopMargin{margin-top: 50px;}
+.mt20{margin-top: 20%;}
 
 
 /* Colors */
@@ -65,7 +68,6 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .color6{color: #564c78 !important} /* purple */
 .color7{color: #c2d63e !important} /* liteGreen */
 
-/* Arrow Font */
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
 	font-family: 'Arrows';
@@ -76,11 +78,16 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Use the following CSS code if you want to have a class per icon */
-
-.ico-arrowLeft, .ico-arrowUp, .ico-arrowRight {
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.ico-arrowLeft, .ico-arrowUp, .ico-arrowRight, .ico-arrowDown {
 	font-family: 'Arrows';
 	speak: none;
 	font-style: normal;
@@ -99,23 +106,61 @@ b,.df-regular{font-family:'GillSansStd',Sans-Serif;}
 .ico-arrowRight:before {
 	content: "\e002";
 }
+.ico-arrowDown:before {
+	content: "\e003";
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-instagram, .icon-pinterest {
+	font-family: 'socialIcons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-instagram:before {
+	content: "\e000";
+}
+.icon-pinterest:before {
+	content: "\e001";
+}
 
 /* Navbar */
-.navbar .nav > li > a {margin-top: 20px}
+.navbar .nav > li > a {margin-top: 20px;padding: 10px 20px 10px; color: #4c4c4c}
 .navbar .brand{background:url('../img/mercerbell-logo.png') no-repeat 0 0;background-size: 484px 61px;width: 484px; height: 61px;padding:0px; margin-left: 0px;left: -286px;top: 7px;text-indent: -9999px}
 header .container{height: 75px}
-.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;box-shadow: none;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center;}
+.navbar-search input{border: 0px; border-bottom: 1px solid #000000;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center;}
 .navbar-search button{border: none;background-color: transparent;}
 /* .navbar .nav > li.current-menu-item a{color: #333333} */
 .navbar .btn-navbar {background-color: transparent;background-image: none;border: 2px solid #4c4c4c;margin-right: 10px;border-radius: 0px}
-.navbar input[type="text"]:focus{border: none;box-shadow: none;border-bottom: 1px solid #000000;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center; }
+.navbar input[type="text"]:focus{border: none; border-bottom: 1px solid #000000;box-shadow: none; -webkit-box-shadow: none;font-family:'GillSansStd',Sans-Serif;font-size: 13px;text-align: center; }
 .icon-search {background-position: 14px 14px;}
 [class^="icon-"], [class*=" icon-"] { background-image: none; }
-.navbar-search{width: 0px;overflow: hidden;}
-
+.navbar-search{width: auto;overflow: hidden;}
+.navicons {padding-top: 6px;}
 .navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {background-color: transparent;}
-.navbar .btn-navbar .icon-bar {background-color: #4c4c4c;width: 13px;border-radius: 0px;border: none;}
+.navbar .btn-navbar .icon-bar {background-color: #4c4c4c;width: 13px;border-radius: 0px;border: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;}
 
+.navbar-static-top .navbar-inner {
+border: 0;
+background: transparent;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+
+#search-menu, #main-menu {box-shadow: 0 5px 5px rgba(0,0,0,0.1)}
+
+.affix { top:0; width: 100%;}
 
 /* Subnav */
 
@@ -129,8 +174,8 @@ header .container{height: 75px}
 
 
 /* Side Nav */
-.spacer{height: 150px} /* This is used to space the nav from the top */
-.sidenav{position: fixed; width: 40px; top:150px;left: 0px}
+.spacer{height: 250px} /* This is used to space the nav from the top */
+.sidenav{position: fixed; width: 40px; top:250px;left: 0px}
 .sidenav .nav-list > li > a {padding: 0px}
 .sidenav .nav > li > a:hover, .nav > li > a:focus {}
 .sidenav .circles{border-radius: 5px;width: 8px;height: 8px;margin: 10px 0 15px 4px}
@@ -172,17 +217,20 @@ box-shadow:inset 0px 0px 1px 1px;}
 #contact iframe{width:100%;}
 
 /* Form Validation */
-span.wpcf7-not-valid-tip {position: absolute;top: auto;left: 0px;z-index: 100;background-color: #60bdb9;border: 1px dashed #000000;width: 100%;padding: 20px 0 20px 0;text-indent: 20px}
-div.wpcf7-validation-errors {border: none;}
+span.wpcf7-not-valid-tip {position: absolute;top: -21px;left: 120px;z-index: 100;background-color: #60bdb9;border: 1px dashed #000000;width: auto;padding: 10px}
+.file-upload {width: 140px; top:-28px; left:11px;}
+div.wpcf7-validation-errors {background-color: #60bdb9;border: 1px dashed #000000;margin-left: 40px; color: #fff; text-align: center}
 span.wpcf7-list-item {margin-left: 0px;}
 .wpcf7-submit{background: none;border: none;font-family: 'GillSansStd-Light', sans-serif;text-transform: uppercase;color: #564c78;padding: 0px}
 
-
+.wpcf7-response-output {clear: both; border: 2px solid #fff; margin-left: 40px; color: #fff; text-align: center}
+.checkbox-newsletter input{vertical-align: top;}
+div.wpcf7-mail-sent-ok {border: none;}
 
 /* ---------------------------------------------------------------------------------------------------------- 
 Page specific         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
-.homeh1 img{position: relative;top:-7px; }
+.homeh1 img{position: relative;top:-7px; float:right}
 .largeArrowHome{border-radius:30px;position:relative; top:-4px;padding: 0px 15px 0px 15px ;line-height: 1em;width: auto;height: auto;vertical-align: middle;font-size:0.7em }
 .largeArrow{font-size: 26px;margin-bottom: 5px;}
 #article4 textarea, #article4 input[type="text"],#article4 input[type="email"]{background-color: #64c9c5;border: none;font-size: 12px;color: #564c78;}
@@ -195,7 +243,7 @@ Page specific         ----------------------------------------------------------
 #article4 textarea:-ms-input-placeholder,#article4 input[type="email"]:-ms-input-placeholder,#article4 input[type="text"]:-ms-input-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif } /* ie */
 #article4 textarea input:-moz-placeholder ,#article4 input[type="email"]input:-moz-placeholder ,#article4 input[type="text"]input:-moz-placeholder { color:#564c78;font-family: 'GillSansStd-Light', sans-serif }
 
-.page-template-page-primary-php h1, .page-article5 h1{font-size: 50px;top: 25%}
+.page-template-page-primary-php h1, .page-article5 h1{font-size: 50px;top: 15%}
 
 #map-canvas{width: 100%; height: 500px;}
 
@@ -211,6 +259,18 @@ Page specific         ----------------------------------------------------------
 
 /* Home page */
 
+
+/* Search */
+.search-results .span4{min-height: 360px;}
+.news .span4{min-height: 370px;}
+
+/* Single people */
+.the-content p, .the-content h4 {
+font-size: 30px;
+line-height: 1.25em;
+}
+
+
 /* ---------------------------------------------------------------------------------------------------------- 
 Interaction         ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
@@ -221,31 +281,11 @@ transition: all .5s;
 -o-transition: all .5s; /* Opera */
 }
 
-#press .span4:hover{background-color: white;}
+#press .span4:hover{background-color: white;box-shadow: 0 0 0 1px #c1c1c1; -webkit-box-shadow: 0 0 0 1px #c1c1c1;}
 
-.element img{opacity: 0.4}
-.element img:hover{opacity: 1}
-
-.rotate{
--webkit-transition-duration: 0.8s;
--moz-transition-duration: 0.8s;
--o-transition-duration: 0.8s;
-transition-duration: 0.8s;
- 
--webkit-transition-property: -webkit-transform;
--moz-transition-property: -moz-transform;
--o-transition-property: -o-transform;
-transition-property: transform;
- 
-overflow:hidden;
-}  
- 
-.rotate:hover  
-{
--webkit-transform:rotate(40deg);
--moz-transform:rotate(400deg);
--o-transform:rotate(40deg);
-}  
+.element img{opacity: 0.4; filter: alpha(40)}
+.element img:hover, .element:hover img{opacity: 1; filter: alpha(100)}
+.noOpacity{opacity: 1 !important; filter: alpha(100) !important;}
 
 .toggled {
     overflow: hidden;
@@ -360,6 +400,10 @@ Responsive           -----------------------------------------------------------
 	
 	.flashContainer #player, .flashContainer, .flashContainer iframe{width:1254px !important; height: 701px !important }
 	.modal{margin-left: -626px;}
+	.navbar .nav > li > a {padding: 10px 30px 10px;}
+	
+	.search-results .span4{min-height: 400px;}
+  .news .span4{min-height: 420px;}
 }
 
 
@@ -374,15 +418,24 @@ Responsive           -----------------------------------------------------------
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {height: 545px;overflow: hidden;}
 	.modal{margin-left: -584px}
-	
+	.the-content p, .the-content h4{font-size: 30px;line-height: 1.25em;}
+	/* News */
+	.search-results .span4{min-height: 380px;}
+	.news .span4{min-height: 400px;}
+}
+
+/* Collapsed nav sizes */
+@media (max-width: 979px) {
+  .nav-collapse, .nav-collapse.collapse { margin-left: -20px; margin-right: -20px;}
+  .navicons {padding-top: 3px;}
 }
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+  body{overflow-x: hidden;}
 	header{margin-top: 0px}
 	.flashContainer #player, .flashContainer, .flashContainer iframe {width:724px !important; height: 406px !important }
 	.modal{margin-left: -362px;top:75px;}
-	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
 	/* Carousel */
@@ -392,26 +445,72 @@ Responsive           -----------------------------------------------------------
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
 	#map-canvas {height:400px }
-	.page-template-page-primary-php h1, .page-article5 h1{font-size: 40px;top: 25%}
+	.page-template-page-primary-php h1, .page-article5 h1{font-size: 38px;top: 15%}
 	.searchIcon{margin-right: 40px;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
 	.imageWrap img{margin-top: -10%; }
 	.homeh1 img{width:40px;top:-4px;}
+	.the-content p, .the-content h4{font-size: 30px;line-height: 1.25em;}
+	
+	/* News */
+	.search-results .span4{min-height: 320px;}
+	.news .span4{min-height: 320px;}
+	
+	#clientLogos .span3 {
+	min-height: 160px;
+	line-height: 160px;
+	}
+	
+}
+
+/* Desktop only */
+@media (min-width: 1025px) {
+ 
+  /* ---------------------------------------------------------------------------------------------------------- 
+  Rotation         ----------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------------- */
+
+  .rotate{
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+   
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -ms-transition-property: -ms-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+   
+  overflow:hidden;
+  }  
+   
+  .rotate:hover  
+  {
+  -webkit-transform:rotate(40deg);
+  -moz-transform:rotate(40deg);
+  -ms-transform: rotate(40deg); 
+  -o-transform:rotate(40deg);
+  transform: rotate(40deg);
+  }  
+ 
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-	body {padding: 0px;}
+	body{overflow-x: hidden; padding: 0px}
 	header{margin-top: 0px}
+	
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;}
+	
 	.container{padding: 0 ;}
 	.flashContainer #player, .flashContainer{width:100% !important; height: 300px !important }
 	.flashContainer iframe {width: 100% !important;height: 300px !important;}
 	.modal{margin: auto;}
 	
 	
-	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-right: 0px;margin-left: 0px;}
-	body{padding-top: 0px;}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
 	/* Carousel */
@@ -422,26 +521,41 @@ Responsive           -----------------------------------------------------------
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
 	#map-canvas {height:400px }
-	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;top: 25%;font-size: 50px;}
+	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 10% 0 10%;left: auto;top: 25%;font-size: 38px;}
 	.element img, .imgStretch img{width: 100%;}
-	.searchIcon{margin-right: 20px;font-size: 1.1em;}
+	.searchIcon{font-size: 1.1em;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
 	.imageWrap img{margin-top: 0%; }
 	.homeh1 img{width:40px;top:-4px;}
+	.the-content{padding: 0 20px 0 20px;}
+	.the-content p, .the-content h4{font-size: 25px;line-height: 1.25em;}
+  .bam, .bbm {border-bottom: 3px solid;}
+  
+	/* 	Client page */
+#clientLogos .span3 {width: 29%; float: left; min-height: 30px; line-height: 30px; margin: 0 10px 0px 10px }
+	
+	/* 	Jobs single */
+	.mobilePadding{padding: 0 20px 0 20px;}
+	.wpcf7 .span2{padding-bottom: 5px;}
+	.single-jobs .span4 img{width: 100%;}
+
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	body{padding: 75px 0px 0px 0px}
+	.mvh{margin: 40px 0  40px 0 !important}
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;}
+	.navbar .brand{background:url('../img/mercerbell-mobile.png') no-repeat 0 0 !important;background-size:164px 24px !important; left: 0px;top:25px; width: 164px;}
 	h2{font-size: 25px}
-	body {padding: 0px;}
 	header{margin-top: 0px}
 	.aboutSectionTopMargin{margin-top: 0px;}
 	.navbar-fixed-top {margin-bottom: 0px;}
 	.flashContainer #player, .flashContainer{width:100% !important; height: auto !important }
 	/* Carousel */
 	.carousel-inner > .item .imageWrap, .imageWrap {overflow: hidden;height: auto;}
-	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 40px 0 40px;left: auto;top: 25%;font-size: 25px;}
+	.page-template-page-primary-php h1, .page-article5 h1{width: 80%; margin: 0 10% 0 10%;left: auto;top: 15%;font-size: 26px;}
 	.primary-caption p{padding-left: 20px; }
 	.element img{opacity: 1;}
 	.patternOverlay {background-image: none;}
@@ -450,9 +564,10 @@ Responsive           -----------------------------------------------------------
 	.sub-menu li {display: block;padding-left: 0px;}
 	.navbar .nav > li > a {margin-top: 0px;}
 	.controlDiv,.controlPlay{background-size: 50% 50% !important}
+	
 	#map_canvas{height:300px }
 	.element img, .imgStretch img{width: 100%;}
-	.searchIcon{margin-right: 20px;font-size: 1.1em;}
+	.searchIcon{font-size: 1.1em;}
 	#menu-main{text-align: center;}
 	.nav-collapse .navbar-form, .nav-collapse .navbar-search  {border-top: none;border-bottom: 0px; margin: auto auto; padding: 0px;}
 	#about,#contact{padding: 0 20px 0 20px;}
@@ -461,7 +576,18 @@ Responsive           -----------------------------------------------------------
 	.largeArrow{padding: 3px !important; font-size: 20px !important;margin-top: -4px;}
 	.phone-padding{padding: 0 20px 0 20px;}
 	.imageWrap img{margin-top: 0%; }
-	.homeh1 img{width:20px;top:-2px;}
+	.homeh1 img{width:26px;top:-2px;}
+	.the-content{padding: 0 20px 0 20px;}
+	.the-content p, .the-content h4{font-size: 20px;line-height: 1.25em;}
+	input[type='text'] {font-size:16px;}
+	
+	/* 	Client page */
+	#clientLogos .span3 {width: 27%; float: left; min-height: 30px; line-height: 30px; margin: 0 10px 0px 10px }
+		
+/* 	Jobs single */
+	.mobilePadding{padding: 0 20px 0 20px;}
+	.wpcf7 .span2{padding-bottom: 5px;}
+	.single-jobs .span4 img{width: 100%;}
 }
 
 

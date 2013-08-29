@@ -62,7 +62,7 @@ function register_mb_post_types() {
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array("slug" => "news"),
-		'supports' => array( 'title', 'editor', 'thumbnail' ),
+		'supports' => array( 'title', 'editor', 'thumbnail','author' ),
 		'taxonomies' => array('post_tag'),
 		'menu_icon' => get_stylesheet_directory_uri() . '/img/admin/pressIcon@2x.png',
 		)
@@ -101,7 +101,7 @@ function register_mb_post_types() {
 				'add_new_item' => __( 'Add New Item' ),
 				'edit_item' => __( 'Edit Item' ),
 				'new_item' => __( 'New Item' ),
-				'view_item' => __( 'View Now (development only)' )
+				'view_item' => __( 'View Now' )
 			),
 		'menu_position'=>5,
 		'public' => true,

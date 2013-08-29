@@ -42,17 +42,23 @@
 			?>
 				<div class="transition mbm">
 					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'square-large'); ?>
-	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
+	        <a href="<?php the_permalink(); ?>" target="_parent">
+	        	<span class="patternOverlay block element">
+	        		<img class="transition" src="<?php echo $Imageurl[0]; ?>" alt="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>" title="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>" />
+	        	</span>
+	        </a>
 					<h4 class="uppercase df-regular mtm fsl phone-padding"><?php the_title(); ?></h4>
 					<hr>
 					<p class="man uppercase fss phone-padding"><?php the_field('position_held') ?><a href="#" class="null toggle"><i class="icon-angle-down pull-right"></i></a></p>
 					<div class="hide phone-padding">
-						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
+						<p class="mtm mbl"><?php echo string_excerpt_length(get_the_content(),300); ?></p>
 						<p class="man pan fss">Follow: 
 						<?php if( get_field('facebook') ){ ?><a href="<?php the_field('facebook'); ?>" target="_blank"><i class=" mlt prt icon-facebook"></i></a><?php } ?>
 						<?php if( get_field('twitter') ){ ?><a href="<?php the_field('twitter'); ?>" target="_blank"><i class="icon-twitter mrt"></i></a><?php } ?>
 						<?php if( get_field('pinterest') ){ ?><a href="<?php the_field('pinterest'); ?>" target="_blank"><i class="icon-pinterest mrt"></i></a><?php } ?>
-						<?php if( get_field('instagram') ){ ?><a href="<?php the_field('instagram'); ?>" target="_blank"><i class="icon-instagram"></i></a>	<?php } ?>
+						<?php if( get_field('instagram') ){ ?><a href="<?php the_field('instagram'); ?>" target="_blank"><i class="icon-instagram mrt"></i></a>	<?php } ?>
+						<?php if( get_field('linkedin') ){ ?><a href="<?php the_field('linkedin'); ?>" target="_blank"><i class="icon-linkedin"></i></a>	<?php  } ?>
+
 						</p>
 					</div>
 					<hr>

@@ -46,7 +46,8 @@
 				  <div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
 				  	<a href="#myModal" role="button" data-toggle="modal">
 						  	<div class="controlPlay play"></div>
-						  	<?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?>
+						  	<span class="hidden-phone"><?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'large'); $youtubeID = get_field('mb_youtube'); ?></span>	
+						  	<span class="hidden-desktop hidden-tablet"><?php echo wp_get_attachment_image( get_field('youtube_poster_image') ,'span5');?></span>
 					  </a>
 				</div>
 				  <?php endif; ?>
@@ -57,7 +58,8 @@
 					if($rows):
 						foreach($rows as $row){ ?>
 							<div class="item <?php if($first == true){echo 'active';$first = false;} ?>">
-								<?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?>
+								<span class="hidden-phone"><?php echo wp_get_attachment_image( $row['mb_single_images'], 'large' ); ?></span>
+								<span class="hidden-desktop hidden-tablet"><?php echo wp_get_attachment_image( $row['mb_single_images'], 'span5' ); ?></span>
 							</div>
 
 						<?php } ?>
@@ -103,12 +105,16 @@
 		<div class="span6 mbm">
 			<?php the_content(); ?>
 			<p class="uppercase fss">
+			
+			 <?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'people-large' ); ?>
+			
 				<a href="<?php print $_SERVER['HTTP_REFERER'];?>" target="_parent">Back <i class="icon-angle-right txtM"></i></a>
 				<span class="pull-right">Share: 
 					<a href="http://www.facebook.com/share.php?u=<?php print(urlencode( the_permalink() )) ?>&title=<?php print(urlencode(the_title())); ?>" target="_blank"><i class="txtT mlt prt icon-facebook color6"></i></a>
-					<a href="http://twitter.com/home?status=<?php  print(urlencode( the_permalink() )) ?>+<?php print(urlencode(the_title())); ?>" target="_blank"><i class="txtT icon-twitter mrt color6"></i></a>
+					
+					<a href="<?php echo "http://twitter.com/intent/tweet?text="; echo urlencode(the_title()); echo "&url="; echo urlencode( the_permalink() );  echo "&hashtags=mercerbell&via=mercerbell"; ?>" target="_blank"><i class="txtT icon-twitter mrt color6"></i></a>
 					<a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php print($Imageurl[0])  ?>&url=<?php  print(urlencode( the_permalink() )) ?>&is_video=false&description=<?php print(urlencode(the_title())); ?>
-" target="_blank"><i class=" txtT icon-pinterest mrt color6"></i></a>
+" target="_blank"><i class="fwBold txtT icon-pinterest mrt color6"></i></a>
 
 				</span>
 			</p>

@@ -27,13 +27,16 @@
 			</ul>			
 		
 		</div>
-		<div class="span6 txtC mvl">
+		<div class="span6 txtC mvh">
 			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 			<h4 class="uppercase lsm df-regular color6"><?php the_title(); ?></h4>
 		</div>
+	</div>
+	
 		
 		
 		<!-- 		iphone filter -->
+	<div class="row">
 		<div class="span12 hidden-tablet hidden-desktop">
 		
 		<div class="btn-group mtm span12 uppercase iphoneFilter">
@@ -47,9 +50,9 @@
 					<?php } ?>
 			</ul>	
     </div>
-		
-		
-	</div><!-- close row -->
+    
+		</div>
+  </div><!-- close row -->
 
 	<!-- rows -->
 	<div class="row transition color6">
@@ -75,7 +78,8 @@
 	        <a href="<?php the_permalink(); ?>" target="_parent"><img src="<?php echo $Imageurl[0]; ?>" /></a>
 					<h4 class="uppercase df-regular mtm fsl color6 phone-padding"><?php the_title(); ?></h4>
 					<hr class="bc-color6">
-					<p class="man uppercase fss phone-padding"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?><a href="#" class="null toggle color6"><i class="icon-angle-down pull-right"></i></a></p>
+					<p class="man uppercase fss phone-padding"><?php echo mercerBellTerms(strtolower(get_post_type( get_the_id() ) ) ); #outputs categories ?>
+						<a href="#" class="null toggle color6 inlineBlock pull-right"><i class="icon-angle-down"></i></a></p>
 					<div class="hide phone-padding">
 						<p class="mtm mbl"><?php $content = get_the_content(); print $content; ?></p>
 						<p class="man pan fss">Share: 

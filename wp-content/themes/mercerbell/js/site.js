@@ -1,5 +1,8 @@
 jQuery(document).ready(function ($) {
 
+
+$('.tooltips').tooltip(); // bootstrap tooltip
+
   /* ========================================================================================================================
 	
 	People Hover
@@ -162,26 +165,52 @@ $(".scroll").on('click', function(e){
 	Header form
 
 ======================================================================================================================== */
-var collapsed = true;
+var searchCollapsed = true;
 $(".searchIcon").on('click', function(e){
 	
-	if(collapsed){
+	if(searchCollapsed){
+  	if(!mainCollapsed){
+  		$('#main-menu').collapse('hide');
+  		mainCollapsed = true;
+  	}
 		$('.navbar-search').stop().animate({width: 206+'px'}, 800);
-		$('.nav-collapse').collapse('show')
-		collapsed = false;
+		$('#search-menu').collapse('show');
+		searchCollapsed = false;
 	}else{
 		$('.navbar-search').stop().animate({width: 0+'px'}, 800);
-		$('.nav-collapse').collapse('hide')
-		collapsed = true;
+		$('#search-menu').collapse('hide');
+		searchCollapsed = true;
 	}
 });
+
+var mainCollapsed = true;
+$(".mainCollapse").on('click', function(e){
+	if(mainCollapsed){
+  	if(!searchCollapsed){
+  		$('.navbar-search').stop().animate({width: 0+'px'}, 800);
+  		$('#search-menu').collapse('hide');  
+  		searchCollapsed = true;
+  	}
+		$('#main-menu').collapse('show');
+		mainCollapsed = false;
+	}else{
+		$('#main-menu').collapse('hide');
+		mainCollapsed = true;
+	}
+});
+
 /* ========================================================================================================================
 
 	Menu Scroll
 
 ======================================================================================================================== */
+$(window).bind('touchmove', function() {
+	console.log('touch move');
+});
+
+
 	function sidebar(){  
-  var distanceFromTop = 150; // top spacer - can be adjusted
+  var distanceFromTop = 250; // top spacer - can be adjusted
   var menuPos =  $(".sidenav").offset().top + $(".sidenav").height() - $(window).scrollTop() + 14; // total menu height
   
   $(window).on('scroll',function(){
@@ -258,11 +287,17 @@ $(".searchIcon").on('click', function(e){
 	Toggle // Unhides the closest p element with a .hide class
 
 ======================================================================================================================== */
+
 function bindToggle(){
 	$('.toggle').on('click',function(e){
+		toggleArrow(this);
 		pde(e);
 		$(e.target).parent().parent().siblings('.hide').slideToggle('300')
 	})
+}
+
+function toggleArrow(value){
+	$(value).children().toggleClass('icon-angle-up icon-angle-down');
 }
 
 
@@ -289,8 +324,7 @@ function bindToggle(){
 	Ajax
 	
 ======================================================================================================================== */
-
-function galleryAjax(posttype, offsetNum,term){
+function newsAjax(posttype, offsetNum,term,numItems){
      jQuery.ajax({
           url: '/wp-admin/admin-ajax.php',
           data:{
@@ -299,6 +333,63 @@ function galleryAjax(posttype, offsetNum,term){
                'posttype':posttype,
                'trackOffset':offsetNum,
                'term':term,
+               'items':numItems,
+               },
+          dataType: 'JSON',
+          success:function(data){
+          	//console.log(data);
+          	var workContent = '';
+          	var terms = '';
+          	var sizeArray = ['span8','span4','span7','span5','span4','span4','span4'];
+          	for(i = 0 ; i < data.length ; i++){
+          		terms = '';
+          		
+          		for(j = 0 ; j < data[i].terms.length ; j++){
+          			terms += data[i].terms[j];
+          			if(j < data[i].terms.length - 1){
+          				terms += ', ';
+          			}
+          		}
+          		workContent += '<a href="'+ data[i].link +'" target="_parent">'+
+														 '<div class="bg-color1 transition element mbm '+ sizeArray[1] +'">'+
+														 		'<span class="patternOverlay block"><img class="transition" src="'+data[i].thumbnail[sizeArray[1]][0] + '"/></span>'+ //'<img src="'+data[i].attachments[0][sizeArray[i]][0] + '"/>'+
+													        '<div class="pam">'+
+																		'<h4 class="uppercase df-regular uppercase man">'+ data[i].title +'</h4>'+
+																		'<hr>' +
+																		'<p class="fss man uppercase">'+ terms +'</p>'+
+																	'</div>'+
+																'</div>'+
+															'</a>';
+
+	              }
+	         if(filtered){
+		          $("#appendAjaxContent").empty();
+	         }
+	         $("#appendAjaxContent").hide().append(workContent).fadeIn('slow');
+          		//console.log(data);
+          		//After finished
+          		hasFinished = true;
+          		trackCountNews = trackCountNews + 9;
+          		$('.loadingSpinner').remove();
+          },
+          error: function(errorThrown){
+               //alert('error');
+               //console.log(errorThrown);
+          }
+     });
+}
+
+
+function galleryAjax(posttype, offsetNum,term,numItems){
+     jQuery.ajax({
+          url: '/wp-admin/admin-ajax.php',
+          data:{
+               'action':'do_ajax',
+               'fn':'get_more_items',
+               'posttype':posttype,
+               'trackOffset':offsetNum,
+               'term':term,
+               'items':numItems,
                },
           dataType: 'JSON',
           success:function(data){
@@ -427,13 +518,23 @@ var hasFinished = true;
 var filtered = false;
 
 var trackCount = 7;
-$('#moreViaAjax').on('click', function(){
+$('.moreViaAjax').on('click', function(){
 	filtered = false;
 	if(hasFinished){
-	galleryAjax( $('#moreViaAjax').attr('data-postType'), trackCount );
+	galleryAjax( $('.moreViaAjax').attr('data-postType'), trackCount, null,7 );
+	hasFinished = false;
+	}
+})
+
+var trackCountNews = 9;
+$('.newsViaAjax').on('click', function(){
+	filtered = false;
+	if(hasFinished){
+	newsAjax( $('.newsViaAjax').attr('data-postType'), trackCountNews, null,9 );
 	hasFinished = false;
 	}
 })	
+
 
 //Filter items
 $('#filters a, #filters-mobile a').on('click', function(){
@@ -443,15 +544,32 @@ $('#filters a, #filters-mobile a').on('click', function(){
 	trackCount = 0;
 	//Will only run if ajax is finished
 	if(hasFinished){
-	galleryAjax( $('#moreViaAjax').attr('data-postType'), trackCount, $(this).attr('data-taxonomy') );
+		if($('.news').length == 1){
+			newsAjax( $('.newsViaAjax').attr('data-postType'), trackCount, $(this).attr('data-taxonomy') );
+		}else{
+			galleryAjax( $('.moreViaAjax').attr('data-postType'), trackCount, $(this).attr('data-taxonomy') );
+		}
 	hasFinished = false;
 	}
-	$('#filters a, #filters-mobile a').removeClass('df-regular');
-	$('#filters a, #filters-mobile a').children().removeClass('color7');
-	$(this).addClass('df-regular');
-	$(this).children().addClass('color7');
+	
+	if($('.news').length == 1){
+			$('#filters a, #filters-mobile a').removeClass('df-regular');
+			$('#filters a, #filters-mobile a').children().removeClass('color4');
+			$(this).addClass('df-regular');
+			$(this).children().addClass('color4');
+		}else{
+			$('#filters a, #filters-mobile a').removeClass('df-regular');
+			$('#filters a, #filters-mobile a').children().removeClass('color7');
+			$(this).addClass('df-regular');
+			$(this).children().addClass('color7');
+		}
+	
+	
 	
 })
+
+
+
 //three column ajax
 $('#three-col-filter a, #three-col-filter-mobile a').on('click', function(){
 	jobsAjax('jobs',$(this).attr('data-taxonomy'));

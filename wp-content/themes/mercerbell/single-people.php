@@ -18,7 +18,7 @@
 		<div class="span6 offset3">
 			<div class="cycle-slideshow">
 				<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'people-large' ); ?>
-				<img src="<?php echo $Imageurl[0]; ?>" />
+				<img src="<?php echo $Imageurl[0]; ?>" alt="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>" title="<?php echo get_post( get_post_thumbnail_id() )->post_title; ?>" />
 			<?php
 					$attachments = get_posts( array(
 						'post_type' => 'attachment',
@@ -41,23 +41,41 @@
 						
 					}
 			?>
+		</div>
 		
-			
-			</div>
-	    <h4 class="uppercase df-regular uppercase mtm"><?php the_title(); ?></h4>
+		<div class="the-content">
+	    <h4 class="uppercase fsh df-regular uppercase mtm"><?php the_title(); ?></h4>
 			<hr>
-			<p class="fss man mbm uppercase"><?php the_field('position_held');?></p>
-			<p class="fsl"><?php echo the_content(); ?></p>
+			<span class="fsl man mbm uppercase"><?php the_field('position_held');?></span>
+			<div class="fsh df-light ptm"><?php echo the_content(); ?></div>
 			<hr class="mbm mtl">
 			<?php the_field('footer_information'); ?>
-			<p class="pull-right">Follow: 
-				<?php if( get_field('facebook') ){ ?><a href="<?php the_field('facebook'); ?>" target="_blank"><i class=" mlt prt icon-facebook"></i></a><?php } ?>
-				<?php if( get_field('twitter') ){ ?><a href="<?php the_field('twitter'); ?>" target="_blank"><i class="icon-twitter mrt"></i></a><?php } ?>
-				<?php if( get_field('pinterest') ){ ?><a href="<?php the_field('pinterest'); ?>" target="_blank"><i class="icon-pinterest mrt"></i></a><?php } ?>
-				<?php if( get_field('instagram') ){ ?><a href="<?php the_field('instagram'); ?>" target="_blank"><i class="icon-instagram"></i></a>	<?php } ?>
-			</p>
-		</div>
-			
+			<!-- Footer Additional Links Repeater -->
+			<div class="contentFooter">
+				
+					<strong class="uppercase">
+						<?php if(get_field('additional_links')): ?>
+							<?php the_field('footer_information'); ?>
+						<?php endif; ?>
+					</strong>
+					
+					<?php if(get_field('additional_links')): ?>
+						<?php while(the_repeater_field('additional_links')): ?>
+							<a href="<?php  the_sub_field('additional_link_url');?>" target="_blank" class="block df-light"><?php  the_sub_field('additional_link_title');?></a>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<!-- EndOf Footer Additional Links Repeater -->
+				</div>
+				
+				<span class="pull-right">Follow: 
+				<?php if( get_field('facebook') ){ ?><a href="<?php the_field('facebook'); ?>" target="_blank"><i class="noUnderline mlt prt icon-facebook"></i></a><?php } ?>
+				<?php if( get_field('twitter') ){ ?><a href="<?php the_field('twitter'); ?>" target="_blank"><i class="noUnderline icon-twitter mrt"></i></a><?php } ?>
+				<?php if( get_field('pinterest') ){ ?><a href="<?php the_field('pinterest'); ?>" target="_blank"><i class="noUnderline icon-pinterest mrt"></i></a><?php } ?>
+				<?php if( get_field('instagram') ){ ?><a href="<?php the_field('instagram'); ?>" target="_blank"><i class="noUnderline icon-instagram"></i></a>	<?php } ?>
+				<?php if( get_field('linkedin') ){ ?><a href="<?php the_field('linkedin'); ?>" target="_blank"><i class="noUnderline icon-linkedin"></i></a>	<?php } ?>
+				</span>
+			</div><!-- the-content -->
+		</div> <!-- Span6 -->
 			<div class="span12 txtC mvl">
 				<a href="<?php echo get_home_url() ?>/work" target="_parent"><h4 class="df-regular man uppercase">Load More</h4></a>
 				<ul class="unstyled inline">

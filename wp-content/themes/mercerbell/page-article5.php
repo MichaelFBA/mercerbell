@@ -16,14 +16,22 @@
 
 
 <div class="container aboutSectionTopMargin page-article5" id="top">
-	
 	<div class="row">
-		<div class="span12 relative">
-		<h1 class=" uppercase color1 absolute span5 offset3 veryTight bbm df-regular fwNormal homeh1"><?php the_title(); ?>
-			<img src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
+		<!--	Logo -->
+		<div class="span12 txtC mvl">
+			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bellIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+			<h4 class="uppercase lsm df-regular">About</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12 relative element">
+		<h1 class=" uppercase color1 absolute span5 offset3 veryTight bbm df-regular fwNormal homeh1 middle"><?php the_field('image_title'); ?>
+			<img class="noOpacity" src="<?php echo get_stylesheet_directory_uri() ?>/img/homeArrow.png"/>
 		</h1>
-		<?php $featureImage = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'); ?>
-		<img src="<?php echo $featureImage[0]; ?>" />
+		
+		<span class="hidden-phone patternOverlay block"><?php the_post_thumbnail('large',array('class'=> 'transition')); ?></span>
+		<span class="hidden-desktop hidden-tablet patternOverlay block"><?php the_post_thumbnail('span5',array('class'=> 'transition')); ?></span>
+		
 		</div>
 	</div>
 	

@@ -41,7 +41,7 @@ register_sidebar(array(
 //Add Custom image size
 add_image_size('thumbnail', 50, 50, false);
 add_image_size('square-large', 398, 398, true);
-add_image_size('people-large', 612, 530, true);
+add_image_size('people-large', 612, 612, true);
 add_image_size('large', 1254, 544, true);
 
 //Image sizes for work page
@@ -166,7 +166,7 @@ function our_ajax_function()
   
   switch ($_REQUEST['fn']) {
     case 'get_more_items':
-      $output = ajax_get_more_items($_REQUEST['posttype'], $_REQUEST['trackOffset'], $_REQUEST['term']);
+      $output = ajax_get_more_items($_REQUEST['posttype'], $_REQUEST['trackOffset'], $_REQUEST['term'], $_REQUEST['items'] );
       break;
     case 'get_more_jobs':
       $output = ajax_get_more_jobs($_REQUEST['posttype'], $_REQUEST['term']);
@@ -252,11 +252,11 @@ function ajax_get_more_jobs($postType,$term)
 }
 
 
-function ajax_get_more_items($postType, $trackOffset, $term)
+function ajax_get_more_items($postType, $trackOffset, $term, $numItems)
 {
   $args = array(
     'offset' 				 => $trackOffset,
-    'posts_per_page' => 7,
+    'posts_per_page' => $numItems,
   	'post_type'			 => $postType,
   	'order'					 => 'DESC',
   	'orderby'				 => 'date',

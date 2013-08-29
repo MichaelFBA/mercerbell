@@ -3,7 +3,7 @@
 					<!-- About use -->
 			<section class="row">
 				<!--	Logo -->
-				<div class="span12 txtC mvl">
+				<div class="span12 txtC mvh">
 					<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/contactIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 					<h4 class="uppercase lsm df-regular color6 mtm">Contact</h4>
 				</div>
@@ -24,10 +24,18 @@
 				<div class="span4">
 					<h4 class="fsl uppercase df-regular color6">Follow us</h4>
 					<p>Stay in the loop 
-					<a class="mrt mls color6" href="<?php the_field('mb_facebook','options') ?>" target="_blank"><i class="icon-facebook"></i></a>
+					<!--
+<a class="mrt mls color6" href="<?php the_field('mb_facebook','options') ?>" target="_blank"><i class="icon-facebook"></i></a>
 					<a class="color6" href="<?php the_field('mb_twitter','options') ?>" target="_blank"> <i class="icon-twitter mrt"></i></a>
-					<a class="color6" href="<?php the_field('mb_pinterest','options') ?>" target="_blank"><i class="icon-pinterest mrt"></i></a>
-					<a class="color6" href="<?php the_field('mb_instagram','options') ?>" target="_blank"><i class="icon-instagram"></i></a>
+					<a class="color6" href="<?php the_field('mb_pinterest','options') ?>" target="_blank"><i class="fwBold icon-pinterest mrt"></i></a>
+					<a class="color6" href="<?php the_field('mb_instagram','options') ?>" target="_blank"><span class="fwBold icon-instagram"></span></a>
+-->
+				<?php if( get_field('mb_facebook','options') ){ ?><a class="color6" href="<?php the_field('mb_facebook','options'); ?>" target="_blank"><i class="noUnderline mlt prt icon-facebook"></i></a><?php } ?>
+				<?php if( get_field('mb_twitter','options') ){ ?><a class="color6" href="<?php the_field('mb_twitter','options'); ?>" target="_blank"><i class="noUnderline icon-twitter mrt"></i></a><?php } ?>
+				<?php if( get_field('mb_pinterest','options') ){ ?><a class="color6" href="<?php the_field('mb_pinterest','options'); ?>" target="_blank"><i class="noUnderline icon-pinterest mrt"></i></a><?php } ?>
+				<?php if( get_field('mb_instagram','options') ){ ?><a class="color6" href="<?php the_field('mb_instagram','options'); ?>" target="_blank"><i class="noUnderline icon-instagram"></i></a>	<?php } ?>
+				<?php if( get_field('mb_linkedin','options') ){ ?><a class="color6" href="<?php the_field('mb_linkedin','options'); ?>" target="_blank"><i class="noUnderline icon-linkedin mrt"></i></a>	<?php } ?>
+				<?php if( get_field('mb_googleplus','options') ){ ?><a class="color6" href="<?php the_field('mb_googleplus','options'); ?>" target="_blank"><i class="noUnderline fwBold icon-google-plus"></i></a>	<?php } ?>
 					</p>
 				</div>
 				
@@ -51,7 +59,7 @@
 				<div class="span12 txtC mvl">
 					<h4 class="df-regular uppercase color6 man">Back to top</h4>
 					<ul class="unstyled inline">
-						<li class="pan"><a class="scroll block transition arrowBorder brah color6" href="#primaryCarousel"><h4 class="ico-arrowUp pas man color6"></h4></a></li>
+						<li class="pan"><a class="scroll block transition arrowBorder brah color6" href="#contact"><h4 class="ico-arrowUp pas man color6"></h4></a></li>
 						<li class="pan"><a class="block transition arrowBorder brah color6" href="<?php echo get_home_url() ?>/contact"><h4 class="ico-arrowRight pas man color6"></h4></a></li>
 					</ul>
 				</div>

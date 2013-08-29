@@ -1,6 +1,6 @@
 <?php
 /**
- *Template Name: Secondary 1
+ *Template Name: Secondary 4
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
@@ -18,7 +18,7 @@
 		<div class="span3">
 			
 			<ul id="filters" class="unstyled uppercase mt20 hidden-phone">
-				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color7"></i> all</a></li>
+				<li class="tight"><a href="#" class="null df-regular" data-taxonomy=""><i class="icon-minus color4"></i> all</a></li>
 					<?php # use page name to filter for categories
 					$categories = get_categories('taxonomy='. strtolower(get_the_title()) .'&type='. strtolower(get_the_title()) ); 
 					foreach ($categories as $a){ ?>
@@ -28,7 +28,7 @@
 		
 		</div>
 		<div class="span6 txtC mvh">
-			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/workIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
+			<img class="rotate" src="<?php echo get_stylesheet_directory_uri(); ?>/img/pressIcon@2x.png" alt="workIcon@2x" width="60" height="59" />
 			<h4 class="uppercase lsm df-regular"><?php echo $pageTitle = get_the_title() ?></h4>
 		</div>
 		
@@ -59,22 +59,20 @@
 		<!-- 	Use WP-Query as the main loop, its better than get-posts etc -->
 		<?php
 			$queryHome = new WP_Query(array(
-	    	'posts_per_page' => 7,
+	    	'posts_per_page' => 9,
 	    	'post_type'			 => strtolower(get_the_title()), #use the page title to filter for custom post type
 	    	'order'					 => 'DESC',
 	    	'orderby'				 => 'date',
 	    	'post_status'		 => 'publish'
 	       ) 
 	    );
-			$sizeArray = array('span8','span4','span7','span5','span4','span4','span4');
-			$count = 0;
 			while ( $queryHome->have_posts() ) : $queryHome->the_post();
 			?>
 
 			<!-- add array classes so they can be filtered in menu -->
 			<a href="<?php the_permalink(); ?>" target="_parent">
-				<div class="bg-color1 transition element mbm <?php echo $sizeArray[$count]; ?>">
-					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), $sizeArray[$count] ); ?>
+				<div class="bg-color1 transition element mbm span4">
+					<?php $Imageurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'span4' ); ?>
 	        <span class="patternOverlay block"><img class="transition" src="<?php echo $Imageurl[0]; ?>" /></span>
 					<div class="pam">
 						<h4 class="uppercase df-regular uppercase man"><?php the_title(); ?></h4>
@@ -84,18 +82,17 @@
 				</div>
 			</a>
 			<?
-			$count++;
-			if($count >= 7){$count = 0;}
+
 			endwhile;
 		?>
 	</div>
 	
 	<div class="row">
 		<div class="span12 txtC mvl">
-			<a href="#" class="null moreViaAjax" data-postType="<?php echo get_post_type( get_the_id() ); ?>"><h4 class="df-regular man uppercase">More <?php echo $pageTitle; ?></h4></a>
+			<a href="#" class="null newsViaAjax" data-postType="<?php echo get_post_type( get_the_id() ); ?>"><h4 class="df-regular man uppercase">More <?php echo $pageTitle; ?></h4></a>
 			<ul class="unstyled inline">
 				<li class="pan"><a class="scroll block transition arrowBorder brah" href="#top"><h4 class="ico-arrowUp pas man"></h4></a></li>
-				<li class="pan"><a class="block transition arrowBorder brah null moreViaAjax" href="#"><h4 class="ico-arrowDown pas man"></h4></a></li>
+				<li class="pan"><a class="block transition arrowBorder brah newsViaAjax null" href="#"><h4 class="ico-arrowDown pas man"></h4></a></li>
 			</ul>
 		</div>
 	</div>
